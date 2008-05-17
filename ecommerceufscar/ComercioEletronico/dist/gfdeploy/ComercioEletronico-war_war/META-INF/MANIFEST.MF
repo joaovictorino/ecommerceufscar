@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.0
+Created-By: 1.6.0_02-b06 (Sun Microsystems Inc.)
+Class-Path:   dataprovider.jar sqlx.jar  commons-fileupload-1.0.jar js
+ on-2.jar prototype-1.5.0.jar dojo-0.9.0.jar jsf-extensions-common-0.1
+ .jar  webui-jsf-suntheme.jar webui-jsf-suntheme_pt_BR.jar ComercioEle
+ tronico-ejb.jar 
+

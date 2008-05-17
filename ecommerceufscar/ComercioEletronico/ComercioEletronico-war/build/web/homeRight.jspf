@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : homeRight
+    Created on : 10/02/2008, 18:35:13
+    Author     : Cliente
+-->
+<div style="height: 454px; width: 142px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
+    <f:subview id="homeRight">
+        <webuijsf:label binding="#{homeRight.lblSenha1}" id="lblSenha1" style="left: 0px; top: 72px; position: absolute" text="Senha" visible="#{homeRight.controlVisibility}"/>
+        <webuijsf:label binding="#{homeRight.lblLogin1}" id="lblLogin1" style="left: 0px; top: 24px; position: absolute" text="Login" visible="#{homeRight.controlVisibility}"/>
+        <webuijsf:textField binding="#{homeRight.txtLogin1}" id="txtLogin1" style="left: 0px; top: 48px; position: absolute" tabIndex="0" visible="#{homeRight.controlVisibility}"/>
+        <webuijsf:button actionExpression="#{homeRight.btnLogin_action}" binding="#{homeRight.btnLogin1}" id="btnLogin1"
+            style="left: -1px; top: 120px; position: absolute" tabIndex="2" text="Login" visible="#{homeRight.controlVisibility}"/>
+        <webuijsf:passwordField binding="#{homeRight.txtSenha1}" id="txtSenha1" style="left: 0px; top: 96px; position: absolute" tabIndex="1" visible="#{homeRight.controlVisibility}"/>
+    </f:subview>
+</div>
