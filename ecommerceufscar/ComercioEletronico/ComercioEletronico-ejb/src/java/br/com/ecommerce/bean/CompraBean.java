@@ -57,7 +57,7 @@ public class CompraBean implements CompraRemote {
         compras.setDataEntrega(null);
         compras.setDataPrevistaEntrega(null);
         
-        compras.setNumCompra(null);
+        //compras.setNumCompra(null);
         Collection<Endereco> listEnd = cliente.getEnderecoCollection();
         compras.setCodEndereco((Endereco)listEnd.toArray()[0]);
         
