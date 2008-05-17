@@ -8,6 +8,7 @@ package br.com.ecommerce.bean;
 import br.com.ecommerce.entity.Compras;
 import br.com.ecommerce.entity.Endereco;
 import br.com.ecommerce.entity.ItensCompras;
+import br.com.ecommerce.entity.ItensComprasPK;
 import br.com.ecommerce.entity.Pessoa;
 import br.com.ecommerce.entity.Produtos;
 import java.util.ArrayList;
@@ -56,15 +57,18 @@ public class CompraBean implements CompraRemote {
         
         //compras.setDataEntrega(null);
         //compras.setDataPrevistaEntrega(null);
-        
         //compras.setNumCompra(null);
+        
         Collection<Endereco> listEnd = cliente.getEnderecoCollection();
         compras.setCodEndereco((Endereco)listEnd.toArray()[0]);
         
         ArrayList<ItensCompras> listItens = new ArrayList<ItensCompras>();
         
         for (Map.Entry<Integer, Integer> item : mapProdutos.entrySet()){
+            ItensComprasPK itensPk = new ItensComprasPK();
             ItensCompras itens = new ItensCompras();
+            itensPk.setCodProduto(item.getKey());
+            itens.setItensComprasPK(itensPk);
             Produtos produtos = new Produtos();
             produtos.setCodProduto(item.getKey());
             Produtos produtoItem = produtoBean.buscarProdutoPorId(produtos);     
