@@ -457,13 +457,13 @@ public class buscarProduto extends AbstractPageBean {
             meuProduto.setNomeProduto("");
        }
        
-       if(precoMinProcurar.getText() != null){
+       if(precoMinProcurar.getText() != null && !precoMinProcurar.getText().toString().equalsIgnoreCase("")){
             meuProduto.setPreco(Double.parseDouble(precoMinProcurar.getText().toString()));
        }else {
             meuProduto.setPreco(0);
        }
        
-       if(precoMaxProcurar.getText() != null){
+       if(precoMaxProcurar.getText() != null && !precoMaxProcurar.getText().toString().equalsIgnoreCase("")){
             meuProduto.setDadosTecnicos(precoMaxProcurar.getText().toString());
        }else {
             meuProduto.setDadosTecnicos(""+999999999);
