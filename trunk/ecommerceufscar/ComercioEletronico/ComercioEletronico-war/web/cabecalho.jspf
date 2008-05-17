@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : cabecalho
+    Created on : 03/02/2008, 14:34:49
+    Author     : Cliente
+-->
+<div style="height: 94px; width: 1222px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
+    <f:subview id="cabecalho">
+        <webuijsf:label binding="#{cabecalho.label1}" id="label1" style="height: 70px; left: 480px; top: 24px; position: absolute; width: 214px"
+            styleClass="nomeSite" text="Nome do Site"/>
+        <webuijsf:label binding="#{cabecalho.label2}" id="label2" style="left: 1008px; top: 72px; position: absolute" text="Bem vindo," visible="#{cabecalho.controlVisibility}"/>
+        <webuijsf:label binding="#{cabecalho.lblUsuario}" id="lblUsuario" style="left: 1080px; top: 72px; position: absolute" text="#{cabecalho.loginCliente}" visible="#{cabecalho.controlVisibility}"/>
+        <webuijsf:imageHyperlink actionExpression="#{cabecalho.lnkLogout_action}" binding="#{cabecalho.lnkLogout}" id="lnkLogout"
+            style="left: 1152px; top: 72px; position: absolute" styleClass="outros" text="Logout" visible="#{cabecalho.controlVisibility}"/>
+    </f:subview>
+</div>
