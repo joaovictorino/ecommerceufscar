@@ -655,7 +655,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 REVOKE ALL ON TABLE acompanhamento_produtos_em_falta FROM PUBLIC;
 REVOKE ALL ON TABLE acompanhamento_produtos_em_falta FROM postgres;
 GRANT ALL ON TABLE acompanhamento_produtos_em_falta TO postgres;
-GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE acompanhamento_produtos_em_falta TO usrsite;
+GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE acompanhamento_produtos_em_falta TO g_usersite;
 
 
 --
@@ -667,7 +667,7 @@ GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE acompanhamento_produtos_em_falta TO u
 REVOKE ALL ON TABLE administrador FROM PUBLIC;
 REVOKE ALL ON TABLE administrador FROM postgres;
 GRANT ALL ON TABLE administrador TO postgres;
-GRANT INSERT,SELECT,RULE,UPDATE,DELETE ON TABLE administrador TO usrsite;
+GRANT INSERT,SELECT,RULE,UPDATE,DELETE ON TABLE administrador TO g_usersite;
 
 
 --
@@ -679,7 +679,7 @@ GRANT INSERT,SELECT,RULE,UPDATE,DELETE ON TABLE administrador TO usrsite;
 REVOKE ALL ON TABLE categorias FROM PUBLIC;
 REVOKE ALL ON TABLE categorias FROM postgres;
 GRANT ALL ON TABLE categorias TO postgres;
-GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE categorias TO usrsite;
+GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE categorias TO g_usersite;
 
 
 --
@@ -691,7 +691,7 @@ GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE categorias TO usrsite;
 REVOKE ALL ON TABLE cliente FROM PUBLIC;
 REVOKE ALL ON TABLE cliente FROM postgres;
 GRANT ALL ON TABLE cliente TO postgres;
-GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE cliente TO usrsite;
+GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE cliente TO g_usersite;
 
 
 --
@@ -703,7 +703,7 @@ GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE cliente TO usrsite;
 REVOKE ALL ON TABLE cliente_esta_gpr FROM PUBLIC;
 REVOKE ALL ON TABLE cliente_esta_gpr FROM postgres;
 GRANT ALL ON TABLE cliente_esta_gpr TO postgres;
-GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE cliente_esta_gpr TO usrsite;
+GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE cliente_esta_gpr TO g_usersite;
 
 
 --
@@ -715,7 +715,7 @@ GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE cliente_esta_gpr TO usrsite;
 REVOKE ALL ON TABLE compras FROM PUBLIC;
 REVOKE ALL ON TABLE compras FROM postgres;
 GRANT ALL ON TABLE compras TO postgres;
-GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE compras TO usrsite;
+GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE compras TO g_usersite;
 
 
 --
@@ -727,7 +727,7 @@ GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE compras TO usrsite;
 REVOKE ALL ON TABLE endereco FROM PUBLIC;
 REVOKE ALL ON TABLE endereco FROM postgres;
 GRANT ALL ON TABLE endereco TO postgres;
-GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE endereco TO usrsite;
+GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE endereco TO g_usersite;
 
 
 --
@@ -739,7 +739,7 @@ GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE endereco TO usrsite;
 REVOKE ALL ON TABLE grp_tem_produto FROM PUBLIC;
 REVOKE ALL ON TABLE grp_tem_produto FROM postgres;
 GRANT ALL ON TABLE grp_tem_produto TO postgres;
-GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE grp_tem_produto TO usrsite;
+GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE grp_tem_produto TO g_usersite;
 
 
 --
@@ -751,7 +751,7 @@ GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE grp_tem_produto TO usrsite;
 REVOKE ALL ON TABLE grupo_interesse FROM PUBLIC;
 REVOKE ALL ON TABLE grupo_interesse FROM postgres;
 GRANT ALL ON TABLE grupo_interesse TO postgres;
-GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE grupo_interesse TO usrsite;
+GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE grupo_interesse TO g_usersite;
 
 
 --
@@ -763,7 +763,7 @@ GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE grupo_interesse TO usrsite;
 REVOKE ALL ON TABLE historico_navegacao FROM PUBLIC;
 REVOKE ALL ON TABLE historico_navegacao FROM postgres;
 GRANT ALL ON TABLE historico_navegacao TO postgres;
-GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE historico_navegacao TO usrsite;
+GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE historico_navegacao TO g_usersite;
 
 
 --
@@ -775,7 +775,7 @@ GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE historico_navegacao TO usrsite;
 REVOKE ALL ON TABLE itens_compras FROM PUBLIC;
 REVOKE ALL ON TABLE itens_compras FROM postgres;
 GRANT ALL ON TABLE itens_compras TO postgres;
-GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE itens_compras TO usrsite;
+GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE itens_compras TO g_usersite;
 
 
 --
@@ -787,7 +787,7 @@ GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE itens_compras TO usrsite;
 REVOKE ALL ON TABLE pessoa FROM PUBLIC;
 REVOKE ALL ON TABLE pessoa FROM postgres;
 GRANT ALL ON TABLE pessoa TO postgres;
-GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE pessoa TO usrsite;
+GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE pessoa TO g_usersite;
 
 
 --
@@ -799,7 +799,7 @@ GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE pessoa TO usrsite;
 REVOKE ALL ON TABLE produtos FROM PUBLIC;
 REVOKE ALL ON TABLE produtos FROM postgres;
 GRANT ALL ON TABLE produtos TO postgres;
-GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE produtos TO usrsite;
+GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE produtos TO g_usersite;
 
 
 --
@@ -811,7 +811,7 @@ GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE produtos TO usrsite;
 REVOKE ALL ON TABLE produtos_promocao FROM PUBLIC;
 REVOKE ALL ON TABLE produtos_promocao FROM postgres;
 GRANT ALL ON TABLE produtos_promocao TO postgres;
-GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE produtos_promocao TO usrsite;
+GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE produtos_promocao TO g_usersite;
 
 
 --
@@ -823,7 +823,7 @@ GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE produtos_promocao TO usrsite;
 REVOKE ALL ON TABLE visitante FROM PUBLIC;
 REVOKE ALL ON TABLE visitante FROM postgres;
 GRANT ALL ON TABLE visitante TO postgres;
-GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE visitante TO usrsite;
+GRANT INSERT,SELECT,UPDATE,DELETE ON TABLE visitante TO g_usersite;
 
 
 -- Completed on 2007-12-15 09:11:31 BRST
