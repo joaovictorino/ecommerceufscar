@@ -4,7 +4,7 @@
 
 -- Started on 2007-12-15 09:11:31 BRST
 
--- SET client_encoding = 'LATIN1';
+SET client_encoding = 'LATIN1';
 SET check_function_bodies = false;
 SET client_min_messages = warning;
 
@@ -119,9 +119,9 @@ CREATE TABLE compras (
     data_prevista_entrega date,
     data_entrega date,
     observacoes text,
-    valor_frete money,
-    desconto money,
-    valor_total money
+    valor_frete numeric(6,2),
+    desconto numeric(8,2),
+    valor_total numeric(11,2)
 );
 
 
@@ -203,7 +203,7 @@ CREATE TABLE itens_compras (
     num_compra integer NOT NULL,
     cod_produto integer NOT NULL,
     quantidade integer,
-    preco_produto money
+    preco_produto numeric(9,2)
 );
 
 
@@ -243,7 +243,7 @@ CREATE TABLE produtos (
     descricao_detalhada character varying(300),
     nome_produto character varying(50) NOT NULL,
     numero_visualizacao serial NOT NULL,
-    preco money NOT NULL,
+    preco numeric(9,2) NOT NULL,
     qtde_compras serial NOT NULL,
     qtde_estoque integer,
     quantidade character varying(6) NOT NULL,
@@ -263,7 +263,7 @@ CREATE TABLE produtos_promocao (
     cod_promocao serial NOT NULL,
     cod_produto integer NOT NULL,
     observacoes text,
-    preco_promocional money,
+    preco_promocional numeric(9,2),
     data_inicio_promocao date,
     data_fim_promocao date
 );
