@@ -255,6 +255,7 @@ is divided into following sections:
         <!-- You can override this target in the ../build.xml file. -->
     </target>
     <target depends="compile" name="library-inclusion-in-archive">
+        <copy file="${libs.PostgreSQLDriver.classpath}" todir="${build.classes.dir}"/>
         <copy file="${libs.Hibernate3.classpath.libfile.31}" todir="${build.classes.dir}"/>
         <copy file="${libs.Hibernate3.classpath.libfile.30}" todir="${build.classes.dir}"/>
         <copy file="${libs.Hibernate3.classpath.libfile.29}" todir="${build.classes.dir}"/>
@@ -286,9 +287,10 @@ is divided into following sections:
         <copy file="${libs.Hibernate3.classpath.libfile.3}" todir="${build.classes.dir}"/>
         <copy file="${libs.Hibernate3.classpath.libfile.2}" todir="${build.classes.dir}"/>
         <copy file="${libs.Hibernate3.classpath.libfile.1}" todir="${build.classes.dir}"/>
-        <copy file="${libs.PostgreSQLDriver.classpath}" todir="${build.classes.dir}"/>
     </target>
     <target depends="compile" name="library-inclusion-in-manifest">
+        <basename file="${libs.PostgreSQLDriver.classpath}" property="included.lib.libs.PostgreSQLDriver.classpath"/>
+        <copy file="${libs.PostgreSQLDriver.classpath}" todir="${dist.ear.dir}"/>
         <basename file="${libs.Hibernate3.classpath.libfile.31}" property="included.lib.libs.Hibernate3.classpath.31"/>
         <basename file="${libs.Hibernate3.classpath.libfile.30}" property="included.lib.libs.Hibernate3.classpath.30"/>
         <basename file="${libs.Hibernate3.classpath.libfile.29}" property="included.lib.libs.Hibernate3.classpath.29"/>
@@ -351,10 +353,8 @@ is divided into following sections:
         <copy file="${libs.Hibernate3.classpath.libfile.3}" todir="${dist.ear.dir}"/>
         <copy file="${libs.Hibernate3.classpath.libfile.2}" todir="${dist.ear.dir}"/>
         <copy file="${libs.Hibernate3.classpath.libfile.1}" todir="${dist.ear.dir}"/>
-        <basename file="${libs.PostgreSQLDriver.classpath}" property="included.lib.libs.PostgreSQLDriver.classpath"/>
-        <copy file="${libs.PostgreSQLDriver.classpath}" todir="${dist.ear.dir}"/>
         <manifest file="${build.ear.classes.dir}/META-INF/MANIFEST.MF" mode="update">
-            <attribute name="Class-Path" value="${included.lib.libs.Hibernate3.classpath.1} ${included.lib.libs.Hibernate3.classpath.2} ${included.lib.libs.Hibernate3.classpath.3} ${included.lib.libs.Hibernate3.classpath.4} ${included.lib.libs.Hibernate3.classpath.5} ${included.lib.libs.Hibernate3.classpath.6} ${included.lib.libs.Hibernate3.classpath.7} ${included.lib.libs.Hibernate3.classpath.8} ${included.lib.libs.Hibernate3.classpath.9} ${included.lib.libs.Hibernate3.classpath.10} ${included.lib.libs.Hibernate3.classpath.11} ${included.lib.libs.Hibernate3.classpath.12} ${included.lib.libs.Hibernate3.classpath.13} ${included.lib.libs.Hibernate3.classpath.14} ${included.lib.libs.Hibernate3.classpath.15} ${included.lib.libs.Hibernate3.classpath.16} ${included.lib.libs.Hibernate3.classpath.17} ${included.lib.libs.Hibernate3.classpath.18} ${included.lib.libs.Hibernate3.classpath.19} ${included.lib.libs.Hibernate3.classpath.20} ${included.lib.libs.Hibernate3.classpath.21} ${included.lib.libs.Hibernate3.classpath.22} ${included.lib.libs.Hibernate3.classpath.23} ${included.lib.libs.Hibernate3.classpath.24} ${included.lib.libs.Hibernate3.classpath.25} ${included.lib.libs.Hibernate3.classpath.26} ${included.lib.libs.Hibernate3.classpath.27} ${included.lib.libs.Hibernate3.classpath.28} ${included.lib.libs.Hibernate3.classpath.29} ${included.lib.libs.Hibernate3.classpath.30} ${included.lib.libs.Hibernate3.classpath.31} ${included.lib.libs.PostgreSQLDriver.classpath} "/>
+            <attribute name="Class-Path" value="${included.lib.libs.PostgreSQLDriver.classpath} ${included.lib.libs.Hibernate3.classpath.1} ${included.lib.libs.Hibernate3.classpath.2} ${included.lib.libs.Hibernate3.classpath.3} ${included.lib.libs.Hibernate3.classpath.4} ${included.lib.libs.Hibernate3.classpath.5} ${included.lib.libs.Hibernate3.classpath.6} ${included.lib.libs.Hibernate3.classpath.7} ${included.lib.libs.Hibernate3.classpath.8} ${included.lib.libs.Hibernate3.classpath.9} ${included.lib.libs.Hibernate3.classpath.10} ${included.lib.libs.Hibernate3.classpath.11} ${included.lib.libs.Hibernate3.classpath.12} ${included.lib.libs.Hibernate3.classpath.13} ${included.lib.libs.Hibernate3.classpath.14} ${included.lib.libs.Hibernate3.classpath.15} ${included.lib.libs.Hibernate3.classpath.16} ${included.lib.libs.Hibernate3.classpath.17} ${included.lib.libs.Hibernate3.classpath.18} ${included.lib.libs.Hibernate3.classpath.19} ${included.lib.libs.Hibernate3.classpath.20} ${included.lib.libs.Hibernate3.classpath.21} ${included.lib.libs.Hibernate3.classpath.22} ${included.lib.libs.Hibernate3.classpath.23} ${included.lib.libs.Hibernate3.classpath.24} ${included.lib.libs.Hibernate3.classpath.25} ${included.lib.libs.Hibernate3.classpath.26} ${included.lib.libs.Hibernate3.classpath.27} ${included.lib.libs.Hibernate3.classpath.28} ${included.lib.libs.Hibernate3.classpath.29} ${included.lib.libs.Hibernate3.classpath.30} ${included.lib.libs.Hibernate3.classpath.31} "/>
         </manifest>
     </target>
     <target name="-copy-meta-inf">
