@@ -8,7 +8,6 @@
         <Node id="produto.jsp" x="484" y="109" zoom="true"/>
     </Scope>
     <Scope Scope="Project">
-        <Node id="carrinhoDeCompras.jsp" x="740" y="248" zoom="true"/>
         <Node id="index.jsp" x="111" y="21" zoom="true"/>
         <Node id="buscarProduto.jsp" x="177" y="87" zoom="true"/>
         <Node id="homeAdm.jsp" x="96" y="398" zoom="true"/>
