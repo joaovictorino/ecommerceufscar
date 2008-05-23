@@ -9,10 +9,10 @@ package comercioeletronicowar;
 import br.com.ecommerce.bean.CompraRemote;
 import br.com.ecommerce.bean.ProdutoRemote;
 import br.com.ecommerce.entity.Produtos;
+import com.sun.data.provider.RowKey;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.component.Body;
 import com.sun.webui.jsf.component.Button;
-import com.sun.webui.jsf.component.Checkbox;
 import com.sun.webui.jsf.component.Form;
 import com.sun.webui.jsf.component.Head;
 import com.sun.webui.jsf.component.Html;
@@ -141,15 +141,7 @@ public class carrinhoDeProdutos extends AbstractPageBean {
     public void setTableColumn1(TableColumn tc) {
         this.tableColumn1 = tc;
     }
-    private Checkbox checkbox1 = new Checkbox();
-
-    public Checkbox getCheckbox1() {
-        return checkbox1;
-    }
-
-    public void setCheckbox1(Checkbox c) {
-        this.checkbox1 = c;
-    }
+    
     private TableColumn tableColumn2 = new TableColumn();
 
     public TableColumn getTableColumn2() {
@@ -279,14 +271,14 @@ public class carrinhoDeProdutos extends AbstractPageBean {
     public void setTableColumn6(TableColumn tc) {
         this.tableColumn6 = tc;
     }
-    private ImageHyperlink imageHyperlink1 = new ImageHyperlink();
+    private ImageHyperlink hplRemover = new ImageHyperlink();
 
-    public ImageHyperlink getImageHyperlink1() {
-        return imageHyperlink1;
+    public ImageHyperlink getHplRemover() {
+        return hplRemover;
     }
 
-    public void setImageHyperlink1(ImageHyperlink ih) {
-        this.imageHyperlink1 = ih;
+    public void setHplRemover(ImageHyperlink ih) {
+        this.hplRemover = ih;
     }
 
     // </editor-fold>
@@ -378,15 +370,14 @@ public class carrinhoDeProdutos extends AbstractPageBean {
         return (SessionBean1) getBean("SessionBean1");
     }
 
-    public String btnRemover_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        return null;
-    }
-
     public String btnAtualizar_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
+        Produtos[] produtosTableRow = (Produtos[])this.getTableRowGroup1().getSourceData();
+        
+        for(Produtos produtoRow : produtosTableRow){
+            this.getSessionBean1().getCarrinhoCompras().remove(produtoRow.getCodProduto());
+            this.getSessionBean1().getCarrinhoCompras().put(produtoRow.getCodProduto(), produtoRow.getQtdeCompras());
+        }
+         this.carregar();
         return null;
     }
 
@@ -397,6 +388,7 @@ public class carrinhoDeProdutos extends AbstractPageBean {
     
     public void carregar()
     {
+        total = 0;
         Map<Integer, Integer> carrinho = this.getSessionBean1().getCarrinhoCompras();
         List<Integer> ids = new ArrayList<Integer>();
         for (Map.Entry<Integer, Integer> item : carrinho.entrySet()){
@@ -410,12 +402,20 @@ public class carrinhoDeProdutos extends AbstractPageBean {
             this.produtos[i].setNomeProduto(produtosList.get(i).getNomeProduto()); 
             this.produtos[i].setQtdeCompras(carrinho.get(produtosList.get(i).getCodProduto())); 
             this.produtos[i].setPreco(produtosList.get(i).getPreco());
-            total += produtosList.get(i).getPreco();
+            total += (produtosList.get(i).getPreco() * carrinho.get(produtosList.get(i).getCodProduto()));
         }
     }
     
     public String getcalculoTotal(){
         return "R$ " + String.valueOf(total);
+    }
+
+    public String hplRemover_action() {
+        RowKey row = (RowKey)this.getValue("#{currentRow.tableRow}");
+        Produtos deletedProduto = this.getProdutos()[Integer.parseInt(row.getRowId())];
+        this.getSessionBean1().getCarrinhoCompras().remove(deletedProduto.getCodProduto());
+        this.carregar();
+        return null;
     }
     
 }

@@ -28,11 +28,12 @@
                             style="left: 456px; top: 168px; position: absolute" styleClass="outros" text="Preço Max.:"/>
                         <webuijsf:table augmentTitle="false" binding="#{buscarProduto.table2}" id="table2" style="left: 216px; top: 216px; position: absolute"
                             title="Produtos" width="552">
-                            <webuijsf:tableRowGroup binding="#{buscarProduto.tableRowGroup2}" id="tableRowGroup2" rows="5"
+                            <webuijsf:tableRowGroup binding="#{buscarProduto.tableRowGroup2}" id="tableRowGroup2" rows="10"
                                 sourceData="#{buscarProduto.listaTabelaProdutosEncontrados}" sourceVar="currentRow">
-                                <webuijsf:tableColumn binding="#{buscarProduto.tableColumn7}" headerText="Foto" id="tableColumn7" sort="imagem"
+                                <webuijsf:tableColumn align="center" binding="#{buscarProduto.tableColumn7}" headerText="Foto" id="tableColumn7"
                                     styleClass="outros" width="80">
-                                    <webuijsf:imageHyperlink binding="#{buscarProduto.imageHyperlink2}" id="imageHyperlink2" imageURL="/resources/#{currentRow.value['imagem']}" url="produto.jsp?id=#{currentRow.value['codProduto']}"/>
+                                    <webuijsf:imageHyperlink binding="#{buscarProduto.imageHyperlink2}" id="imageHyperlink2"
+                                        imageURL="/resources/#{currentRow.value['imagem']}" text="" url="produto.jsp?id=#{currentRow.value['codProduto']}"/>
                                 </webuijsf:tableColumn>
                                 <webuijsf:tableColumn binding="#{buscarProduto.tableColumn8}" headerText="Produto" id="tableColumn8" sort="nomeProduto" styleClass="outros">
                                     <webuijsf:staticText binding="#{buscarProduto.staticText8}" id="staticText8" text="#{currentRow.value['nomeProduto']}"/>
@@ -43,7 +44,7 @@
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>
                         <div style="left: 0px; top: 0px; position: absolute">
-                            <jsp:directive.include file="cabecalho.jspf" />
+                            <jsp:directive.include file="cabecalho.jspf"/>
                         </div>
                         <div style="left: 0px; top: 96px; position: absolute">
                             <jsp:directive.include file="menu.jspf"/>

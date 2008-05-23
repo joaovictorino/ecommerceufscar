@@ -29,8 +29,8 @@
                                 sourceData="#{carrinhoDeProdutos.produtos}" sourceVar="currentRow">
                                 <webuijsf:tableColumn align="center" binding="#{carrinhoDeProdutos.tableColumn6}" id="tableColumn6" spacerColumn="true"
                                     valign="middle" width="20">
-                                    <webuijsf:imageHyperlink binding="#{carrinhoDeProdutos.imageHyperlink1}" id="imageHyperlink1"
-                                        imageURL="/resources/ico_excluir.jpg" text=""/>
+                                    <webuijsf:imageHyperlink actionExpression="#{carrinhoDeProdutos.hplRemover_action}"
+                                        binding="#{carrinhoDeProdutos.hplRemover}" id="hplRemover" imageURL="/resources/ico_excluir.jpg" text=""/>
                                 </webuijsf:tableColumn>
                                 <webuijsf:tableColumn binding="#{carrinhoDeProdutos.tableColumn2}" headerText="Produto" id="tableColumn2" sort="nomeProduto" width="545">
                                     <webuijsf:staticText binding="#{carrinhoDeProdutos.staticText1}" id="staticText1" text="#{currentRow.value['nomeProduto']}"/>
