@@ -67,11 +67,6 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
-        <managed-bean-name>carrinhoDeCompras</managed-bean-name>
-        <managed-bean-class>comercioeletronicowar.carrinhoDeCompras</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
-    <managed-bean>
         <managed-bean-name>carrinhoDeProdutos</managed-bean-name>
         <managed-bean-class>comercioeletronicowar.carrinhoDeProdutos</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
