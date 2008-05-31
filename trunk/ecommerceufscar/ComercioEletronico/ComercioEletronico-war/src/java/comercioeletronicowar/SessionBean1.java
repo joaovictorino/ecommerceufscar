@@ -28,7 +28,6 @@ import javax.servlet.http.HttpServletResponse;
 public class SessionBean1 extends AbstractSessionBean {
     
     private boolean logged = false;
-    private int codProduto = 0;
     private Map<Integer, Integer> map = new HashMap<Integer, Integer>();
     private String loginCliente = null;
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">

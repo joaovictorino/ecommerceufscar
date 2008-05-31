@@ -64,7 +64,7 @@ public class CompraBean implements CompraRemote {
             ItensCompras itens = new ItensCompras(compras.getNumCompra(), produtoItem.getCodProduto());
             itens.setPrecoProduto(produtoItem.getPreco());
             itens.setQuantidade(item.getValue());
-            valorTotal += produtos.getPreco();
+            valorTotal += produtos.getPreco() * item.getValue();
             em.persist(itens);
         }
         
