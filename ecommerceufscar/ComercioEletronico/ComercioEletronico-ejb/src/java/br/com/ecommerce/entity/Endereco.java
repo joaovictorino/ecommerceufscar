@@ -7,7 +7,6 @@ package br.com.ecommerce.entity;
 
 import java.io.Serializable;
 import java.util.Collection;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,11 +22,11 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Cliente
+ * @author João Henrique
  */
 @Entity
 @Table(name = "endereco")
-@NamedQueries({@NamedQuery(name = "Endereco.findByCodEndereco", query = "SELECT e FROM Endereco e WHERE e.codEndereco = :codEndereco"), @NamedQuery(name = "Endereco.findByTipoEndereco", query = "SELECT e FROM Endereco e WHERE e.tipoEndereco = :tipoEndereco"), @NamedQuery(name = "Endereco.findByEndereco", query = "SELECT e FROM Endereco e WHERE e.endereco = :endereco"), @NamedQuery(name = "Endereco.findByNumero", query = "SELECT e FROM Endereco e WHERE e.numero = :numero"), @NamedQuery(name = "Endereco.findByCep", query = "SELECT e FROM Endereco e WHERE e.cep = :cep"), @NamedQuery(name = "Endereco.findByEstado", query = "SELECT e FROM Endereco e WHERE e.estado = :estado"), @NamedQuery(name = "Endereco.findByPais", query = "SELECT e FROM Endereco e WHERE e.pais = :pais"), @NamedQuery(name = "Endereco.findByCidade", query = "SELECT e FROM Endereco e WHERE e.cidade = :cidade"), @NamedQuery(name = "Endereco.findByBairro", query = "SELECT e FROM Endereco e WHERE e.bairro = :bairro")})
+@NamedQueries({@NamedQuery(name = "Endereco.findByCodEndereco", query = "SELECT e FROM Endereco e WHERE e.codEndereco = :codEndereco"), @NamedQuery(name = "Endereco.findByBairro", query = "SELECT e FROM Endereco e WHERE e.bairro = :bairro"), @NamedQuery(name = "Endereco.findByCep", query = "SELECT e FROM Endereco e WHERE e.cep = :cep"), @NamedQuery(name = "Endereco.findByCidade", query = "SELECT e FROM Endereco e WHERE e.cidade = :cidade"), @NamedQuery(name = "Endereco.findByEndereco", query = "SELECT e FROM Endereco e WHERE e.endereco = :endereco"), @NamedQuery(name = "Endereco.findByEstado", query = "SELECT e FROM Endereco e WHERE e.estado = :estado"), @NamedQuery(name = "Endereco.findByNumero", query = "SELECT e FROM Endereco e WHERE e.numero = :numero"), @NamedQuery(name = "Endereco.findByPais", query = "SELECT e FROM Endereco e WHERE e.pais = :pais"), @NamedQuery(name = "Endereco.findByTipoEndereco", query = "SELECT e FROM Endereco e WHERE e.tipoEndereco = :tipoEndereco")})
 public class Endereco implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -35,23 +34,23 @@ public class Endereco implements Serializable {
     @SequenceGenerator(name="endereco_cod_endereco_seq", sequenceName="endereco_cod_endereco_seq", initialValue=1, allocationSize=1)
     @Column(name = "cod_endereco", nullable = false)
     private Integer codEndereco;
-    @Column(name = "tipo_endereco", nullable = false)
-    private String tipoEndereco;
-    @Column(name = "endereco", nullable = false)
-    private String endereco;
-    @Column(name = "numero", nullable = false)
-    private int numero;
-    @Column(name = "cep", nullable = false)
-    private String cep;
-    @Column(name = "estado", nullable = false)
-    private String estado;
-    @Column(name = "pais")
-    private String pais;
-    @Column(name = "cidade", nullable = false)
-    private String cidade;
     @Column(name = "bairro")
     private String bairro;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codEndereco")
+    @Column(name = "cep", nullable = false)
+    private String cep;
+    @Column(name = "cidade", nullable = false)
+    private String cidade;
+    @Column(name = "endereco", nullable = false)
+    private String endereco;
+    @Column(name = "estado", nullable = false)
+    private String estado;
+    @Column(name = "numero", nullable = false)
+    private int numero;
+    @Column(name = "pais")
+    private String pais;
+    @Column(name = "tipo_endereco", nullable = false)
+    private String tipoEndereco;
+    @OneToMany(mappedBy = "codEndereco")
     private Collection<Compras> comprasCollection;
     @JoinColumn(name = "login_end", referencedColumnName = "login_pes")
     @ManyToOne
@@ -64,14 +63,14 @@ public class Endereco implements Serializable {
         this.codEndereco = codEndereco;
     }
 
-    public Endereco(Integer codEndereco, String tipoEndereco, String endereco, int numero, String cep, String estado, String cidade) {
+    public Endereco(Integer codEndereco, String cep, String cidade, String endereco, String estado, int numero, String tipoEndereco) {
         this.codEndereco = codEndereco;
-        this.tipoEndereco = tipoEndereco;
-        this.endereco = endereco;
-        this.numero = numero;
         this.cep = cep;
-        this.estado = estado;
         this.cidade = cidade;
+        this.endereco = endereco;
+        this.estado = estado;
+        this.numero = numero;
+        this.tipoEndereco = tipoEndereco;
     }
 
     public Integer getCodEndereco() {
@@ -82,28 +81,12 @@ public class Endereco implements Serializable {
         this.codEndereco = codEndereco;
     }
 
-    public String getTipoEndereco() {
-        return tipoEndereco;
+    public String getBairro() {
+        return bairro;
     }
 
-    public void setTipoEndereco(String tipoEndereco) {
-        this.tipoEndereco = tipoEndereco;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
     }
 
     public String getCep() {
@@ -114,12 +97,36 @@ public class Endereco implements Serializable {
         this.cep = cep;
     }
 
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
     public String getEstado() {
         return estado;
     }
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
     public String getPais() {
@@ -130,20 +137,12 @@ public class Endereco implements Serializable {
         this.pais = pais;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getTipoEndereco() {
+        return tipoEndereco;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public String getBairro() {
-        return bairro;
-    }
-
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
+    public void setTipoEndereco(String tipoEndereco) {
+        this.tipoEndereco = tipoEndereco;
     }
 
     public Collection<Compras> getComprasCollection() {

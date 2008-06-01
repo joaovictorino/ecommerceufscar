@@ -11,7 +11,7 @@ import javax.persistence.Embeddable;
 
 /**
  *
- * @author Cliente
+ * @author João Henrique
  */
 @Embeddable
 public class ClienteEstaGprPK implements Serializable {

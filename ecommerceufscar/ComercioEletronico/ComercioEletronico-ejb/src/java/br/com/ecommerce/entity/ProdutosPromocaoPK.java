@@ -11,28 +11,20 @@ import javax.persistence.Embeddable;
 
 /**
  *
- * @author Cliente
+ * @author João Henrique
  */
 @Embeddable
 public class ProdutosPromocaoPK implements Serializable {
-    @Column(name = "cod_promocao", nullable = false)
-    private int codPromocao;
     @Column(name = "cod_produto", nullable = false)
     private int codProduto;
+    @Column(name = "cod_promocao", nullable = false)
+    private int codPromocao;
 
     public ProdutosPromocaoPK() {
     }
 
-    public ProdutosPromocaoPK(int codPromocao, int codProduto) {
-        this.codPromocao = codPromocao;
+    public ProdutosPromocaoPK(int codProduto, int codPromocao) {
         this.codProduto = codProduto;
-    }
-
-    public int getCodPromocao() {
-        return codPromocao;
-    }
-
-    public void setCodPromocao(int codPromocao) {
         this.codPromocao = codPromocao;
     }
 
@@ -44,11 +36,19 @@ public class ProdutosPromocaoPK implements Serializable {
         this.codProduto = codProduto;
     }
 
+    public int getCodPromocao() {
+        return codPromocao;
+    }
+
+    public void setCodPromocao(int codPromocao) {
+        this.codPromocao = codPromocao;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (int) codPromocao;
         hash += (int) codProduto;
+        hash += (int) codPromocao;
         return hash;
     }
 
@@ -59,10 +59,10 @@ public class ProdutosPromocaoPK implements Serializable {
             return false;
         }
         ProdutosPromocaoPK other = (ProdutosPromocaoPK) object;
-        if (this.codPromocao != other.codPromocao) {
+        if (this.codProduto != other.codProduto) {
             return false;
         }
-        if (this.codProduto != other.codProduto) {
+        if (this.codPromocao != other.codPromocao) {
             return false;
         }
         return true;
@@ -70,7 +70,7 @@ public class ProdutosPromocaoPK implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.ecommerce.entity.ProdutosPromocaoPK[codPromocao=" + codPromocao + ", codProduto=" + codProduto + "]";
+        return "br.com.ecommerce.entity.ProdutosPromocaoPK[codProduto=" + codProduto + ", codPromocao=" + codPromocao + "]";
     }
 
 }

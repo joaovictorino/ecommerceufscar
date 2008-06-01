@@ -18,20 +18,20 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Cliente
+ * @author João Henrique
  */
 @Entity
 @Table(name = "visitante")
-@NamedQueries({@NamedQuery(name = "Visitante.findByCodVisitante", query = "SELECT v FROM Visitante v WHERE v.codVisitante = :codVisitante"), @NamedQuery(name = "Visitante.findByNome", query = "SELECT v FROM Visitante v WHERE v.nome = :nome"), @NamedQuery(name = "Visitante.findByEmail", query = "SELECT v FROM Visitante v WHERE v.email = :email")})
+@NamedQueries({@NamedQuery(name = "Visitante.findByCodVisitante", query = "SELECT v FROM Visitante v WHERE v.codVisitante = :codVisitante"), @NamedQuery(name = "Visitante.findByEmail", query = "SELECT v FROM Visitante v WHERE v.email = :email"), @NamedQuery(name = "Visitante.findByNome", query = "SELECT v FROM Visitante v WHERE v.nome = :nome")})
 public class Visitante implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Column(name = "cod_visitante", nullable = false)
     private Integer codVisitante;
-    @Column(name = "nome", nullable = false)
-    private String nome;
     @Column(name = "email", nullable = false)
     private String email;
+    @Column(name = "nome", nullable = false)
+    private String nome;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "visitante")
     private Collection<AcompanhamentoProdutosEmFalta> acompanhamentoProdutosEmFaltaCollection;
 
@@ -42,10 +42,10 @@ public class Visitante implements Serializable {
         this.codVisitante = codVisitante;
     }
 
-    public Visitante(Integer codVisitante, String nome, String email) {
+    public Visitante(Integer codVisitante, String email, String nome) {
         this.codVisitante = codVisitante;
-        this.nome = nome;
         this.email = email;
+        this.nome = nome;
     }
 
     public Integer getCodVisitante() {
@@ -56,20 +56,20 @@ public class Visitante implements Serializable {
         this.codVisitante = codVisitante;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public Collection<AcompanhamentoProdutosEmFalta> getAcompanhamentoProdutosEmFaltaCollection() {
