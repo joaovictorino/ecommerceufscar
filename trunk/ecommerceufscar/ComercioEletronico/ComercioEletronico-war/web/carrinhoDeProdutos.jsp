@@ -38,8 +38,8 @@
                                 <webuijsf:tableColumn binding="#{carrinhoDeProdutos.tableColumn5}" headerText="Quantidade" id="tableColumn5" width="100">
                                     <webuijsf:textField binding="#{carrinhoDeProdutos.textField2}" columns="10" id="textField2" text="#{currentRow.value['qtdeCompras']}"/>
                                 </webuijsf:tableColumn>
-                                <webuijsf:tableColumn binding="#{carrinhoDeProdutos.tableColumn4}" headerText="Preço (R$)" id="tableColumn4" sort="preco" width="100">
-                                    <webuijsf:staticText binding="#{carrinhoDeProdutos.staticText2}" id="staticText2" text="#{currentRow.value['preco']}"/>
+                                <webuijsf:tableColumn binding="#{carrinhoDeProdutos.tableColumn4}" headerText="Preço" id="tableColumn4" sort="preco" width="100">
+                                    <webuijsf:staticText binding="#{carrinhoDeProdutos.staticText2}" id="staticText2" text="#{currentRow.value['preco']}" converter="#{carrinhoDeProdutos.realConverter1}"/>
                                 </webuijsf:tableColumn>
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>

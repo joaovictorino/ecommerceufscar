@@ -24,6 +24,7 @@ import javax.ejb.EJB;
 import javax.faces.FacesException;
 import javax.faces.component.html.HtmlPanelGrid;
 import javax.faces.context.FacesContext;
+import javax.faces.convert.CharacterConverter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -235,6 +236,26 @@ public class produto extends AbstractPageBean {
     public void setGridPanel1(HtmlPanelGrid hpg) {
         this.gridPanel1 = hpg;
     }
+    
+    private CharacterConverter characterConverter1 = new CharacterConverter();
+
+    public CharacterConverter getCharacterConverter1() {
+        return characterConverter1;
+    }
+
+    public void setCharacterConverter1(CharacterConverter cc) {
+        this.characterConverter1 = cc;
+    }
+    
+    private RealConverter realConverter1 = new RealConverter();
+
+    public RealConverter getRealConverter1() {
+        return realConverter1;
+    }
+
+    public void setRealConverter1(RealConverter cc) {
+        this.realConverter1 = cc;
+    }
 
     // </editor-fold>
 
@@ -344,7 +365,7 @@ public class produto extends AbstractPageBean {
             Produtos result = produtoBean.buscarProdutoPorId(produto);
             if (result != null){
                 getLabel1().setText(result.getNomeProduto());
-                getLabel2().setText("" + result.getPreco());
+                getLabel2().setText(this.realConverter1.getAsString(null, null, result.getPreco()));
                 getLabel4().setText(result.getDadosTecnicos());
                 getLabel5().setText(result.getDescricaoDetalhada());
                 getImage1().setUrl("/resources/" + result.getImagem());

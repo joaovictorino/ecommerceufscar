@@ -348,6 +348,16 @@ public class buscarProduto extends AbstractPageBean {
         this.hiddenField1 = hf;
     }
 
+    private RealConverter realConverter1 = new RealConverter();
+
+    public RealConverter getRealConverter1() {
+        return realConverter1;
+    }
+
+    public void setRealConverter1(RealConverter cc) {
+        this.realConverter1 = cc;
+    }
+    
     // </editor-fold>
 
     /**

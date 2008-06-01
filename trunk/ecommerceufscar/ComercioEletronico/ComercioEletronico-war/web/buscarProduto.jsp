@@ -39,7 +39,7 @@
                                     <webuijsf:staticText binding="#{buscarProduto.staticText8}" id="staticText8" text="#{currentRow.value['nomeProduto']}"/>
                                 </webuijsf:tableColumn>
                                 <webuijsf:tableColumn binding="#{buscarProduto.tableColumn9}" headerText="Preço" id="tableColumn9" sort="preco" styleClass="outros">
-                                    <webuijsf:staticText binding="#{buscarProduto.staticText9}" id="staticText9" text="#{currentRow.value['preco']}"/>
+                                    <webuijsf:staticText binding="#{buscarProduto.staticText9}" converter="#{buscarProduto.realConverter1}" id="staticText9" text="#{currentRow.value['preco']}"/>
                                 </webuijsf:tableColumn>
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>

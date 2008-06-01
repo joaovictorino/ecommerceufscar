@@ -280,6 +280,16 @@ public class carrinhoDeProdutos extends AbstractPageBean {
     public void setHplRemover(ImageHyperlink ih) {
         this.hplRemover = ih;
     }
+    
+    private RealConverter realConverter1 = new RealConverter();
+
+    public RealConverter getRealConverter1() {
+        return realConverter1;
+    }
+
+    public void setRealConverter1(RealConverter cc) {
+        this.realConverter1 = cc;
+    }
 
     // </editor-fold>
 
@@ -407,7 +417,7 @@ public class carrinhoDeProdutos extends AbstractPageBean {
     }
     
     public String getcalculoTotal(){
-        return "R$ " + String.valueOf(total);
+        return this.realConverter1.getAsString(null, null, total);
     }
 
     public String hplRemover_action() {
