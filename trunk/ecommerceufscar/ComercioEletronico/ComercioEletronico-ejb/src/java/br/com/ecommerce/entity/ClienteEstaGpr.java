@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Cliente
+ * @author João Henrique
  */
 @Entity
 @Table(name = "cliente_esta_gpr")
@@ -25,12 +25,12 @@ public class ClienteEstaGpr implements Serializable {
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected ClienteEstaGprPK clienteEstaGprPK;
-    @JoinColumn(name = "cod_cliente", referencedColumnName = "cod_cliente", insertable = false, updatable = false)
-    @ManyToOne
-    private Cliente cliente;
     @JoinColumn(name = "login_cli", referencedColumnName = "login_cli")
     @ManyToOne
     private Cliente loginCli;
+    @JoinColumn(name = "cod_cliente", referencedColumnName = "cod_cliente", insertable = false, updatable = false)
+    @ManyToOne
+    private Cliente cliente;
     @JoinColumn(name = "cod_grupo", referencedColumnName = "cod_grupo", insertable = false, updatable = false)
     @ManyToOne
     private GrupoInteresse grupoInteresse;
@@ -54,20 +54,20 @@ public class ClienteEstaGpr implements Serializable {
         this.clienteEstaGprPK = clienteEstaGprPK;
     }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
     public Cliente getLoginCli() {
         return loginCli;
     }
 
     public void setLoginCli(Cliente loginCli) {
         this.loginCli = loginCli;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public GrupoInteresse getGrupoInteresse() {

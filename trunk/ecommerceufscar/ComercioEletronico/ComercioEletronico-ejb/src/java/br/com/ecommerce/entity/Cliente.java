@@ -20,30 +20,30 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Cliente
+ * @author João Henrique
  */
 @Entity
 @Table(name = "cliente")
-@NamedQueries({@NamedQuery(name = "Cliente.findByCodCliente", query = "SELECT c FROM Cliente c WHERE c.codCliente = :codCliente"), @NamedQuery(name = "Cliente.findByEmailSecundario", query = "SELECT c FROM Cliente c WHERE c.emailSecundario = :emailSecundario"), @NamedQuery(name = "Cliente.findByDesejaReceberEmail", query = "SELECT c FROM Cliente c WHERE c.desejaReceberEmail = :desejaReceberEmail")})
+@NamedQueries({@NamedQuery(name = "Cliente.findByCodCliente", query = "SELECT c FROM Cliente c WHERE c.codCliente = :codCliente"), @NamedQuery(name = "Cliente.findByDesejaReceberEmail", query = "SELECT c FROM Cliente c WHERE c.desejaReceberEmail = :desejaReceberEmail"), @NamedQuery(name = "Cliente.findByEmailSecundario", query = "SELECT c FROM Cliente c WHERE c.emailSecundario = :emailSecundario")})
 public class Cliente implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Column(name = "cod_cliente", nullable = false)
     private Integer codCliente;
-    @Column(name = "email_secundario")
-    private String emailSecundario;
     @Column(name = "deseja_receber_email", nullable = false)
     private String desejaReceberEmail;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
-    private Collection<ClienteEstaGpr> clienteEstaGprCollection;
+    @Column(name = "email_secundario")
+    private String emailSecundario;
     @OneToMany(mappedBy = "loginCli")
+    private Collection<ClienteEstaGpr> clienteEstaGprCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
     private Collection<ClienteEstaGpr> clienteEstaGprCollection1;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codClienteVisitante")
+    @OneToMany(mappedBy = "codClienteVisitante")
     private Collection<HistoricoNavegacao> historicoNavegacaoCollection;
     @JoinColumn(name = "login_cli", referencedColumnName = "login_pes")
     @OneToOne
     private Pessoa loginCli;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "loginCli")
+    @OneToMany(mappedBy = "loginCli")
     private Collection<Compras> comprasCollection;
 
     public Cliente() {
@@ -66,20 +66,20 @@ public class Cliente implements Serializable {
         this.codCliente = codCliente;
     }
 
-    public String getEmailSecundario() {
-        return emailSecundario;
-    }
-
-    public void setEmailSecundario(String emailSecundario) {
-        this.emailSecundario = emailSecundario;
-    }
-
     public String getDesejaReceberEmail() {
         return desejaReceberEmail;
     }
 
     public void setDesejaReceberEmail(String desejaReceberEmail) {
         this.desejaReceberEmail = desejaReceberEmail;
+    }
+
+    public String getEmailSecundario() {
+        return emailSecundario;
+    }
+
+    public void setEmailSecundario(String emailSecundario) {
+        this.emailSecundario = emailSecundario;
     }
 
     public Collection<ClienteEstaGpr> getClienteEstaGprCollection() {

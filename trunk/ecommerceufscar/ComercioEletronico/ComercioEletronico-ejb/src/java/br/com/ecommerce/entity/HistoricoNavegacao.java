@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Cliente
+ * @author João Henrique
  */
 @Entity
 @Table(name = "historico_navegacao")

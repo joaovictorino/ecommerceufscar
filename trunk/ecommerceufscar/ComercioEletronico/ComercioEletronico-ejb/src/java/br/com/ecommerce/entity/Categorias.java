@@ -7,7 +7,6 @@ package br.com.ecommerce.entity;
 
 import java.io.Serializable;
 import java.util.Collection;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -18,7 +17,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Cliente
+ * @author João Henrique
  */
 @Entity
 @Table(name = "categorias")
@@ -30,7 +29,7 @@ public class Categorias implements Serializable {
     private String categoria;
     @Column(name = "categoria_pai")
     private String categoriaPai;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "categoria")
+    @OneToMany(mappedBy = "categoria")
     private Collection<Produtos> produtosCollection;
 
     public Categorias() {

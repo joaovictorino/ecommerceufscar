@@ -24,7 +24,7 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author Cliente
+ * @author João Henrique
  */
 @Entity
 @Table(name = "grupo_interesse")

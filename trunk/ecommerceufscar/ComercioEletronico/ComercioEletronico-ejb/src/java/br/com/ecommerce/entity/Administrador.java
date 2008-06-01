@@ -20,29 +20,29 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author Cliente
+ * @author João Henrique
  */
 @Entity
 @Table(name = "administrador")
-@NamedQueries({@NamedQuery(name = "Administrador.findByLoginAdm", query = "SELECT a FROM Administrador a WHERE a.loginAdm = :loginAdm"), @NamedQuery(name = "Administrador.findByFraseSeguranca", query = "SELECT a FROM Administrador a WHERE a.fraseSeguranca = :fraseSeguranca"), @NamedQuery(name = "Administrador.findByRg", query = "SELECT a FROM Administrador a WHERE a.rg = :rg"), @NamedQuery(name = "Administrador.findByPassaporte", query = "SELECT a FROM Administrador a WHERE a.passaporte = :passaporte"), @NamedQuery(name = "Administrador.findByOrgaoExpedicao", query = "SELECT a FROM Administrador a WHERE a.orgaoExpedicao = :orgaoExpedicao"), @NamedQuery(name = "Administrador.findByTituloEleitor", query = "SELECT a FROM Administrador a WHERE a.tituloEleitor = :tituloEleitor"), @NamedQuery(name = "Administrador.findByDataExpedicao", query = "SELECT a FROM Administrador a WHERE a.dataExpedicao = :dataExpedicao")})
+@NamedQueries({@NamedQuery(name = "Administrador.findByLoginAdm", query = "SELECT a FROM Administrador a WHERE a.loginAdm = :loginAdm"), @NamedQuery(name = "Administrador.findByDataExpedicao", query = "SELECT a FROM Administrador a WHERE a.dataExpedicao = :dataExpedicao"), @NamedQuery(name = "Administrador.findByFraseSeguranca", query = "SELECT a FROM Administrador a WHERE a.fraseSeguranca = :fraseSeguranca"), @NamedQuery(name = "Administrador.findByOrgaoExpedicao", query = "SELECT a FROM Administrador a WHERE a.orgaoExpedicao = :orgaoExpedicao"), @NamedQuery(name = "Administrador.findByPassaporte", query = "SELECT a FROM Administrador a WHERE a.passaporte = :passaporte"), @NamedQuery(name = "Administrador.findByRg", query = "SELECT a FROM Administrador a WHERE a.rg = :rg"), @NamedQuery(name = "Administrador.findByTituloEleitor", query = "SELECT a FROM Administrador a WHERE a.tituloEleitor = :tituloEleitor")})
 public class Administrador implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Column(name = "login_adm", nullable = false)
     private String loginAdm;
-    @Column(name = "frase_seguranca", nullable = false)
-    private String fraseSeguranca;
-    @Column(name = "rg", nullable = false)
-    private String rg;
-    @Column(name = "passaporte")
-    private String passaporte;
-    @Column(name = "orgao_expedicao")
-    private String orgaoExpedicao;
-    @Column(name = "titulo_eleitor")
-    private String tituloEleitor;
     @Column(name = "data_expedicao")
     @Temporal(TemporalType.DATE)
     private Date dataExpedicao;
+    @Column(name = "frase_seguranca", nullable = false)
+    private String fraseSeguranca;
+    @Column(name = "orgao_expedicao")
+    private String orgaoExpedicao;
+    @Column(name = "passaporte")
+    private String passaporte;
+    @Column(name = "rg", nullable = false)
+    private String rg;
+    @Column(name = "titulo_eleitor")
+    private String tituloEleitor;
     @JoinColumn(name = "login_adm", referencedColumnName = "login_pes", insertable = false, updatable = false)
     @OneToOne
     private Pessoa pessoa;
@@ -68,28 +68,20 @@ public class Administrador implements Serializable {
         this.loginAdm = loginAdm;
     }
 
+    public Date getDataExpedicao() {
+        return dataExpedicao;
+    }
+
+    public void setDataExpedicao(Date dataExpedicao) {
+        this.dataExpedicao = dataExpedicao;
+    }
+
     public String getFraseSeguranca() {
         return fraseSeguranca;
     }
 
     public void setFraseSeguranca(String fraseSeguranca) {
         this.fraseSeguranca = fraseSeguranca;
-    }
-
-    public String getRg() {
-        return rg;
-    }
-
-    public void setRg(String rg) {
-        this.rg = rg;
-    }
-
-    public String getPassaporte() {
-        return passaporte;
-    }
-
-    public void setPassaporte(String passaporte) {
-        this.passaporte = passaporte;
     }
 
     public String getOrgaoExpedicao() {
@@ -100,20 +92,28 @@ public class Administrador implements Serializable {
         this.orgaoExpedicao = orgaoExpedicao;
     }
 
+    public String getPassaporte() {
+        return passaporte;
+    }
+
+    public void setPassaporte(String passaporte) {
+        this.passaporte = passaporte;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+
     public String getTituloEleitor() {
         return tituloEleitor;
     }
 
     public void setTituloEleitor(String tituloEleitor) {
         this.tituloEleitor = tituloEleitor;
-    }
-
-    public Date getDataExpedicao() {
-        return dataExpedicao;
-    }
-
-    public void setDataExpedicao(Date dataExpedicao) {
-        this.dataExpedicao = dataExpedicao;
     }
 
     public Pessoa getPessoa() {

@@ -26,38 +26,37 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author Cliente
+ * @author João Henrique
  */
 @Entity
 @Table(name = "compras")
-@NamedQueries({@NamedQuery(name = "Compras.findByNumCompra", query = "SELECT c FROM Compras c WHERE c.numCompra = :numCompra"), @NamedQuery(name = "Compras.findByFormaPagamento", query = "SELECT c FROM Compras c WHERE c.formaPagamento = :formaPagamento"), @NamedQuery(name = "Compras.findByStatusCompra", query = "SELECT c FROM Compras c WHERE c.statusCompra = :statusCompra"), @NamedQuery(name = "Compras.findByDataPedido", query = "SELECT c FROM Compras c WHERE c.dataPedido = :dataPedido"), @NamedQuery(name = "Compras.findByDataPrevistaEntrega", query = "SELECT c FROM Compras c WHERE c.dataPrevistaEntrega = :dataPrevistaEntrega"), @NamedQuery(name = "Compras.findByDataEntrega", query = "SELECT c FROM Compras c WHERE c.dataEntrega = :dataEntrega"), @NamedQuery(name = "Compras.findByObservacoes", query = "SELECT c FROM Compras c WHERE c.observacoes = :observacoes"), @NamedQuery(name = "Compras.findByValorFrete", query = "SELECT c FROM Compras c WHERE c.valorFrete = :valorFrete"), @NamedQuery(name = "Compras.findByDesconto", query = "SELECT c FROM Compras c WHERE c.desconto = :desconto"), @NamedQuery(name = "Compras.findByValorTotal", query = "SELECT c FROM Compras c WHERE c.valorTotal = :valorTotal")})
+@NamedQueries({@NamedQuery(name = "Compras.findByNumCompra", query = "SELECT c FROM Compras c WHERE c.numCompra = :numCompra"), @NamedQuery(name = "Compras.findByDataEntrega", query = "SELECT c FROM Compras c WHERE c.dataEntrega = :dataEntrega"), @NamedQuery(name = "Compras.findByDataPedido", query = "SELECT c FROM Compras c WHERE c.dataPedido = :dataPedido"), @NamedQuery(name = "Compras.findByDataPrevistaEntrega", query = "SELECT c FROM Compras c WHERE c.dataPrevistaEntrega = :dataPrevistaEntrega"), @NamedQuery(name = "Compras.findByDesconto", query = "SELECT c FROM Compras c WHERE c.desconto = :desconto"), @NamedQuery(name = "Compras.findByFormaPagamento", query = "SELECT c FROM Compras c WHERE c.formaPagamento = :formaPagamento"), @NamedQuery(name = "Compras.findByObservacoes", query = "SELECT c FROM Compras c WHERE c.observacoes = :observacoes"), @NamedQuery(name = "Compras.findByStatusCompra", query = "SELECT c FROM Compras c WHERE c.statusCompra = :statusCompra"), @NamedQuery(name = "Compras.findByValorFrete", query = "SELECT c FROM Compras c WHERE c.valorFrete = :valorFrete"), @NamedQuery(name = "Compras.findByValorTotal", query = "SELECT c FROM Compras c WHERE c.valorTotal = :valorTotal")})
 public class Compras implements Serializable {
     private static final long serialVersionUID = 1L;
-    
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "compras_num_compra_seq")
     @SequenceGenerator(name="compras_num_compra_seq", sequenceName="compras_num_compra_seq", initialValue=1, allocationSize=1)
     @Column(name = "num_compra", nullable = false)
     private Integer numCompra;
-    @Column(name = "forma_pagamento")
-    private String formaPagamento;
-    @Column(name = "status_compra")
-    private String statusCompra;
+    @Column(name = "data_entrega")
+    @Temporal(TemporalType.DATE)
+    private Date dataEntrega;
     @Column(name = "data_pedido")
     @Temporal(TemporalType.DATE)
     private Date dataPedido;
     @Column(name = "data_prevista_entrega")
     @Temporal(TemporalType.DATE)
     private Date dataPrevistaEntrega;
-    @Column(name = "data_entrega")
-    @Temporal(TemporalType.DATE)
-    private Date dataEntrega;
-    @Column(name = "observacoes")
-    private String observacoes;
-    @Column(name = "valor_frete")
-    private Double valorFrete;
     @Column(name = "desconto")
     private Double desconto;
+    @Column(name = "forma_pagamento")
+    private String formaPagamento;
+    @Column(name = "observacoes")
+    private String observacoes;
+    @Column(name = "status_compra")
+    private String statusCompra;
+    @Column(name = "valor_frete")
+    private Double valorFrete;
     @Column(name = "valor_total")
     private Double valorTotal;
     @JoinColumn(name = "login_cli", referencedColumnName = "login_cli")
@@ -84,20 +83,12 @@ public class Compras implements Serializable {
         this.numCompra = numCompra;
     }
 
-    public String getFormaPagamento() {
-        return formaPagamento;
+    public Date getDataEntrega() {
+        return dataEntrega;
     }
 
-    public void setFormaPagamento(String formaPagamento) {
-        this.formaPagamento = formaPagamento;
-    }
-
-    public String getStatusCompra() {
-        return statusCompra;
-    }
-
-    public void setStatusCompra(String statusCompra) {
-        this.statusCompra = statusCompra;
+    public void setDataEntrega(Date dataEntrega) {
+        this.dataEntrega = dataEntrega;
     }
 
     public Date getDataPedido() {
@@ -116,12 +107,20 @@ public class Compras implements Serializable {
         this.dataPrevistaEntrega = dataPrevistaEntrega;
     }
 
-    public Date getDataEntrega() {
-        return dataEntrega;
+    public Double getDesconto() {
+        return desconto;
     }
 
-    public void setDataEntrega(Date dataEntrega) {
-        this.dataEntrega = dataEntrega;
+    public void setDesconto(Double desconto) {
+        this.desconto = desconto;
+    }
+
+    public String getFormaPagamento() {
+        return formaPagamento;
+    }
+
+    public void setFormaPagamento(String formaPagamento) {
+        this.formaPagamento = formaPagamento;
     }
 
     public String getObservacoes() {
@@ -132,20 +131,20 @@ public class Compras implements Serializable {
         this.observacoes = observacoes;
     }
 
+    public String getStatusCompra() {
+        return statusCompra;
+    }
+
+    public void setStatusCompra(String statusCompra) {
+        this.statusCompra = statusCompra;
+    }
+
     public Double getValorFrete() {
         return valorFrete;
     }
 
     public void setValorFrete(Double valorFrete) {
         this.valorFrete = valorFrete;
-    }
-
-    public Double getDesconto() {
-        return desconto;
-    }
-
-    public void setDesconto(Double desconto) {
-        this.desconto = desconto;
     }
 
     public Double getValorTotal() {

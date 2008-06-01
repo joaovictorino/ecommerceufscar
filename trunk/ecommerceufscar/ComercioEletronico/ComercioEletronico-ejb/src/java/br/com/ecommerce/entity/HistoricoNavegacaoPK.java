@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author Cliente
+ * @author João Henrique
  */
 @Embeddable
 public class HistoricoNavegacaoPK implements Serializable {

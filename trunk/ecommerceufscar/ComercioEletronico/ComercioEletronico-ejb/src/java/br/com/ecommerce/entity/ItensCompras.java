@@ -17,19 +17,19 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Cliente
+ * @author João Henrique
  */
 @Entity
 @Table(name = "itens_compras")
-@NamedQueries({@NamedQuery(name = "ItensCompras.findByNumCompra", query = "SELECT i FROM ItensCompras i WHERE i.itensComprasPK.numCompra = :numCompra"), @NamedQuery(name = "ItensCompras.findByCodProduto", query = "SELECT i FROM ItensCompras i WHERE i.itensComprasPK.codProduto = :codProduto"), @NamedQuery(name = "ItensCompras.findByQuantidade", query = "SELECT i FROM ItensCompras i WHERE i.quantidade = :quantidade"), @NamedQuery(name = "ItensCompras.findByPrecoProduto", query = "SELECT i FROM ItensCompras i WHERE i.precoProduto = :precoProduto")})
+@NamedQueries({@NamedQuery(name = "ItensCompras.findByCodProduto", query = "SELECT i FROM ItensCompras i WHERE i.itensComprasPK.codProduto = :codProduto"), @NamedQuery(name = "ItensCompras.findByNumCompra", query = "SELECT i FROM ItensCompras i WHERE i.itensComprasPK.numCompra = :numCompra"), @NamedQuery(name = "ItensCompras.findByPrecoProduto", query = "SELECT i FROM ItensCompras i WHERE i.precoProduto = :precoProduto"), @NamedQuery(name = "ItensCompras.findByQuantidade", query = "SELECT i FROM ItensCompras i WHERE i.quantidade = :quantidade")})
 public class ItensCompras implements Serializable {
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected ItensComprasPK itensComprasPK;
-    @Column(name = "quantidade")
-    private Integer quantidade;
     @Column(name = "preco_produto")
     private Double precoProduto;
+    @Column(name = "quantidade")
+    private Integer quantidade;
     @JoinColumn(name = "num_compra", referencedColumnName = "num_compra", insertable = false, updatable = false)
     @ManyToOne
     private Compras compras;
@@ -44,8 +44,8 @@ public class ItensCompras implements Serializable {
         this.itensComprasPK = itensComprasPK;
     }
 
-    public ItensCompras(int numCompra, int codProduto) {
-        this.itensComprasPK = new ItensComprasPK(numCompra, codProduto);
+    public ItensCompras(int codProduto, int numCompra) {
+        this.itensComprasPK = new ItensComprasPK(codProduto, numCompra);
     }
 
     public ItensComprasPK getItensComprasPK() {
@@ -56,20 +56,20 @@ public class ItensCompras implements Serializable {
         this.itensComprasPK = itensComprasPK;
     }
 
-    public Integer getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(Integer quantidade) {
-        this.quantidade = quantidade;
-    }
-
     public Double getPrecoProduto() {
         return precoProduto;
     }
 
     public void setPrecoProduto(Double precoProduto) {
         this.precoProduto = precoProduto;
+    }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
     }
 
     public Compras getCompras() {

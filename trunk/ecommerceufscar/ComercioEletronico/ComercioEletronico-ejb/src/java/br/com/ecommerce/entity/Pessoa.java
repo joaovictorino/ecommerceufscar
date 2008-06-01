@@ -23,40 +23,40 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author Cliente
+ * @author João Henrique
  */
 @Entity
 @Table(name = "pessoa")
-@NamedQueries({@NamedQuery(name = "Pessoa.findByDataNasc", query = "SELECT p FROM Pessoa p WHERE p.dataNasc = :dataNasc"), @NamedQuery(name = "Pessoa.findByLoginPes", query = "SELECT p FROM Pessoa p WHERE p.loginPes = :loginPes"), @NamedQuery(name = "Pessoa.findBySenha", query = "SELECT p FROM Pessoa p WHERE p.senha = :senha"), @NamedQuery(name = "Pessoa.findByEmail", query = "SELECT p FROM Pessoa p WHERE p.email = :email"), @NamedQuery(name = "Pessoa.findByNome", query = "SELECT p FROM Pessoa p WHERE p.nome = :nome"), @NamedQuery(name = "Pessoa.findByCpf", query = "SELECT p FROM Pessoa p WHERE p.cpf = :cpf"), @NamedQuery(name = "Pessoa.findByCelular", query = "SELECT p FROM Pessoa p WHERE p.celular = :celular"), @NamedQuery(name = "Pessoa.findByDddCelular", query = "SELECT p FROM Pessoa p WHERE p.dddCelular = :dddCelular"), @NamedQuery(name = "Pessoa.findByDddTelefone", query = "SELECT p FROM Pessoa p WHERE p.dddTelefone = :dddTelefone"), @NamedQuery(name = "Pessoa.findByTelefone", query = "SELECT p FROM Pessoa p WHERE p.telefone = :telefone"), @NamedQuery(name = "Pessoa.findByRamal", query = "SELECT p FROM Pessoa p WHERE p.ramal = :ramal")})
+@NamedQueries({@NamedQuery(name = "Pessoa.findByLoginPes", query = "SELECT p FROM Pessoa p WHERE p.loginPes = :loginPes"), @NamedQuery(name = "Pessoa.findByCelular", query = "SELECT p FROM Pessoa p WHERE p.celular = :celular"), @NamedQuery(name = "Pessoa.findByCpf", query = "SELECT p FROM Pessoa p WHERE p.cpf = :cpf"), @NamedQuery(name = "Pessoa.findByDataNasc", query = "SELECT p FROM Pessoa p WHERE p.dataNasc = :dataNasc"), @NamedQuery(name = "Pessoa.findByDddcelular", query = "SELECT p FROM Pessoa p WHERE p.dddcelular = :dddcelular"), @NamedQuery(name = "Pessoa.findByDddtelefone", query = "SELECT p FROM Pessoa p WHERE p.dddtelefone = :dddtelefone"), @NamedQuery(name = "Pessoa.findByEmail", query = "SELECT p FROM Pessoa p WHERE p.email = :email"), @NamedQuery(name = "Pessoa.findByNome", query = "SELECT p FROM Pessoa p WHERE p.nome = :nome"), @NamedQuery(name = "Pessoa.findByRamal", query = "SELECT p FROM Pessoa p WHERE p.ramal = :ramal"), @NamedQuery(name = "Pessoa.findBySenha", query = "SELECT p FROM Pessoa p WHERE p.senha = :senha"), @NamedQuery(name = "Pessoa.findByTelefone", query = "SELECT p FROM Pessoa p WHERE p.telefone = :telefone")})
 public class Pessoa implements Serializable {
     private static final long serialVersionUID = 1L;
-    @Column(name = "data_nasc")
-    @Temporal(TemporalType.DATE)
-    private Date dataNasc;
     @Id
     @Column(name = "login_pes", nullable = false)
     private String loginPes;
-    @Column(name = "senha", nullable = false)
-    private String senha;
+    @Column(name = "celular")
+    private String celular;
+    @Column(name = "cpf")
+    private String cpf;
+    @Column(name = "data_nasc")
+    @Temporal(TemporalType.DATE)
+    private Date dataNasc;
+    @Column(name = "dddcelular")
+    private String dddcelular;
+    @Column(name = "dddtelefone")
+    private String dddtelefone;
     @Column(name = "email", nullable = false)
     private String email;
     @Column(name = "nome")
     private String nome;
-    @Column(name = "cpf")
-    private String cpf;
-    @Column(name = "celular")
-    private String celular;
-    @Column(name = "dddTelefone")
-    private String dddTelefone;
-    @Column(name = "dddCelular")
-    private String dddCelular;
-    @Column(name = "telefone")
-    private String telefone;
     @Column(name = "ramal")
     private String ramal;
+    @Column(name = "senha", nullable = false)
+    private String senha;
+    @Column(name = "telefone")
+    private String telefone;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "pessoa")
     private Administrador administrador;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "loginCli")
+    @OneToOne(mappedBy = "loginCli")
     private Cliente cliente;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "loginEnd")
     private Collection<Endereco> enderecoCollection;
@@ -68,18 +68,10 @@ public class Pessoa implements Serializable {
         this.loginPes = loginPes;
     }
 
-    public Pessoa(String loginPes, String senha, String email) {
+    public Pessoa(String loginPes, String email, String senha) {
         this.loginPes = loginPes;
-        this.senha = senha;
         this.email = email;
-    }
-
-    public Date getDataNasc() {
-        return dataNasc;
-    }
-
-    public void setDataNasc(Date dataNasc) {
-        this.dataNasc = dataNasc;
+        this.senha = senha;
     }
 
     public String getLoginPes() {
@@ -90,12 +82,44 @@ public class Pessoa implements Serializable {
         this.loginPes = loginPes;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getCelular() {
+        return celular;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public Date getDataNasc() {
+        return dataNasc;
+    }
+
+    public void setDataNasc(Date dataNasc) {
+        this.dataNasc = dataNasc;
+    }
+
+    public String getDddcelular() {
+        return dddcelular;
+    }
+
+    public void setDddcelular(String dddcelular) {
+        this.dddcelular = dddcelular;
+    }
+
+    public String getDddtelefone() {
+        return dddtelefone;
+    }
+
+    public void setDddtelefone(String dddtelefone) {
+        this.dddtelefone = dddtelefone;
     }
 
     public String getEmail() {
@@ -114,36 +138,20 @@ public class Pessoa implements Serializable {
         this.nome = nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getRamal() {
+        return ramal;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setRamal(String ramal) {
+        this.ramal = ramal;
     }
 
-    public String getCelular() {
-        return celular;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setCelular(String celular) {
-        this.celular = celular;
-    }
-
-    public String getDddTelefone() {
-        return dddTelefone;
-    }
-
-    public void setDddTelefone(String dddTelefone) {
-        this.dddTelefone = dddTelefone;
-    }
-    
-        public String getDddCelular() {
-        return dddCelular;
-    }
-
-    public void setDddCelular(String dddCelular) {
-        this.dddCelular = dddCelular;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public String getTelefone() {
@@ -152,14 +160,6 @@ public class Pessoa implements Serializable {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
-
-    public String getRamal() {
-        return ramal;
-    }
-
-    public void setRamal(String ramal) {
-        this.ramal = ramal;
     }
 
     public Administrador getAdministrador() {

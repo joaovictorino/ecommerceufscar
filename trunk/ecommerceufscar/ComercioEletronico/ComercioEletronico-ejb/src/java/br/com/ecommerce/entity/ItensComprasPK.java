@@ -11,28 +11,20 @@ import javax.persistence.Embeddable;
 
 /**
  *
- * @author Cliente
+ * @author João Henrique
  */
 @Embeddable
 public class ItensComprasPK implements Serializable {
-    @Column(name = "num_compra", nullable = false)
-    private int numCompra;
     @Column(name = "cod_produto", nullable = false)
     private int codProduto;
+    @Column(name = "num_compra", nullable = false)
+    private int numCompra;
 
     public ItensComprasPK() {
     }
 
-    public ItensComprasPK(int numCompra, int codProduto) {
-        this.numCompra = numCompra;
+    public ItensComprasPK(int codProduto, int numCompra) {
         this.codProduto = codProduto;
-    }
-
-    public int getNumCompra() {
-        return numCompra;
-    }
-
-    public void setNumCompra(int numCompra) {
         this.numCompra = numCompra;
     }
 
@@ -44,11 +36,19 @@ public class ItensComprasPK implements Serializable {
         this.codProduto = codProduto;
     }
 
+    public int getNumCompra() {
+        return numCompra;
+    }
+
+    public void setNumCompra(int numCompra) {
+        this.numCompra = numCompra;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (int) numCompra;
         hash += (int) codProduto;
+        hash += (int) numCompra;
         return hash;
     }
 
@@ -59,10 +59,10 @@ public class ItensComprasPK implements Serializable {
             return false;
         }
         ItensComprasPK other = (ItensComprasPK) object;
-        if (this.numCompra != other.numCompra) {
+        if (this.codProduto != other.codProduto) {
             return false;
         }
-        if (this.codProduto != other.codProduto) {
+        if (this.numCompra != other.numCompra) {
             return false;
         }
         return true;
@@ -70,7 +70,7 @@ public class ItensComprasPK implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.ecommerce.entity.ItensComprasPK[numCompra=" + numCompra + ", codProduto=" + codProduto + "]";
+        return "br.com.ecommerce.entity.ItensComprasPK[codProduto=" + codProduto + ", numCompra=" + numCompra + "]";
     }
 
 }

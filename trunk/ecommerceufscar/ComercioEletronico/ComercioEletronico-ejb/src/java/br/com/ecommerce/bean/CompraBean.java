@@ -9,8 +9,6 @@ import br.com.ecommerce.entity.Endereco;
 import br.com.ecommerce.entity.ItensCompras;
 import br.com.ecommerce.entity.Pessoa;
 import br.com.ecommerce.entity.Produtos;
-import br.com.ecommerce.entity.ItensCompras;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Map;
@@ -46,7 +44,7 @@ public class CompraBean implements CompraRemote {
         Date now = new Date();
         compras.setDataPedido(now);
         compras.setDesconto(0.0);
-        compras.setFormaPagamento(login_cli);
+        compras.setFormaPagamento("");
         compras.setLoginCli(cliente.getCliente());
         compras.setStatusCompra("Aprovado");
         compras.setObservacoes("");
@@ -58,18 +56,22 @@ public class CompraBean implements CompraRemote {
         em.persist(compras);
 
         for (Map.Entry<Integer, Integer> item : mapProdutos.entrySet()) {
-            Produtos produtos = new Produtos();
-            produtos.setCodProduto(item.getKey());
-            Produtos produtoItem = produtoBean.buscarProdutoPorId(produtos);
-            ItensCompras itens = new ItensCompras(compras.getNumCompra(), produtoItem.getCodProduto());
+            Produtos produtoItem = new Produtos();
+            produtoItem.setCodProduto(item.getKey());
+            produtoItem = produtoBean.buscarProdutoPorId(produtoItem);
+            produtoItem.setQtdeCompras(produtoItem.getQtdeCompras() + item.getValue());
+            produtoItem.setQtdeEstoque(produtoItem.getQtdeEstoque() - item.getValue());        
+            ItensCompras itens = new ItensCompras(produtoItem.getCodProduto(), compras.getNumCompra());
             itens.setPrecoProduto(produtoItem.getPreco());
             itens.setQuantidade(item.getValue());
-            valorTotal += produtos.getPreco() * item.getValue();
+            valorTotal += produtoItem.getPreco() * item.getValue();
+            
+            em.merge(produtoItem);
+            
             em.persist(itens);
         }
         
         compras.setValorTotal(valorTotal);
-        
         em.persist(compras);
         
         return true;
