@@ -102,6 +102,26 @@ public class homeRight extends AbstractFragmentBean {
             return true;
         }
     }
+    private Label lblError = new Label();
+
+    public Label getLblError() {
+        return lblError;
+    }
+
+    public void setLblError(Label l) {
+        this.lblError = l;
+    }
+
+    private boolean showError = false;
+    
+    public void setShowError(boolean showError){
+        this.showError = showError;
+    }
+    
+    public boolean getShowError(){
+        return this.showError;
+    }
+    
     // </editor-fold>
 
     public homeRight() {
@@ -161,12 +181,6 @@ public class homeRight extends AbstractFragmentBean {
         return (SessionBean1) getBean("SessionBean1");
     }
 
-    public String hyperlink1_action() {
-        // TODO: Process the action. Return value is a navigation
-        // case name where null will return to the same page.
-        return null;
-    }
-
     public String btnLogin_action() {
         Pessoa pessoa = new Pessoa();
         pessoa.setLoginPes(this.getTxtLogin1().getText().toString());
@@ -174,6 +188,9 @@ public class homeRight extends AbstractFragmentBean {
         
         if (this.pessoaBean.loginCliente(pessoa)){
             this.getSessionBean1().setLoginCliente(pessoa.getLoginPes());
+            this.setShowError(false);
+        }else{
+            this.setShowError(true);
         }
         
         return null;
