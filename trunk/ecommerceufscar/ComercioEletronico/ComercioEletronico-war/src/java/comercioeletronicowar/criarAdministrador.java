@@ -737,8 +737,8 @@ public class criarAdministrador extends AbstractPageBean
             pess.setNome(txtNome.getText().toString());
             pess.setCpf(txtCPF.getText().toString());
             pess.setCelular(txtCelular.getText().toString());
-            pess.setDddTelefone(txtDDDTelefone.getText().toString());
-            pess.setDddCelular(txtDDDCelular.getText().toString());
+            pess.setDddtelefone(txtDDDTelefone.getText().toString());
+            pess.setDddcelular(txtDDDCelular.getText().toString());
             pess.setTelefone(txtTelefone.getText().toString());
             pess.setRamal(txtRamal.getText().toString());
             end.setTipoEndereco(ddlTipoEnd.getSelected().toString());
