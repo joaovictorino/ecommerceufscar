@@ -63,4 +63,12 @@ public class ProdutoBean implements ProdutoRemote {
         }
         return produtos;
     }
+
+    public void incrementarNroVisita(Integer intCodProduto) {
+        Produtos produto = new Produtos();
+        produto.setCodProduto(intCodProduto);
+        Produtos result = this.buscarProdutoPorId(produto);
+        result.setNumeroVisualizacao(result.getNumeroVisualizacao() + 1);
+        em.persist(result);
+    }
 }

@@ -38,9 +38,10 @@ import javax.servlet.http.HttpServletResponse;
  * @author Cliente
  */
 public class produto extends AbstractPageBean {
+
     @EJB
     private ProdutoRemote produtoBean;
-   
+       
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
     /**
      * <p>Automatically managed component initialization.  <strong>WARNING:</strong>
@@ -301,7 +302,8 @@ public class produto extends AbstractPageBean {
         // *after* managed components are initialized
         // TODO - add your own initialization code here
         /**         * Process a GET type request.         */    
-        this.carregarProduto();  
+        this.carregarProduto();
+        this.incrementarNroVisita();
     }
 
     /**
@@ -346,6 +348,11 @@ public class produto extends AbstractPageBean {
      */
     protected SessionBean1 getSessionBean1() {
         return (SessionBean1) getBean("SessionBean1");
+    }
+    
+    public void incrementarNroVisita(){
+        if(!"".equals(this.getId()))
+            this.produtoBean.incrementarNroVisita(new Integer(this.getId()));
     }
 
     public String getId() {

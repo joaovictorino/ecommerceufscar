@@ -14,7 +14,6 @@
                 </webuijsf:head>
                 <webuijsf:body binding="#{produto.body1}" id="body1" style="-rave-layout: grid">
                     <webuijsf:form binding="#{produto.form1}" id="form1">
-                        <webuijsf:label binding="#{produto.label1}" id="label1" style="font-size: 18px; left: 360px; top: 144px; position: absolute" styleClass="outrosSmallText"/>
                         <webuijsf:label binding="#{produto.label2}" id="label2" style="left: 408px; top: 192px; position: absolute" styleClass="outrosSmallText" converter="#{produto.realConverter1}"/>
                         <webuijsf:image binding="#{produto.image1}" id="image1" style="left: 216px; top: 144px; position: absolute" url=""/>
                         <div style="left: 0px; top: 0px; position: absolute">

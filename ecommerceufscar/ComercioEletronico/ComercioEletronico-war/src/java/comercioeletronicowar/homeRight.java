@@ -186,7 +186,7 @@ public class homeRight extends AbstractFragmentBean {
         pessoa.setLoginPes(this.getTxtLogin1().getText().toString());
         pessoa.setSenha(this.getTxtSenha1().getText().toString());
         
-        if (this.pessoaBean.loginCliente(pessoa)){
+        if (!this.getTxtLogin1().getText().toString().equals("") && !this.getTxtSenha1().getText().toString().equals("") && this.pessoaBean.loginCliente(pessoa)){
             this.getSessionBean1().setLoginCliente(pessoa.getLoginPes());
             this.setShowError(false);
         }else{
