@@ -52,6 +52,7 @@
                         <div style="left: 1080px; top: 96px; position: absolute">
                             <jsp:directive.include file="homeRight.jspf"/>
                         </div>
+                        <div style="left: 48px; top: 336px; position: absolute"></div>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
