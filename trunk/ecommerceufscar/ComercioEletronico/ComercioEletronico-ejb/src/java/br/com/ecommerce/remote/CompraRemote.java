@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package br.com.ecommerce.bean;
+package br.com.ecommerce.remote;
 
 import java.util.Map;
 import javax.ejb.Remote;
