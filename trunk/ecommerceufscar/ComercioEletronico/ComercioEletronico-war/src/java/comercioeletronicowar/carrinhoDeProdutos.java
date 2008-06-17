@@ -6,8 +6,8 @@
  
 package comercioeletronicowar;
 
-import br.com.ecommerce.bean.CompraRemote;
-import br.com.ecommerce.bean.ProdutoRemote;
+import br.com.ecommerce.remote.CompraRemote;
+import br.com.ecommerce.remote.ProdutoRemote;
 import br.com.ecommerce.entity.Produtos;
 import com.sun.data.provider.RowKey;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
