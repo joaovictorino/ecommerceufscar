@@ -7,7 +7,7 @@
  
 package comercioeletronicowar;
 
-import br.com.ecommerce.bean.ProdutoRemote;
+import br.com.ecommerce.remote.ProdutoRemote;
 import br.com.ecommerce.entity.Produtos;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.component.Body;
@@ -351,7 +351,7 @@ public class produto extends AbstractPageBean {
     }
     
     public void incrementarNroVisita(){
-        if(!"".equals(this.getId()))
+        if(!"".equals(this.getId()) && this.getId() != null)
             this.produtoBean.incrementarNroVisita(new Integer(this.getId()));
     }
 

@@ -7,7 +7,7 @@
  
 package comercioeletronicowar;
 
-import br.com.ecommerce.bean.PessoaRemote;
+import br.com.ecommerce.remote.PessoaRemote;
 import br.com.ecommerce.entity.Pessoa;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.component.Body;
