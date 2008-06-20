@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmlns:UML="omg.org/UML/1.4" xmi.version="2.0">
+   <XMI.header>
+      <XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+		<XMI.documentation>
+			<XMI.exporter>
+				Embarcadero's Describe
+			</XMI.exporter>
+			<XMI.exporterVersion>
+				6.0
+			</XMI.exporterVersion>
+		</XMI.documentation>
+   </XMI.header>
+
+   <XMI.content>
+   <UML:Profile xmi.id="DCE.C9B8322F-FEC7-A791-EFED-A5E2B3F19763" name="Unnamed" isCloned="true" href="./ComercioEletronico-ejb-Model-v2.etup#//*[@xmi.id=&apos;DCE.C9B8322F-FEC7-A791-EFED-A5E2B3F19763&apos;]" isDirty="false"><UML:Element.ownedElement>
+<UML:Stereotype xmi.id="DCE.120896BC-3BC0-2215-FFC0-ECD0DC418D43" name="interface" owner="__uri_./ComercioEletronico-ejb-Model-v2.etup#//*[@xmi.id=&apos;DCE.C9B8322F-FEC7-A791-EFED-A5E2B3F19763&apos;]"/></UML:Element.ownedElement></UML:Profile></XMI.content>
+</XMI>
