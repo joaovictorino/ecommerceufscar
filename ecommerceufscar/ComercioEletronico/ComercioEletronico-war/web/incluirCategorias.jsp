@@ -16,19 +16,20 @@
                     <webuijsf:form binding="#{incluirCategorias.form1}" id="form1">
                         <webuijsf:label binding="#{incluirCategorias.label2}" id="label2" style="left: 192px; top: 192px; position: absolute" text="Categoria-Pai:"/>
                         <webuijsf:label binding="#{incluirCategorias.label3}" id="label3" style="left: 192px; top: 216px; position: absolute" text="Nome:"/>
-                        <webuijsf:dropDown binding="#{incluirCategorias.dropDown1}" id="dropDown1" items="#{incluirCategorias.dropDown1DefaultOptions.options}"
-                            style="left: 288px; top: 192px; position: absolute" valueChangeListenerExpression="#{incluirCategorias.dropDown1_processValueChange}"/>
-                        <webuijsf:textField binding="#{incluirCategorias.textField1}" id="textField1" style="left: 288px; top: 216px; position: absolute"/>
+                        <webuijsf:dropDown binding="#{incluirCategorias.categoria_pai}" id="categoria_pai"
+                            items="#{incluirCategorias.categoria_paiDefaultOptions.options}" style="left: 288px; top: 192px; position: absolute" valueChangeListenerExpression="#{incluirCategorias.categoria_pai_processValueChange}"/>
+                        <webuijsf:textField binding="#{incluirCategorias.categoria}" id="categoria" style="left: 288px; top: 216px; position: absolute"/>
                         <webuijsf:button actionExpression="#{incluirCategorias.button1_action}" binding="#{incluirCategorias.button1}" id="button1"
                             style="left: 287px; top: 240px; position: absolute" text="Incluir"/>
                         <webuijsf:label binding="#{incluirCategorias.label1}" id="label1"
-                            style="font-family: 'Arial','Helvetica',sans-serif; font-size: 18px; left: 192px; top: 144px; position: absolute" text="Administração &gt;&gt; Categorias &gt;&gt; Incluir"/>
+                            style="font-family: 'Arial','Helvetica',sans-serif; font-size: 18px; left: 192px; top: 144px; position: absolute" text="AdministraÃ§Ã£o &gt;&gt; Categorias &gt;&gt; Incluir"/>
                         <div style="left: -24px; top: 0px; position: absolute">
                             <jsp:directive.include file="cabecalho.jspf"/>
                         </div>
                         <div style="left: 0px; top: 96px; position: absolute">
                             <jsp:directive.include file="menuAdm.jspf"/>
                         </div>
+                        <webuijsf:label binding="#{incluirCategorias.lblResultado}" id="lblResultado" style="left: 408px; top: 240px; position: absolute"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
