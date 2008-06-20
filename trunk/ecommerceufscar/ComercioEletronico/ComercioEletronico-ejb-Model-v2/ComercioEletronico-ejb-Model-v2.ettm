@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--!DOCTYPE TypeManagement 
+[
+	<!ELEMENT TypeManagement (Types?, Locations?, IrresolvableTypes?)>
+	<!ATTLIST TypeManagement projectID ID #REQUIRED>
+
+	<!ELEMENT Locations (Location*)>
+	<!ATTLIST Locations
+			nextID CDATA #IMPLIED >
+
+	<!ELEMENT Location ANY>
+	<!ATTLIST Location
+			locID ID #IMPLIED
+			href CDATA #IMPLIED
+			importProjectLoc CDATA #IMPLIED
+			importProjID CDATA #IMPLIED >
+
+	<!ELEMENT Types (Type*)>
+	<!ELEMENT Type ANY>
+	<!ATTLIST Type
+			id ID #IMPLIED
+			location IDREF #IMPLIED
+			name CDATA #IMPLIED >
+
+	<!ELEMENT IrresolvableTypes (Irresolvable*)>
+	<!ELEMENT Irresolvable ANY>
+	<!ATTLIST Irresolvable 
+		   id CDATA #IMPLIED >
+]--><TypeManagement projectID="DCE.5BF0718C-D69F-4095-5692-4BC2637AA2E9">
+	<Locations nextID="2">
+	<Location locID="T.0" href="./ComercioEletronico-ejb-Model-v2.etup"/><Location locID="T.1" href="./ComercioEletronico-war-Model-V2.etd"/></Locations>
+
+   <Types>
+   <Type id="DCE.C9B8322F-FEC7-A791-EFED-A5E2B3F19763" location="T.0" name="Unnamed"/><Type id="DCE.BD5A4F01-D285-0754-9B61-4B6A945D5475" location="T.1" name="buscarProduto"/><Type id="DCE.67865C66-C5B1-5AA5-E46A-26D15C02AF69" location="T.1" name="ProdutoRemote"/></Types>
+
+	<IrresolvableTypes>
+	</IrresolvableTypes>
+
+</TypeManagement>
