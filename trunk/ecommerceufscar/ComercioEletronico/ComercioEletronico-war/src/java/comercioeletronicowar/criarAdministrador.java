@@ -25,8 +25,7 @@ public class criarAdministrador extends AbstractPageBean
         List[0] = new Option("", "Selecione");
         List[1] = new Option("Rua", "Rua");
         List[2] = new Option("Avenida", "Avenida");
-        List[3]
-                = new Option("Alameda", "Alameda");
+        List[3]= new Option("Alameda", "Alameda");
         ddlTipoEndDefaultOptions.setOptions(List);
     }
 

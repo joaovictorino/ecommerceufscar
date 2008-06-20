@@ -6,6 +6,7 @@
  
 package comercioeletronicowar;
 
+import br.com.ecommerce.entity.Categoria;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.component.Body;
 import com.sun.webui.jsf.component.Button;
@@ -32,6 +33,13 @@ import javax.faces.event.ValueChangeEvent;
  * @author sronly
  */
 public class incluirCategorias extends AbstractPageBean {
+    
+    
+    @EJB
+    private CategoriaRemote catBean;
+    
+    
+    
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
     /**
@@ -119,32 +127,32 @@ public class incluirCategorias extends AbstractPageBean {
     public void setLabel3(Label l) {
         this.label3 = l;
     }
-    private DropDown dropDown1 = new DropDown();
+    private DropDown categoria_pai = new DropDown();
 
-    public DropDown getDropDown1() {
-        return dropDown1;
+    public DropDown getCategoria_pai() {
+        return categoria_pai;
     }
 
-    public void setDropDown1(DropDown dd) {
-        this.dropDown1 = dd;
+    public void setCategoria_pai(DropDown dd) {
+        this.categoria_pai = dd;
     }
-    private SingleSelectOptionsList dropDown1DefaultOptions = new SingleSelectOptionsList();
+    private SingleSelectOptionsList categoria_paiDefaultOptions = new SingleSelectOptionsList();
 
-    public SingleSelectOptionsList getDropDown1DefaultOptions() {
-        return dropDown1DefaultOptions;
-    }
-
-    public void setDropDown1DefaultOptions(SingleSelectOptionsList ssol) {
-        this.dropDown1DefaultOptions = ssol;
-    }
-    private TextField textField1 = new TextField();
-
-    public TextField getTextField1() {
-        return textField1;
+    public SingleSelectOptionsList getCategoria_paiDefaultOptions() {
+        return categoria_paiDefaultOptions;
     }
 
-    public void setTextField1(TextField tf) {
-        this.textField1 = tf;
+    public void setCategoria_paiDefaultOptions(SingleSelectOptionsList ssol) {
+        this.categoria_paiDefaultOptions = ssol;
+    }
+    private TextField categoria = new TextField();
+
+    public TextField getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(TextField tf) {
+        this.categoria = tf;
     }
     private Button button1 = new Button();
 
@@ -163,6 +171,15 @@ public class incluirCategorias extends AbstractPageBean {
 
     public void setLabel1(Label l) {
         this.label1 = l;
+    }
+    private Label lblResultado = new Label();
+
+    public Label getLblResultado() {
+        return lblResultado;
+    }
+
+    public void setLblResultado(Label l) {
+        this.lblResultado = l;
     }
 
     // </editor-fold>
@@ -185,6 +202,11 @@ public class incluirCategorias extends AbstractPageBean {
      * values submitted with this request.  Instead, they represent the
      * property values that were saved for this view when it was rendered.</p>
      */
+    
+    
+    
+    
+    
     @Override
     public void init() {
         // Perform initializations inherited from our superclass
@@ -253,12 +275,24 @@ public class incluirCategorias extends AbstractPageBean {
         return (SessionBean1) getBean("SessionBean1");
     }
 
-    public void dropDown1_processValueChange(ValueChangeEvent event) {
+    public void categoria_pai_processValueChange(ValueChangeEvent event) {
     }
 
     public String button1_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
+        
+        Categoria cat = new Categoria();
+        cat.setCategoria(categoria.getText().toString());
+        cat.setCategoria_pai(categoria_pai.getSelected().toString());
+        
+        /*
+          if (pessoaBean.salvar(pess))
+                lblResultado.setText("sucesso");
+            else
+                lblResultado.setText("erro");
+         */
+        
         return null;
     }
     
