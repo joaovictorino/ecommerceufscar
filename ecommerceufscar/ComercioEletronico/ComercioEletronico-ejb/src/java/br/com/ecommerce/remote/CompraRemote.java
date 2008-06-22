@@ -14,5 +14,5 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface CompraRemote {
-    boolean efetuarCompra(String login_cli, Map<Integer, Integer> mapProdutos);
+    Integer efetuarCompra(String login_cli, Map<Integer, Integer> mapProdutos);
 }

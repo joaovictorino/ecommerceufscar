@@ -39,7 +39,8 @@
                                     <webuijsf:textField binding="#{carrinhoDeProdutos.textField2}" columns="10" id="textField2" text="#{currentRow.value['qtdeCompras']}"/>
                                 </webuijsf:tableColumn>
                                 <webuijsf:tableColumn binding="#{carrinhoDeProdutos.tableColumn4}" headerText="Preço" id="tableColumn4" sort="preco" width="100">
-                                    <webuijsf:staticText binding="#{carrinhoDeProdutos.staticText2}" id="staticText2" text="#{currentRow.value['preco']}" converter="#{carrinhoDeProdutos.realConverter1}"/>
+                                    <webuijsf:staticText binding="#{carrinhoDeProdutos.staticText2}" converter="#{carrinhoDeProdutos.realConverter1}"
+                                        id="staticText2" text="#{currentRow.value['preco']}"/>
                                 </webuijsf:tableColumn>
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>
@@ -48,7 +49,7 @@
                         <webuijsf:button actionExpression="#{carrinhoDeProdutos.btnAtualizar_action}" binding="#{carrinhoDeProdutos.btnAtualizar1}"
                             id="btnAtualizar1" style="left: 191px; top: 264px; position: absolute" text="Atualizar"/>
                         <webuijsf:button actionExpression="#{carrinhoDeProdutos.btnComprar_action}" binding="#{carrinhoDeProdutos.btnComprar1}" id="btnComprar1"
-                            style="left: 911px; top: 312px; position: absolute" text="Finalizar Comprar"/>
+                            style="left: 911px; top: 312px; position: absolute" text="Efetuar Compra"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

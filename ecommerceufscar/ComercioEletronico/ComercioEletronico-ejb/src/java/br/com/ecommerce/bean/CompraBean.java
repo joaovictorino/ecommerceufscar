@@ -35,7 +35,7 @@ public class CompraBean implements CompraRemote {
     @EJB(beanName = "PessoaBean")
     private PessoaRemote pessoaBean;
 
-    public boolean efetuarCompra(String login_cli, Map<Integer, Integer> mapProdutos) {
+    public Integer efetuarCompra(String login_cli, Map<Integer, Integer> mapProdutos) {
         double valorTotal = 0.0;
         Pessoa pessoa = new Pessoa();
         pessoa.setLoginPes(login_cli);
@@ -76,6 +76,6 @@ public class CompraBean implements CompraRemote {
         compras.setValorTotal(valorTotal);
         em.persist(compras);
         
-        return true;
+        return compras.getNumCompra();
     }
 }

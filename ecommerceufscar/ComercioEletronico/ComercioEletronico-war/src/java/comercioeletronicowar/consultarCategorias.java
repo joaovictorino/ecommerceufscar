@@ -446,6 +446,15 @@ public class consultarCategorias extends AbstractPageBean {
         // case name where null will return to the same page.
         return null;
     }
+
+    /**
+     * <p>Return a reference to the scoped data bean.</p>
+     *
+     * @return reference to the scoped data bean
+     */
+    protected carrinhoDeProdutos getcarrinhoDeProdutos() {
+        return (carrinhoDeProdutos) getBean("carrinhoDeProdutos");
+    }
     
 }
 
