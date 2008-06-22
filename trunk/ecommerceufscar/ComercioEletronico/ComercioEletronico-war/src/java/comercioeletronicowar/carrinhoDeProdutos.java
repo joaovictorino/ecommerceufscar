@@ -392,8 +392,8 @@ public class carrinhoDeProdutos extends AbstractPageBean {
     }
 
     public String btnComprar_action() {
-        compraBean.efetuarCompra(this.getSessionBean1().getLoginCliente(), this.getSessionBean1().getCarrinhoCompras());
-        return null;
+        //compraBean.efetuarCompra(this.getSessionBean1().getLoginCliente(), this.getSessionBean1().getCarrinhoCompras());
+        return "CarregarEscolherEndereco";
     }
     
     public void carregar()
@@ -411,7 +411,7 @@ public class carrinhoDeProdutos extends AbstractPageBean {
             this.produtos[i].setCodProduto(produtosList.get(i).getCodProduto());
             this.produtos[i].setNomeProduto(produtosList.get(i).getNomeProduto()); 
             this.produtos[i].setQtdeCompras(carrinho.get(produtosList.get(i).getCodProduto())); 
-            this.produtos[i].setPreco(produtosList.get(i).getPreco());
+            this.produtos[i].setPreco(produtosList.get(i).getPreco() * carrinho.get(produtosList.get(i).getCodProduto()));
             total += (produtosList.get(i).getPreco() * carrinho.get(produtosList.get(i).getCodProduto()));
         }
     }

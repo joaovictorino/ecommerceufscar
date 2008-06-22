@@ -333,6 +333,15 @@ public class consultarClientes extends AbstractPageBean {
     protected SessionBean1 getSessionBean1() {
         return (SessionBean1) getBean("SessionBean1");
     }
+
+    /**
+     * <p>Return a reference to the scoped data bean.</p>
+     *
+     * @return reference to the scoped data bean
+     */
+    protected carrinhoDeProdutos getcarrinhoDeProdutos() {
+        return (carrinhoDeProdutos) getBean("carrinhoDeProdutos");
+    }
     
 }
 

@@ -6,7 +6,7 @@
  
 package comercioeletronicowar;
 
-import br.com.ecommerce.entity.Categoria;
+import br.com.ecommerce.entity.Categorias;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.component.Body;
 import com.sun.webui.jsf.component.Button;
@@ -35,8 +35,8 @@ import javax.faces.event.ValueChangeEvent;
 public class incluirCategorias extends AbstractPageBean {
     
     
-    @EJB
-    private CategoriaRemote catBean;
+//    @EJB
+//    private CategoriaRemote catBean;
     
     
     
@@ -282,9 +282,9 @@ public class incluirCategorias extends AbstractPageBean {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         
-        Categoria cat = new Categoria();
-        cat.setCategoria(categoria.getText().toString());
-        cat.setCategoria_pai(categoria_pai.getSelected().toString());
+//        Categoria cat = new Categoria();
+//        cat.setCategoria(categoria.getText().toString());
+//        cat.setCategoria_pai(categoria_pai.getSelected().toString());
         
         /*
           if (pessoaBean.salvar(pess))

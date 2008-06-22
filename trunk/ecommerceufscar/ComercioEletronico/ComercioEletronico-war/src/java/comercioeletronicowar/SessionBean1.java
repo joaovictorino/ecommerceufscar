@@ -30,6 +30,7 @@ public class SessionBean1 extends AbstractSessionBean {
     private boolean logged = false;
     private Map<Integer, Integer> map = new HashMap<Integer, Integer>();
     private String loginCliente = null;
+    private Integer numCompra = null;
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
 
     /**
@@ -156,6 +157,14 @@ public class SessionBean1 extends AbstractSessionBean {
                 FacesContext.getCurrentInstance().responseComplete();
             }catch(Exception ex){}
         }
+    }
+
+    public Integer getNumCompra() {
+        return numCompra;
+    }
+
+    public void setNumCompra(Integer numCompra) {
+        this.numCompra = numCompra;
     }
 
 }
