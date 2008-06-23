@@ -71,4 +71,15 @@ public class ProdutoBean implements ProdutoRemote {
         result.setNumeroVisualizacao(result.getNumeroVisualizacao() + 1);
         em.persist(result);
     }
+
+    public boolean salvaprod(Produtos produto) {
+        try {
+             em.persist(produto);
+             return true;
+        }catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+    }
+    }     
 }

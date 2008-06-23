@@ -19,4 +19,5 @@ public interface ProdutoRemote {
     List<Produtos> listarProdutosParaUsuarios(Produtos produto);
     List<Produtos> listaProdutosPorId(List<Integer> ids);
     void incrementarNroVisita(Integer intCodProduto);
+    boolean salvaprod(Produtos produto);
 }
