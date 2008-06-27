@@ -67,8 +67,8 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
-        <managed-bean-name>carrinhoDeProdutos</managed-bean-name>
-        <managed-bean-class>comercioeletronicowar.carrinhoDeProdutos</managed-bean-class>
+        <managed-bean-name>incluirCategorias</managed-bean-name>
+        <managed-bean-class>comercioeletronicowar.incluirCategorias</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
@@ -94,11 +94,6 @@
     <managed-bean>
         <managed-bean-name>consultarClientes</managed-bean-name>
         <managed-bean-class>comercioeletronicowar.consultarClientes</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
-    <managed-bean>
-        <managed-bean-name>incluirCategorias</managed-bean-name>
-        <managed-bean-class>comercioeletronicowar.incluirCategorias</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
@@ -130,9 +125,4 @@
             <to-view-id>/CompraEfetuada.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
-    <managed-bean>
-        <managed-bean-name>cadastrarProdutos</managed-bean-name>
-        <managed-bean-class>comercioeletronicowar.cadastrarProdutos</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
 </faces-config>
