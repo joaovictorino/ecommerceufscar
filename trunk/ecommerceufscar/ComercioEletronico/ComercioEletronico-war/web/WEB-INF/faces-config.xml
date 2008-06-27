@@ -72,6 +72,11 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
+        <managed-bean-name>cadastrarProdutos</managed-bean-name>
+        <managed-bean-class>comercioeletronicowar.cadastrarProdutos</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
         <managed-bean-name>editarAdministrador</managed-bean-name>
         <managed-bean-class>comercioeletronicowar.editarAdministrador</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
