@@ -7,13 +7,13 @@
 <jsp:root version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
     <jsp:directive.page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"/>
     <f:view>
-        <webuijsf:page binding="#{cadastrarProdutos.pageCaProd}" id="pageCadProd">
+        <webuijsf:page binding="#{cadastrarProdutos.pageCaProd}" id="pageCaProd">
             <webuijsf:html binding="#{cadastrarProdutos.htmlCaProd }" id="htmlCadProd" lang="">
-                <webuijsf:head binding="#{cadastrarProdutos.headCaProd}" id="headCadProd">
-                    <webuijsf:link binding="#{cadastrarProdutos.linkCaProd}" id="linkCadProd" url="/resources/stylesheet.css"/>
+                <webuijsf:head binding="#{cadastrarProdutos.headCaProd}" id="headCaProd">
+                    <webuijsf:link binding="#{cadastrarProdutos.linkCaProd}" id="linkCaProd" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
-                <webuijsf:body binding="#{cadastrarProdutos.bodyCaProd}" id="bodyCadProd" style="-rave-layout: grid">
-                    <webuijsf:form binding="#{cadastrarProdutos.formCaProd}" id="formCadProd">
+                <webuijsf:body binding="#{cadastrarProdutos.bodyCaProd}" id="bodyCaProd" style="-rave-layout: grid">
+                    <webuijsf:form binding="#{cadastrarProdutos.formCaProd}" id="formCaProd">
                         <div style="left: 0px; top: 0px; position: absolute">
                             <jsp:directive.include file="cabecalhoAdm.jspf"/>
                             <webuijsf:label id="label1"

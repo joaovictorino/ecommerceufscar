@@ -125,4 +125,9 @@
             <to-view-id>/CompraEfetuada.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>carrinhoDeProdutos</managed-bean-name>
+        <managed-bean-class>comercioeletronicowar.carrinhoDeProdutos</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>
