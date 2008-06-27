@@ -50,7 +50,8 @@
                             <webuijsf:tableRowGroup binding="#{escolherEnderecoCompra.tableRowGroup2}" id="tableRowGroup2" rows="10"
                                 sourceData="#{escolherEnderecoCompra.enderecos}" sourceVar="currentRow">
                                 <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn8}" id="tableColumn8">
-                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText1}" id="staticText1" text="&lt;input type=&quot;radio&quot; name=&quot;group1&quot; value=&quot;Milk&quot;&gt;"/>
+                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText1}" id="staticText1" text=""/>
+                                    <webuijsf:radioButton binding="#{escolherEnderecoCompra.radioButton2}" id="radioButton2" selectedValue="#{currentRow.value['codEndereco']}" name="radioButton-group-tableColumn8"/>
                                 </webuijsf:tableColumn>
                                 <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn9}" id="tableColumn9" sort="tipoEndereco" width="41">
                                     <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText9}" id="staticText9" text="#{currentRow.value['tipoEndereco']}"/>
