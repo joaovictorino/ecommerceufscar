@@ -12,6 +12,7 @@ import br.com.ecommerce.entity.Produtos;
 import br.com.ecommerce.remote.CompraRemote;
 import br.com.ecommerce.remote.PessoaRemote;
 import br.com.ecommerce.remote.ProdutoRemote;
+import com.sun.data.provider.RowKey;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.component.Body;
 import com.sun.webui.jsf.component.Button;
@@ -445,7 +446,25 @@ public class escolherEnderecoCompra extends AbstractPageBean {
     }
     
     public String btnComprar_action() {
-        //Integer idEndereco = new Integer(getRadioButton1().getValue().toString());
+//        int total = 0;
+//        // Go through the list of selected rows
+//        Integer calories;
+//        Integer nbrServings;
+//        FoodListDataProvider foodListDP = getSessionBean1().getFoodListDataProvider();
+//        RowKey[] selectedRowKeys = getTableRowGroup2().getSelectedRowKeys();
+//        for (int i = 0; i < selectedRowKeys.length; i++) {
+//            String rowId = selectedRowKeys[i].getRowId();
+//            RowKey rowKey = foodListDP.getRowKey(rowId);
+//            // get serving size
+//            String size = (String) getSessionBean1().getServingSizeMap().get(rowId);
+//            // get calories for serving size
+//            calories = (Integer) foodListDP.getValue(size, rowKey);
+//            // get number of servings
+//            nbrServings = (Integer) getSessionBean1().getNbrServingsMap().get(rowId);
+//            // add to total
+//            total += calories.intValue() * nbrServings.intValue();
+//        }
+        
         Integer idCompra = compraBean.efetuarCompra(this.getSessionBean1().getLoginCliente(), this.getSessionBean1().getCarrinhoCompras());
         this.getSessionBean1().setNumCompra(idCompra);
         return "CompraEfetuada";
@@ -476,6 +495,15 @@ public class escolherEnderecoCompra extends AbstractPageBean {
 
     public void setStaticText1(StaticText st) {
         this.staticText1 = st;
+    }
+    private RadioButton radioButton2 = new RadioButton();
+
+    public RadioButton getRadioButton2() {
+        return radioButton2;
+    }
+
+    public void setRadioButton2(RadioButton rb) {
+        this.radioButton2 = rb;
     }
     // </editor-fold>
 
