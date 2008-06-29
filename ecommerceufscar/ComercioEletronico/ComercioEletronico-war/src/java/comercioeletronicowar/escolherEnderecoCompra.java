@@ -36,6 +36,7 @@ import java.util.List;
 import java.util.Map;
 import javax.ejb.EJB;
 import javax.faces.FacesException;
+import javax.faces.event.ValueChangeEvent;
 
 /**
  * <p>Page bean that corresponds to a similarly named JSP page.  This
@@ -67,7 +68,6 @@ public class escolherEnderecoCompra extends AbstractPageBean {
     private CompraRemote compraBean;
     
     private Page page1 = new Page();
-    private ImageHyperlink imageHyperlink2 = new ImageHyperlink();
     
     private Produtos[] produtos;
     private Endereco[] enderecos;
@@ -164,15 +164,6 @@ public class escolherEnderecoCompra extends AbstractPageBean {
 
     public void setTableRowGroup1(TableRowGroup trg) {
         this.tableRowGroup1 = trg;
-    }
-    private TableColumn tableColumn4 = new TableColumn();
-
-    public TableColumn getTableColumn4() {
-        return tableColumn4;
-    }
-
-    public void setTableColumn4(TableColumn tc) {
-        this.tableColumn4 = tc;
     }
     private StaticText staticText4 = new StaticText();
 
@@ -446,8 +437,8 @@ public class escolherEnderecoCompra extends AbstractPageBean {
     }
     
     public String btnComprar_action() {
-//        int total = 0;
-//        // Go through the list of selected rows
+        //int total = 0;
+        // Go through the list of selected rows
 //        Integer calories;
 //        Integer nbrServings;
 //        FoodListDataProvider foodListDP = getSessionBean1().getFoodListDataProvider();
@@ -466,7 +457,9 @@ public class escolherEnderecoCompra extends AbstractPageBean {
 //        }
         
         Integer idCompra = compraBean.efetuarCompra(this.getSessionBean1().getLoginCliente(), this.getSessionBean1().getCarrinhoCompras());
+        this.getSessionBean1().setCarrinhoCompras(null);
         this.getSessionBean1().setNumCompra(idCompra);
+        
         return "CompraEfetuada";
     }
     private Button btnComprar1 = new Button();
@@ -638,12 +631,7 @@ public class escolherEnderecoCompra extends AbstractPageBean {
         this.enderecos = enderecos;
     }
 
-    public ImageHyperlink getImageHyperlink2() {
-        return imageHyperlink2;
-    }
-
-    public void setImageHyperlink2(ImageHyperlink imageHyperlink2) {
-        this.imageHyperlink2 = imageHyperlink2;
+    public void radioButton2_processValueChange(ValueChangeEvent event) {
     }
 }
 

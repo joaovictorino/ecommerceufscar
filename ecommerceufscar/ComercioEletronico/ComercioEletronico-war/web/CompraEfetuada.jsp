@@ -24,7 +24,7 @@
                             <jsp:directive.include file="homeRight.jspf"/>
                         </div>
                         <webuijsf:label binding="#{CompraEfetuada.label1}" id="label1" style="left: 480px; top: 168px; position: absolute" text="Compra realizada com sucesso!"/>
-                        <webuijsf:label binding="#{CompraEfetuada.label2}" id="label2" style="left: 600px; top: 192px; position: absolute; width: 48px" text="#{CompraEfetuada.numCompra}"/>
+                        <webuijsf:label binding="#{CompraEfetuada.label2}" id="label2" style="left: 600px; top: 192px; position: absolute; width: 48px" text="#{SessionBean1.numCompra}"/>
                         <webuijsf:label binding="#{CompraEfetuada.label3}" id="label3" style="left: 480px; top: 192px; position: absolute" text="Número da compra:"/>
                     </webuijsf:form>
                 </webuijsf:body>

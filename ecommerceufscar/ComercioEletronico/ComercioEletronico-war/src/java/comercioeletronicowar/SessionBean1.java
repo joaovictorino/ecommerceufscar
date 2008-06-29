@@ -123,6 +123,9 @@ public class SessionBean1 extends AbstractSessionBean {
     }
     
     public void addCarrinhoCompras(int codProduto, int quantidade){
+        if (map == null){
+            setCarrinhoCompras(new HashMap<Integer, Integer>());
+        }
         if (!map.containsKey(codProduto)){
             map.put(codProduto, quantidade);
         }
@@ -130,6 +133,10 @@ public class SessionBean1 extends AbstractSessionBean {
     
     public Map<Integer, Integer> getCarrinhoCompras(){
         return map;
+    }
+    
+    public void setCarrinhoCompras(Map map){
+        this.map = map;
     }
     
     public String getLoginCliente(){
