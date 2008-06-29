@@ -393,6 +393,7 @@ public class carrinhoDeProdutos extends AbstractPageBean {
 
     public String btnComprar_action() {
         //compraBean.efetuarCompra(this.getSessionBean1().getLoginCliente(), this.getSessionBean1().getCarrinhoCompras());
+        this.btnAtualizar_action();
         return "CarregarEscolherEndereco";
     }
     
