@@ -67,6 +67,8 @@ public class escolherEnderecoCompra extends AbstractPageBean {
     @EJB
     private CompraRemote compraBean;
     
+    private carrinhoDeProdutos carrinhoProdutos = new carrinhoDeProdutos();
+    
     private Page page1 = new Page();
     
     private Produtos[] produtos;
@@ -255,33 +257,6 @@ public class escolherEnderecoCompra extends AbstractPageBean {
     protected SessionBean1 getSessionBean1() {
         return (SessionBean1) getBean("SessionBean1");
     }
-    private Table table2 = new Table();
-
-    public Table getTable2() {
-        return table2;
-    }
-
-    public void setTable2(Table t) {
-        this.table2 = t;
-    }
-    private TableRowGroup tableRowGroup2 = new TableRowGroup();
-
-    public TableRowGroup getTableRowGroup2() {
-        return tableRowGroup2;
-    }
-
-    public void setTableRowGroup2(TableRowGroup trg) {
-        this.tableRowGroup2 = trg;
-    }
-    private TableColumn tableColumn8 = new TableColumn();
-
-    public TableColumn getTableColumn8() {
-        return tableColumn8;
-    }
-
-    public void setTableColumn8(TableColumn tc) {
-        this.tableColumn8 = tc;
-    }
     private StaticText staticText8 = new StaticText();
 
     public StaticText getStaticText8() {
@@ -290,150 +265,6 @@ public class escolherEnderecoCompra extends AbstractPageBean {
 
     public void setStaticText8(StaticText st) {
         this.staticText8 = st;
-    }
-    private TableColumn tableColumn9 = new TableColumn();
-
-    public TableColumn getTableColumn9() {
-        return tableColumn9;
-    }
-
-    public void setTableColumn9(TableColumn tc) {
-        this.tableColumn9 = tc;
-    }
-    private StaticText staticText9 = new StaticText();
-
-    public StaticText getStaticText9() {
-        return staticText9;
-    }
-
-    public void setStaticText9(StaticText st) {
-        this.staticText9 = st;
-    }
-    private TableColumn tableColumn10 = new TableColumn();
-
-    public TableColumn getTableColumn10() {
-        return tableColumn10;
-    }
-
-    public void setTableColumn10(TableColumn tc) {
-        this.tableColumn10 = tc;
-    }
-    private StaticText staticText10 = new StaticText();
-
-    public StaticText getStaticText10() {
-        return staticText10;
-    }
-
-    public void setStaticText10(StaticText st) {
-        this.staticText10 = st;
-    }
-    private TableColumn tableColumn11 = new TableColumn();
-
-    public TableColumn getTableColumn11() {
-        return tableColumn11;
-    }
-
-    public void setTableColumn11(TableColumn tc) {
-        this.tableColumn11 = tc;
-    }
-    private StaticText staticText11 = new StaticText();
-
-    public StaticText getStaticText11() {
-        return staticText11;
-    }
-
-    public void setStaticText11(StaticText st) {
-        this.staticText11 = st;
-    }
-    private TableColumn tableColumn12 = new TableColumn();
-
-    public TableColumn getTableColumn12() {
-        return tableColumn12;
-    }
-
-    public void setTableColumn12(TableColumn tc) {
-        this.tableColumn12 = tc;
-    }
-    private StaticText staticText12 = new StaticText();
-
-    public StaticText getStaticText12() {
-        return staticText12;
-    }
-
-    public void setStaticText12(StaticText st) {
-        this.staticText12 = st;
-    }
-    private TableColumn tableColumn13 = new TableColumn();
-
-    public TableColumn getTableColumn13() {
-        return tableColumn13;
-    }
-
-    public void setTableColumn13(TableColumn tc) {
-        this.tableColumn13 = tc;
-    }
-    private StaticText staticText13 = new StaticText();
-
-    public StaticText getStaticText13() {
-        return staticText13;
-    }
-
-    public void setStaticText13(StaticText st) {
-        this.staticText13 = st;
-    }
-    private TableColumn tableColumn14 = new TableColumn();
-
-    public TableColumn getTableColumn14() {
-        return tableColumn14;
-    }
-
-    public void setTableColumn14(TableColumn tc) {
-        this.tableColumn14 = tc;
-    }
-    private StaticText staticText14 = new StaticText();
-
-    public StaticText getStaticText14() {
-        return staticText14;
-    }
-
-    public void setStaticText14(StaticText st) {
-        this.staticText14 = st;
-    }
-    private TableColumn tableColumn15 = new TableColumn();
-
-    public TableColumn getTableColumn15() {
-        return tableColumn15;
-    }
-
-    public void setTableColumn15(TableColumn tc) {
-        this.tableColumn15 = tc;
-    }
-    private StaticText staticText15 = new StaticText();
-
-    public StaticText getStaticText15() {
-        return staticText15;
-    }
-
-    public void setStaticText15(StaticText st) {
-        this.staticText15 = st;
-    }
-    private TableColumn tableColumn16 = new TableColumn();
-
-    public TableColumn getTableColumn16() {
-        return tableColumn16;
-    }
-
-    public void setTableColumn16(TableColumn tc) {
-        this.tableColumn16 = tc;
-    }
-    private StaticText staticText16 = new StaticText();
-
-    public StaticText getStaticText16() {
-        return staticText16;
-    }
-
-    public void setStaticText16(StaticText st) {
-        this.staticText16 = st;
     }
     
     public String btnComprar_action() {
@@ -480,23 +311,194 @@ public class escolherEnderecoCompra extends AbstractPageBean {
     public void setRadioButton1(RadioButton rb) {
         this.radioButton1 = rb;
     }
-    private StaticText staticText1 = new StaticText();
+    private Table table3 = new Table();
 
-    public StaticText getStaticText1() {
-        return staticText1;
+    public Table getTable3() {
+        return table3;
     }
 
-    public void setStaticText1(StaticText st) {
-        this.staticText1 = st;
+    public void setTable3(Table t) {
+        this.table3 = t;
     }
-    private RadioButton radioButton2 = new RadioButton();
+    private TableRowGroup tableRowGroup3 = new TableRowGroup();
 
-    public RadioButton getRadioButton2() {
-        return radioButton2;
+    public TableRowGroup getTableRowGroup3() {
+        return tableRowGroup3;
     }
 
-    public void setRadioButton2(RadioButton rb) {
-        this.radioButton2 = rb;
+    public void setTableRowGroup3(TableRowGroup trg) {
+        this.tableRowGroup3 = trg;
+    }
+    private TableColumn tableColumn4 = new TableColumn();
+
+    public TableColumn getTableColumn4() {
+        return tableColumn4;
+    }
+
+    public void setTableColumn4(TableColumn tc) {
+        this.tableColumn4 = tc;
+    }
+    private StaticText staticText18 = new StaticText();
+
+    public StaticText getStaticText18() {
+        return staticText18;
+    }
+
+    public void setStaticText18(StaticText st) {
+        this.staticText18 = st;
+    }
+    private TableColumn tableColumn17 = new TableColumn();
+
+    public TableColumn getTableColumn17() {
+        return tableColumn17;
+    }
+
+    public void setTableColumn17(TableColumn tc) {
+        this.tableColumn17 = tc;
+    }
+    private StaticText staticText19 = new StaticText();
+
+    public StaticText getStaticText19() {
+        return staticText19;
+    }
+
+    public void setStaticText19(StaticText st) {
+        this.staticText19 = st;
+    }
+    private TableColumn tableColumn18 = new TableColumn();
+
+    public TableColumn getTableColumn18() {
+        return tableColumn18;
+    }
+
+    public void setTableColumn18(TableColumn tc) {
+        this.tableColumn18 = tc;
+    }
+    private StaticText staticText20 = new StaticText();
+
+    public StaticText getStaticText20() {
+        return staticText20;
+    }
+
+    public void setStaticText20(StaticText st) {
+        this.staticText20 = st;
+    }
+    private TableColumn tableColumn19 = new TableColumn();
+
+    public TableColumn getTableColumn19() {
+        return tableColumn19;
+    }
+
+    public void setTableColumn19(TableColumn tc) {
+        this.tableColumn19 = tc;
+    }
+    private StaticText staticText21 = new StaticText();
+
+    public StaticText getStaticText21() {
+        return staticText21;
+    }
+
+    public void setStaticText21(StaticText st) {
+        this.staticText21 = st;
+    }
+    private TableColumn tableColumn20 = new TableColumn();
+
+    public TableColumn getTableColumn20() {
+        return tableColumn20;
+    }
+
+    public void setTableColumn20(TableColumn tc) {
+        this.tableColumn20 = tc;
+    }
+    private StaticText staticText22 = new StaticText();
+
+    public StaticText getStaticText22() {
+        return staticText22;
+    }
+
+    public void setStaticText22(StaticText st) {
+        this.staticText22 = st;
+    }
+    private TableColumn tableColumn21 = new TableColumn();
+
+    public TableColumn getTableColumn21() {
+        return tableColumn21;
+    }
+
+    public void setTableColumn21(TableColumn tc) {
+        this.tableColumn21 = tc;
+    }
+    private StaticText staticText23 = new StaticText();
+
+    public StaticText getStaticText23() {
+        return staticText23;
+    }
+
+    public void setStaticText23(StaticText st) {
+        this.staticText23 = st;
+    }
+    private TableColumn tableColumn22 = new TableColumn();
+
+    public TableColumn getTableColumn22() {
+        return tableColumn22;
+    }
+
+    public void setTableColumn22(TableColumn tc) {
+        this.tableColumn22 = tc;
+    }
+    private StaticText staticText24 = new StaticText();
+
+    public StaticText getStaticText24() {
+        return staticText24;
+    }
+
+    public void setStaticText24(StaticText st) {
+        this.staticText24 = st;
+    }
+    private TableColumn tableColumn23 = new TableColumn();
+
+    public TableColumn getTableColumn23() {
+        return tableColumn23;
+    }
+
+    public void setTableColumn23(TableColumn tc) {
+        this.tableColumn23 = tc;
+    }
+    private StaticText staticText25 = new StaticText();
+
+    public StaticText getStaticText25() {
+        return staticText25;
+    }
+
+    public void setStaticText25(StaticText st) {
+        this.staticText25 = st;
+    }
+    private TableColumn tableColumn24 = new TableColumn();
+
+    public TableColumn getTableColumn24() {
+        return tableColumn24;
+    }
+
+    public void setTableColumn24(TableColumn tc) {
+        this.tableColumn24 = tc;
+    }
+    private StaticText staticText26 = new StaticText();
+
+    public StaticText getStaticText26() {
+        return staticText26;
+    }
+
+    public void setStaticText26(StaticText st) {
+        this.staticText26 = st;
+    }
+    private RadioButton radioButton3 = new RadioButton();
+
+    public RadioButton getRadioButton3() {
+        return radioButton3;
+    }
+
+    public void setRadioButton3(RadioButton rb) {
+        this.radioButton3 = rb;
     }
     // </editor-fold>
 
@@ -576,13 +578,24 @@ public class escolherEnderecoCompra extends AbstractPageBean {
     }
     
     
-    public void carregarProdutos()
-    {
+    public void carregarProdutos(){
+//        carrinhoDeProdutos carrinho = new carrinhoDeProdutos();
+//        carrinho.carregarListaProdutosCarrinho();
         total = 0;
         Map<Integer, Integer> carrinho = this.getSessionBean1().getCarrinhoCompras();
         List<Integer> ids = new ArrayList<Integer>();
+        List<Integer> prodTirarCarrinho = new ArrayList<Integer>();
         for (Map.Entry<Integer, Integer> item : carrinho.entrySet()){
-            ids.add(item.getKey());
+            if (item.getValue()>0){
+                ids.add(item.getKey());
+            }else{
+                prodTirarCarrinho.add(item.getKey());
+            }
+        }
+        if (prodTirarCarrinho.size() > 0){
+            for( int i = 0; i < prodTirarCarrinho.size() ; i++){
+                this.getSessionBean1().getCarrinhoCompras().remove(prodTirarCarrinho.get(i));
+            }
         }
         List<Produtos> produtosList = produtoBean.listaProdutosPorId(ids);
         this.produtos = new Produtos[produtosList.size()];
@@ -632,6 +645,14 @@ public class escolherEnderecoCompra extends AbstractPageBean {
     }
 
     public void radioButton2_processValueChange(ValueChangeEvent event) {
+    }
+
+    public carrinhoDeProdutos getCarrinhoProdutos() {
+        return carrinhoProdutos;
+    }
+
+    public void setCarrinhoProdutos(carrinhoDeProdutos carrinhoProdutos) {
+        this.carrinhoProdutos = carrinhoProdutos;
     }
 }
 

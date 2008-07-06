@@ -333,7 +333,7 @@ public class carrinhoDeProdutos extends AbstractPageBean {
         // Perform application initialization that must complete
         // *after* managed components are initialized
         // TODO - add your own initialization code here
-        this.carregar();
+        this.carregarListaProdutosCarrinho();
     }
 
     /**
@@ -387,23 +387,51 @@ public class carrinhoDeProdutos extends AbstractPageBean {
             this.getSessionBean1().getCarrinhoCompras().remove(produtoRow.getCodProduto());
             this.getSessionBean1().getCarrinhoCompras().put(produtoRow.getCodProduto(), produtoRow.getQtdeCompras());
         }
-         this.carregar();
+         this.carregarListaProdutosCarrinho();
         return null;
     }
 
     public String btnComprar_action() {
-        //compraBean.efetuarCompra(this.getSessionBean1().getLoginCliente(), this.getSessionBean1().getCarrinhoCompras());
+        //Verifica se existem produtos no carrinho de compras
+        Map listaCarrinhoProdutos = this.getSessionBean1().getCarrinhoCompras();
+        if (listaCarrinhoProdutos == null || listaCarrinhoProdutos.size()<= 0){
+            return "carrinhoDeProdutos";
+        }
+        
+        //Verifica se o cliente está logado
+        String loginCliente = this.getSessionBean1().getLoginCliente();
+        if (loginCliente == null || loginCliente.equalsIgnoreCase("")){
+            return "carrinhoDeProdutos";
+        }
+        
+        //Atualiza a lista de produtos
         this.btnAtualizar_action();
+        
+        //Encaminha para a página de escolher endereço para a entrega da compra
         return "CarregarEscolherEndereco";
     }
     
-    public void carregar()
+    public void carregarListaProdutosCarrinho()
     {
         total = 0;
         Map<Integer, Integer> carrinho = this.getSessionBean1().getCarrinhoCompras();
         List<Integer> ids = new ArrayList<Integer>();
+        List<Integer> prodTirarCarrinho = new ArrayList<Integer>();
         for (Map.Entry<Integer, Integer> item : carrinho.entrySet()){
-            ids.add(item.getKey());
+            if (item.getValue()>0){
+                ids.add(item.getKey());
+            }else{
+                prodTirarCarrinho.add(item.getKey());
+            }
+        }
+        if (prodTirarCarrinho.size() > 0){
+            for( int i = 0; i < prodTirarCarrinho.size() ; i++){
+                this.getSessionBean1().getCarrinhoCompras().remove(prodTirarCarrinho.get(i));
+            }
+        }
+        carrinho = this.getSessionBean1().getCarrinhoCompras();
+        for(Map.Entry<Integer, Integer> item : carrinho.entrySet()){
+            System.out.println("Id: "+item.getKey()+" - Qt: "+item.getValue());
         }
         List<Produtos> produtosList = produtoBean.listaProdutosPorId(ids);
         this.produtos = new Produtos[produtosList.size()];
@@ -425,7 +453,7 @@ public class carrinhoDeProdutos extends AbstractPageBean {
         RowKey row = (RowKey)this.getValue("#{currentRow.tableRow}");
         Produtos deletedProduto = this.getProdutos()[Integer.parseInt(row.getRowId())];
         this.getSessionBean1().getCarrinhoCompras().remove(deletedProduto.getCodProduto());
-        this.carregar();
+        this.carregarListaProdutosCarrinho();
         return null;
     }
     

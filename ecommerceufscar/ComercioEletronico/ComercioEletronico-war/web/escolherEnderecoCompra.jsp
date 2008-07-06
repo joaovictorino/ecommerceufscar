@@ -17,14 +17,14 @@
                         <div style="left: 0px; top: 0px; position: absolute">
                             <jsp:directive.include file="cabecalho.jspf"/>
                         </div>
-                        <div style="left: 0px; top: 96px; position: absolute">
+                        <div style="left: -24px; top: 96px; position: absolute">
                             <jsp:directive.include file="menu.jspf"/>
                         </div>
                         <div style="left: 1080px; top: 96px; position: absolute">
                             <jsp:directive.include file="homeRight.jspf"/>
                         </div>
                         <webuijsf:table augmentTitle="false" binding="#{escolherEnderecoCompra.table1}" id="table1"
-                            style="height: 101px; left: 264px; top: 168px; position: absolute" title="Carrinho de Compras" width="528">
+                            style="height: 53px; left: 264px; top: 312px; position: absolute; width: 720px" title="Carrinho de Compras" width="720">
                             <webuijsf:tableRowGroup binding="#{escolherEnderecoCompra.tableRowGroup1}" id="tableRowGroup1" rows="10"
                                 sourceData="#{escolherEnderecoCompra.produtos}" sourceVar="currentRow">
                                 <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn5}" headerText="Nome" id="tableColumn5" sort="nomeProduto">
@@ -34,52 +34,51 @@
                                     <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText6}" id="staticText6" text="#{currentRow.value['qtdeCompras']}"/>
                                 </webuijsf:tableColumn>
                                 <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn7}" headerText="Valor" id="tableColumn7" sort="preco" width="80">
-                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText7}" id="staticText7" text="#{currentRow.value['preco']}"/>
+                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText7}"
+                                        converter="#{escolherEnderecoCompra.carrinhoProdutos.realConverter1}" id="staticText7" text="#{currentRow.value['preco']}"/>
                                 </webuijsf:tableColumn>
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>
-                        <webuijsf:label binding="#{escolherEnderecoCompra.label1}" id="label1" style="left: 336px; top: 312px; position: absolute" text="#{escolherEnderecoCompra.calculoTotal}"/>
+                        <webuijsf:label binding="#{escolherEnderecoCompra.label1}" id="label1" style="left: 336px; top: 144px; position: absolute" text="#{escolherEnderecoCompra.calculoTotal}"/>
                         <webuijsf:label binding="#{escolherEnderecoCompra.label2}" id="label2"
-                            style="font-size: 14px; left: 264px; top: 312px; position: absolute" text="Total:"/>
-                        <webuijsf:table augmentTitle="false" binding="#{escolherEnderecoCompra.table2}" id="table2"
-                            style="left: 264px; top: 360px; position: absolute; width: 528px; z-index: 500" title="Endereços" width="528">
-                            <webuijsf:tableRowGroup binding="#{escolherEnderecoCompra.tableRowGroup2}" id="tableRowGroup2" rows="10"
+                            style="font-size: 14px; left: 264px; top: 144px; position: absolute" text="Total:"/>
+                        <webuijsf:button actionExpression="#{escolherEnderecoCompra.btnComprar_action}" binding="#{escolherEnderecoCompra.btnComprar1}"
+                            id="btnComprar1" style="left: 887px; top: 144px; position: absolute" text="Finalizar Comprar"/>
+                        <webuijsf:table augmentTitle="false" binding="#{escolherEnderecoCompra.table3}" id="table3"
+                            style="left: 264px; top: 168px; position: absolute; width: 720px" title="Escolha o endereço para a entrega de sua compra:" width="720">
+                            <webuijsf:tableRowGroup binding="#{escolherEnderecoCompra.tableRowGroup3}" id="tableRowGroup3" rows="10"
                                 sourceData="#{escolherEnderecoCompra.enderecos}" sourceVar="currentRow">
-                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn8}" id="tableColumn8">
-                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText1}" id="staticText1"
-                                        text=""/>
-                                    <webuijsf:radioButton binding="#{escolherEnderecoCompra.radioButton2}"
-                                        id="radioButton2" name="radioButton-group-tableColumn8" selectedValue="#{currentRow.value['codEndereco']}" valueChangeListenerExpression="#{escolherEnderecoCompra.radioButton2_processValueChange}"/>
+                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn4}" id="tableColumn4">
+                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText18}" id="staticText18" text=""/>
+                                    <webuijsf:radioButton binding="#{escolherEnderecoCompra.radioButton3}" id="radioButton3"
+                                        name="radioButton-group-tableColumn4" selectedValue="#{escolherEnderecoCompra.enderecos}"/>
                                 </webuijsf:tableColumn>
-                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn9}" id="tableColumn9" sort="tipoEndereco" width="41">
-                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText9}" id="staticText9" text="#{currentRow.value['tipoEndereco']}"/>
+                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn17}" id="tableColumn17" sort="tipoEndereco">
+                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText19}" id="staticText19" text="#{currentRow.value['tipoEndereco']}"/>
                                 </webuijsf:tableColumn>
-                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn10}" headerText="Endereço" id="tableColumn10" sort="endereco" width="58">
-                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText10}" id="staticText10" text="#{currentRow.value['endereco']}"/>
+                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn18}" headerText="Endereço" id="tableColumn18" sort="endereco">
+                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText20}" id="staticText20" text="#{currentRow.value['endereco']}"/>
                                 </webuijsf:tableColumn>
-                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn11}" headerText="No" id="tableColumn11" sort="numero">
-                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText11}" id="staticText11" text="#{currentRow.value['numero']}"/>
+                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn19}" headerText="No" id="tableColumn19" sort="numero">
+                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText21}" id="staticText21" text="#{currentRow.value['numero']}"/>
                                 </webuijsf:tableColumn>
-                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn12}" headerText="Bairro" id="tableColumn12" sort="bairro">
-                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText12}" id="staticText12" text="#{currentRow.value['bairro']}"/>
+                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn20}" headerText="Bairro" id="tableColumn20" sort="bairro">
+                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText22}" id="staticText22" text="#{currentRow.value['bairro']}"/>
                                 </webuijsf:tableColumn>
-                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn13}" headerText="CEP" id="tableColumn13" sort="cep">
-                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText13}" id="staticText13" text="#{currentRow.value['cep']}"/>
+                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn21}" headerText="CEP" id="tableColumn21" sort="cep">
+                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText23}" id="staticText23" text="#{currentRow.value['cep']}"/>
                                 </webuijsf:tableColumn>
-                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn14}" headerText="Cidade" id="tableColumn14" sort="cidade">
-                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText14}" id="staticText14" text="#{currentRow.value['cidade']}"/>
+                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn22}" headerText="Cidade" id="tableColumn22" sort="cidade">
+                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText24}" id="staticText24" text="#{currentRow.value['cidade']}"/>
                                 </webuijsf:tableColumn>
-                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn15}" headerText="Estado" id="tableColumn15" sort="estado" width="95">
-                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText15}" id="staticText15" text="#{currentRow.value['estado']}"/>
+                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn23}" headerText="Estado" id="tableColumn23" sort="estado">
+                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText25}" id="staticText25" text="#{currentRow.value['estado']}"/>
                                 </webuijsf:tableColumn>
-                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn16}" headerText="Pais" height="22" id="tableColumn16"
-                                    sort="pais" width="65">
-                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText16}" id="staticText16" text="#{currentRow.value['pais']}"/>
+                                <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn24}" headerText="País" id="tableColumn24" sort="pais">
+                                    <webuijsf:staticText binding="#{escolherEnderecoCompra.staticText26}" id="staticText26" text="#{currentRow.value['pais']}"/>
                                 </webuijsf:tableColumn>
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>
-                        <webuijsf:button actionExpression="#{escolherEnderecoCompra.btnComprar_action}" binding="#{escolherEnderecoCompra.btnComprar1}"
-                            id="btnComprar1" style="left: 263px; top: 528px; position: absolute" text="Finalizar Comprar"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
