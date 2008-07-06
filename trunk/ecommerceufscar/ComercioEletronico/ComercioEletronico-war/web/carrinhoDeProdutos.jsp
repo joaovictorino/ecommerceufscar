@@ -24,7 +24,7 @@
                             <jsp:directive.include file="homeRight.jspf"/>
                         </div>
                         <webuijsf:table augmentTitle="false" binding="#{carrinhoDeProdutos.table1}" id="table1"
-                            style="left: 192px; top: 144px; position: absolute; width: 850px" title="Carrinho de Compras" width="850">
+                            style="left: 192px; top: 144px; position: absolute; width: 840px" title="Carrinho de Compras" width="840">
                             <webuijsf:tableRowGroup binding="#{carrinhoDeProdutos.tableRowGroup1}" id="tableRowGroup1" rows="10"
                                 sourceData="#{carrinhoDeProdutos.produtos}" sourceVar="currentRow">
                                 <webuijsf:tableColumn align="center" binding="#{carrinhoDeProdutos.tableColumn6}" id="tableColumn6" spacerColumn="true"
@@ -44,12 +44,12 @@
                                 </webuijsf:tableColumn>
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>
-                        <webuijsf:label binding="#{carrinhoDeProdutos.label1}" id="label1" style="font-size: 14px; left: 192px; top: 312px; position: absolute" text="Total:"/>
-                        <webuijsf:label binding="#{carrinhoDeProdutos.label2}" id="label2" style="left: 264px; top: 312px; position: absolute" text="#{carrinhoDeProdutos.calculoTotal}"/>
+                        <webuijsf:label binding="#{carrinhoDeProdutos.label1}" id="label1" style="font-size: 14px; left: 192px; top: 120px; position: absolute" text="Total:"/>
+                        <webuijsf:label binding="#{carrinhoDeProdutos.label2}" id="label2" style="left: 264px; top: 120px; position: absolute" text="#{carrinhoDeProdutos.calculoTotal}"/>
                         <webuijsf:button actionExpression="#{carrinhoDeProdutos.btnAtualizar_action}" binding="#{carrinhoDeProdutos.btnAtualizar1}"
-                            id="btnAtualizar1" style="left: 191px; top: 264px; position: absolute" text="Atualizar"/>
+                            id="btnAtualizar1" style="left: 839px; top: 120px; position: absolute; width: 72px" text="Atualizar"/>
                         <webuijsf:button actionExpression="#{carrinhoDeProdutos.btnComprar_action}" binding="#{carrinhoDeProdutos.btnComprar1}" id="btnComprar1"
-                            style="left: 911px; top: 312px; position: absolute" text="Efetuar Compra"/>
+                            style="left: 935px; top: 120px; position: absolute; width: 96px" text="Efetuar Compra"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
