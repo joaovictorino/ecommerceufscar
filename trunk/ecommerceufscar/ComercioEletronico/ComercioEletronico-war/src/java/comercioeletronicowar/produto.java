@@ -42,6 +42,7 @@ public class produto extends AbstractPageBean {
     @EJB
     private ProdutoRemote produtoBean;
        
+    private carrinhoDeProdutos carrinhoDeProdutos = new carrinhoDeProdutos();
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
     /**
      * <p>Automatically managed component initialization.  <strong>WARNING:</strong>
@@ -257,6 +258,15 @@ public class produto extends AbstractPageBean {
     public void setRealConverter1(RealConverter cc) {
         this.realConverter1 = cc;
     }
+    private Label label3 = new Label();
+
+    public Label getLabel3() {
+        return label3;
+    }
+
+    public void setLabel3(Label l) {
+        this.label3 = l;
+    }
 
     // </editor-fold>
 
@@ -383,6 +393,7 @@ public class produto extends AbstractPageBean {
 
     public void btnAdd_action() {
         this.getSessionBean1().addCarrinhoCompras(Integer.parseInt(getHiddenField1().getValue().toString()), 1);
+        carrinhoDeProdutos.setMostraMensagemAviso("Item adicionado no carrinho de compras com sucesso.");
     }
 
     public String btnVoltar_action() {
@@ -401,6 +412,14 @@ public class produto extends AbstractPageBean {
             FacesContext.getCurrentInstance().responseComplete();
         }catch(Exception ex){}
         return null;
+    }
+
+    public carrinhoDeProdutos getCarrinhoDeProdutos() {
+        return carrinhoDeProdutos;
+    }
+
+    public void setCarrinhoDeProdutos(carrinhoDeProdutos carrinhoDeProdutos) {
+        this.carrinhoDeProdutos = carrinhoDeProdutos;
     }
 }
 

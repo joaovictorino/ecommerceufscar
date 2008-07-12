@@ -4,7 +4,7 @@
     Created on : 03/02/2008, 14:37:15
     Author     : Cliente
 -->
-<div style="height: 454px; width: 142px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
+<div style="background-color: rgb(255, 255, 255); height: 454px; width: 142px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
     <f:subview id="menu">
         <webuijsf:hyperlink actionExpression="#{menu.hyperlink1_action}" binding="#{menu.hyperlink1}" id="hyperlink1"
             style="left: 24px; top: 48px; position: absolute" styleClass="outros" text="Buscar Produto" url="/faces/buscarProduto.jsp"/>
