@@ -47,6 +47,7 @@ public class carrinhoDeProdutos extends AbstractPageBean {
     @EJB
     private ProdutoRemote produtoBean;
 
+    private boolean mostraMensagem = false;
     /**
      * <p>Automatically managed component initialization.  <strong>WARNING:</strong>
      * This method is automatically generated, so any user-specified code inserted
@@ -290,7 +291,9 @@ public class carrinhoDeProdutos extends AbstractPageBean {
     public void setRealConverter1(RealConverter cc) {
         this.realConverter1 = cc;
     }
-
+    
+    private Label msgCarrinhoDeProdutos = new Label();
+    
     // </editor-fold>
 
     /**
@@ -388,6 +391,7 @@ public class carrinhoDeProdutos extends AbstractPageBean {
             this.getSessionBean1().getCarrinhoCompras().put(produtoRow.getCodProduto(), produtoRow.getQtdeCompras());
         }
          this.carregarListaProdutosCarrinho();
+         this.setMostraMensagemAviso("Item alterado no carrinho de compras com sucesso.");
         return null;
     }
 
@@ -395,12 +399,14 @@ public class carrinhoDeProdutos extends AbstractPageBean {
         //Verifica se existem produtos no carrinho de compras
         Map listaCarrinhoProdutos = this.getSessionBean1().getCarrinhoCompras();
         if (listaCarrinhoProdutos == null || listaCarrinhoProdutos.size()<= 0){
+            this.setMostraMensagemErro("O carrinho deve conter ao menos um produto para finalizar a compra.");
             return "carrinhoDeProdutos";
         }
         
         //Verifica se o cliente está logado
         String loginCliente = this.getSessionBean1().getLoginCliente();
         if (loginCliente == null || loginCliente.equalsIgnoreCase("")){
+            this.setMostraMensagemErro("Não é possível finalizar a compra sem efeturar o login.");
             return "carrinhoDeProdutos";
         }
         
@@ -455,6 +461,34 @@ public class carrinhoDeProdutos extends AbstractPageBean {
         this.getSessionBean1().getCarrinhoCompras().remove(deletedProduto.getCodProduto());
         this.carregarListaProdutosCarrinho();
         return null;
+    }
+
+    public boolean isMostraMensagem() {
+        return mostraMensagem;
+    }
+
+    public void setMostraMensagemAviso(String msg) {
+        getMsgCarrinhoDeProdutos().setText(msg);
+        getMsgCarrinhoDeProdutos().setStyle("color: rgb(0, 0, 153); left: 194px; top: 96px; position: absolute");
+        this.mostraMensagem = true;
+    }
+    
+    public void setMostraMensagemErro(String msg) {
+        getMsgCarrinhoDeProdutos().setText(msg);
+        getMsgCarrinhoDeProdutos().setStyle("color: rgb(255, 51, 51); left: 194px; top: 96px; position: absolute");
+        this.mostraMensagem = true;
+    }
+    
+    public void setNaoMostraMensagem() {
+        this.mostraMensagem = false;
+    }
+
+    public Label getMsgCarrinhoDeProdutos() {
+        return msgCarrinhoDeProdutos;
+    }
+
+    public void setMsgCarrinhoDeProdutos(Label msgCarrinhoDeProdutos) {
+        this.msgCarrinhoDeProdutos = msgCarrinhoDeProdutos;
     }
     
 }

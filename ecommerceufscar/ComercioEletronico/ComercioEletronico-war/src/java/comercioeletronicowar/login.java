@@ -240,9 +240,15 @@ public class login extends AbstractPageBean {
     }
 
     public void btnLogin_action() {
+        
+        if (this.txtLogin.getText() == null || this.txtSenha.getText() == null ||
+            this.txtLogin.getText().toString().equals("") || this.txtSenha.getText().toString().equals("")){
+            return;
+        }
+        
         Pessoa pessoa = new Pessoa();
-        pessoa.setLoginPes(txtLogin.getText().toString());
-        pessoa.setSenha(txtSenha.getText().toString());
+        pessoa.setLoginPes(this.txtLogin.getText().toString());
+        pessoa.setSenha(this.txtSenha.getText().toString());
         getSessionBean1().setLogged(pessoaBean.loginAdm(pessoa));
     }
     

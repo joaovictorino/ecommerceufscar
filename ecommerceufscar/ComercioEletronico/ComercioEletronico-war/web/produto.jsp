@@ -14,7 +14,8 @@
                 </webuijsf:head>
                 <webuijsf:body binding="#{produto.body1}" id="body1" style="-rave-layout: grid">
                     <webuijsf:form binding="#{produto.form1}" id="form1">
-                        <webuijsf:label binding="#{produto.label2}" id="label2" style="left: 408px; top: 192px; position: absolute" styleClass="outrosSmallText" converter="#{produto.realConverter1}"/>
+                        <webuijsf:label binding="#{produto.label2}" converter="#{produto.realConverter1}" id="label2"
+                            style="left: 408px; top: 192px; position: absolute" styleClass="outrosSmallText"/>
                         <webuijsf:image binding="#{produto.image1}" id="image1" style="left: 216px; top: 144px; position: absolute" url=""/>
                         <div style="left: 0px; top: 0px; position: absolute">
                             <jsp:directive.include file="cabecalho.jspf"/>
@@ -32,7 +33,7 @@
                         <webuijsf:label binding="#{produto.label6}" id="label6" style="height: 22px; left: 936px; top: 120px; position: absolute; width: 120px" text="Carrinho de Compras"/>
                         <webuijsf:hiddenField binding="#{produto.hiddenField1}" id="hiddenField1"/>
                         <webuijsf:button actionExpression="#{produto.btnVoltar_action}" binding="#{produto.button1}" id="button1"
-                            style="left: 935px; top: 648px; position: absolute" text="Voltar"/>
+                            style="left: 1007px; top: 624px; position: absolute; width: 48px" text="Voltar"/>
                         <webuijsf:label binding="#{produto.label7}" id="label7" style="left: 360px; top: 192px; position: absolute" styleClass="outrosSmallText" text="Por:"/>
                         <webuijsf:label binding="#{produto.label9}" id="label9" style="font-size: 16px; left: 216px; top: 240px; position: absolute"
                             styleClass="outrosSmallText" text="Descrição"/>
@@ -42,6 +43,7 @@
                             style="height: 142px; left: 216px; top: 456px; position: absolute; width: 840px" styleClass="outrosSmallText"/>
                         <webuijsf:label binding="#{produto.label5}" converter="#{produto.characterConverter1}" id="label5"
                             style="height: 142px; line-height: normal; left: 216px; top: 264px; position: absolute; width: 840px; background-attachment: fixed" styleClass="outrosSmallText"/>
+                        <webuijsf:label binding="#{produto.carrinhoDeProdutos.msgCarrinhoDeProdutos}" id="msgCarrinhoDeProdutos" visible="#{produto.carrinhoDeProdutos.mostraMensagem}"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
