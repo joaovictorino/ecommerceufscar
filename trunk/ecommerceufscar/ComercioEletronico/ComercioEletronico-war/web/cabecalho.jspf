@@ -4,13 +4,42 @@
     Created on : 03/02/2008, 14:34:49
     Author     : Cliente
 -->
-<div style="height: 94px; width: 1222px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
+<div style="background-color: rgb(0, 51, 153); height: 94px; width: 1222px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
     <f:subview id="cabecalho">
-        <webuijsf:label binding="#{cabecalho.label1}" id="label1" style="height: 70px; left: 480px; top: 24px; position: absolute; width: 214px"
-            styleClass="nomeSite" text="Nome do Site"/>
-        <webuijsf:label binding="#{cabecalho.label2}" id="label2" style="left: 1008px; top: 72px; position: absolute" text="Bem vindo," visible="#{cabecalho.controlVisibility}"/>
-        <webuijsf:label binding="#{cabecalho.lblUsuario}" id="lblUsuario" style="left: 1080px; top: 72px; position: absolute" text="#{cabecalho.loginCliente}" visible="#{cabecalho.controlVisibility}"/>
-        <webuijsf:imageHyperlink actionExpression="#{cabecalho.lnkLogout_action}" binding="#{cabecalho.lnkLogout}" id="lnkLogout"
-            style="left: 1152px; top: 72px; position: absolute" styleClass="outros" text="Logout" visible="#{cabecalho.controlVisibility}"/>
+        <webuijsf:label binding="#{cabecalho.label1}" id="label1"
+            style="background-color: rgb(0, 51, 153); color: white; font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; height: 46px; left: 24px; top: 24px; position: absolute; width: 262px"
+            styleClass="nomeSite" text="E-Commerce"/>
+        <webuijsf:label binding="#{cabecalho.label2}" id="label2"
+            style="color: white; font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; font-size: 14px; left: 1014px; top: 60px; position: absolute"
+            text="Bem vindo," visible="#{cabecalho.mostrarBemVindo}"/>
+        <webuijsf:label binding="#{cabecalho.lblUsuario}" id="lblUsuario"
+            style="color: rgb(255, 255, 255); font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; font-size: 18px; left: 1090px; top: 54px; position: absolute"
+            text="#{cabecalho.loginCliente}" visible="#{cabecalho.mostrarBemVindo}"/>
+        <webuijsf:image binding="#{cabecalho.image1}" height="6" id="image1" style="left: 0px; top: 88px; position: absolute"
+            url="/resources/itensPagina/linhaAzul.jpg" width="1222"/>
+        <webuijsf:label binding="#{cabecalho.lblSenha1}" id="lblSenha1"
+            style="color: white; font-family: 'Comic Sans MS',Arial,Helvetica,sans-serif; left: 960px; top: 68px; position: absolute" text="Senha" visible="#{cabecalho.mostrarCamposLogin}"/>
+        <webuijsf:label binding="#{cabecalho.lblLogin1}" id="lblLogin1"
+            style="color: white; font-family: 'Comic Sans MS',Arial,Helvetica,sans-serif; left: 768px; top: 68px; position: absolute" text="Login" visible="#{cabecalho.mostrarCamposLogin}"/>
+        <webuijsf:textField binding="#{cabecalho.txtLogin1}" id="txtLogin1" style="left: 816px; top: 68px; position: absolute" visible="#{cabecalho.mostrarCamposLogin}"/>
+        <webuijsf:passwordField binding="#{cabecalho.txtSenha1}" id="txtSenha1" style="left: 1008px; top: 68px; position: absolute" visible="#{cabecalho.mostrarCamposLogin}"/>
+        <webuijsf:label binding="#{cabecalho.lblError1}" id="lblError1"
+            style="color: rgb(255, 51, 51); font-size: 12px; left: 768px; top: 48px; position: absolute" text="Login e/ou Senha inválidos." visible="#{cabecalho.showError}"/>
+        <webuijsf:imageHyperlink actionExpression="#{cabecalho.lnkLogout_action}" binding="#{cabecalho.imageHyperlink1}" id="imageHyperlink1"
+            imageURL="/resources/itensPagina/logOutPq.jpg" style="left: 1190px; top: 5px; position: absolute" visible="#{cabecalho.mostrarBemVindo}"/>
+        <webuijsf:imageHyperlink actionExpression="#{cabecalho.btnLogin_action}" binding="#{cabecalho.imageHyperlink2}" id="imageHyperlink2"
+            imageURL="/resources/itensPagina/logInPq.jpg" style="left: 1151px; top: 62px; position: absolute" visible="#{cabecalho.mostrarCamposLogin}"/>
+        <webuijsf:hyperlink binding="#{cabecalho.hyperlink1}" id="hyperlink1"
+            style="background-color: rgb(0, 51, 153); color: white; left: 504px; top: 48px; position: absolute; text-decoration: none" styleClass="outros"
+            text="Cadastre-se aqui!" url="/faces/cadastroCliente.jsp" visible="#{cabecalho.mostrarCamposLogin}"/>
+        <webuijsf:hyperlink binding="#{cabecalho.hyperlink2}" id="hyperlink2"
+            style="background-color: rgb(0, 51, 153); color: white; left: 456px; top: 60px; position: absolute; text-decoration: none"
+            styleClass="outrosSmallText" text="Meu Carrinho" url="/faces/carrinhoDeProdutos.jsp" visible="#{cabecalho.mostrarBemVindo}"/>
+        <webuijsf:hyperlink binding="#{cabecalho.hyperlink3}" id="hyperlink3"
+            style="background-color: rgb(0, 51, 153); color: rgb(255, 255, 255); left: 589px; top: 60px; position: absolute; text-decoration: none"
+            styleClass="outrosSmallText" text="Meu Cadastro" url="/faces/configCliente.jsp" visible="#{cabecalho.mostrarBemVindo}"/>
+        <webuijsf:hyperlink binding="#{cabecalho.hyperlink4}" id="hyperlink4"
+            style="background-color: rgb(0, 51, 153); color: white; left: 720px; top: 60px; position: absolute; text-decoration: none"
+            styleClass="outrosSmallText" text="Minhas Compras" url="/faces/configComprasCliente.jsp" visible="#{cabecalho.mostrarBemVindo}"/>
     </f:subview>
 </div>

@@ -49,51 +49,6 @@ public class homeRight extends AbstractFragmentBean {
     public void setHyperlink1(Hyperlink h) {
         this.hyperlink1 = h;
     }
-    private Label lblSenha1 = new Label();
-
-    public Label getLblSenha1() {
-        return lblSenha1;
-    }
-
-    public void setLblSenha1(Label l) {
-        this.lblSenha1 = l;
-    }
-    private Label lblLogin1 = new Label();
-
-    public Label getLblLogin1() {
-        return lblLogin1;
-    }
-
-    public void setLblLogin1(Label l) {
-        this.lblLogin1 = l;
-    }
-    private TextField txtLogin1 = new TextField();
-
-    public TextField getTxtLogin1() {
-        return txtLogin1;
-    }
-
-    public void setTxtLogin1(TextField tf) {
-        this.txtLogin1 = tf;
-    }
-    private Button btnLogin1 = new Button();
-
-    public Button getBtnLogin1() {
-        return btnLogin1;
-    }
-
-    public void setBtnLogin1(Button b) {
-        this.btnLogin1 = b;
-    }
-    private PasswordField txtSenha1 = new PasswordField();
-
-    public PasswordField getTxtSenha1() {
-        return txtSenha1;
-    }
-
-    public void setTxtSenha1(PasswordField pf) {
-        this.txtSenha1 = pf;
-    }
     
     public boolean getControlVisibility(){
         if (this.getSessionBean1().getLoginCliente() != null && !this.getSessionBean1().getLoginCliente().toString().equals("")){
@@ -101,15 +56,6 @@ public class homeRight extends AbstractFragmentBean {
         }else{
             return true;
         }
-    }
-    private Label lblError = new Label();
-
-    public Label getLblError() {
-        return lblError;
-    }
-
-    public void setLblError(Label l) {
-        this.lblError = l;
     }
 
     private boolean showError = false;
@@ -179,26 +125,6 @@ public class homeRight extends AbstractFragmentBean {
      */
     protected SessionBean1 getSessionBean1() {
         return (SessionBean1) getBean("SessionBean1");
-    }
-
-    public String btnLogin_action() {
-        if (this.getTxtLogin1().getText() == null || this.getTxtSenha1().getText() == null ||
-            this.getTxtLogin1().getText().toString().equals("") || this.getTxtSenha1().getText().toString().equals("")){
-            this.setShowError(true);
-            return null;
-        }
-        Pessoa pessoa = new Pessoa();
-        pessoa.setLoginPes(this.getTxtLogin1().getText().toString());
-        pessoa.setSenha(this.getTxtSenha1().getText().toString());
-        
-        if (this.pessoaBean.loginCliente(pessoa)){
-            this.getSessionBean1().setLoginCliente(pessoa.getLoginPes());
-            this.setShowError(false);
-        }else{
-            this.setShowError(true);
-        }
-        
-        return null;
     }
 
 }

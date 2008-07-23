@@ -7,8 +7,19 @@
 <div style="background-color: rgb(255, 255, 255); height: 454px; width: 142px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
     <f:subview id="menu">
         <webuijsf:hyperlink actionExpression="#{menu.hyperlink1_action}" binding="#{menu.hyperlink1}" id="hyperlink1"
-            style="left: 24px; top: 48px; position: absolute" styleClass="outros" text="Buscar Produto" url="/faces/buscarProduto.jsp"/>
+            style="font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; font-size: 12px; font-style: normal; left: 48px; top: 100px; position: absolute; text-decoration: none"
+            styleClass="outros" text="Buscar Produto" url="/faces/buscarProduto.jsp"/>
         <webuijsf:hyperlink actionExpression="#{menu.hyperlink3_action}" binding="#{menu.hyperlink3}" id="hyperlink3"
-            style="position: absolute; left: 24px; top: 24px" styleClass="outros" text="Home" url="/faces/index.jsp"/>
+            style="font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; font-size: 12px; font-style: normal; left: 48px; top: 72px; position: absolute; text-decoration: none"
+            styleClass="outros" text="Home" url="/faces/index.jsp"/>
+        <webuijsf:imageHyperlink binding="#{menu.imageHyperlink3}" id="imageHyperlink3" imageURL="/resources/itensPagina/casinhaAzulPq.jpg"
+            style="left: 5px; top: 60px; position: absolute" url="/faces/index.jsp"/>
+        <webuijsf:imageHyperlink binding="#{menu.imageHyperlink4}" id="imageHyperlink4" imageURL="/resources/itensPagina/lupaPq.jpg"
+            style="left: 5px; top: 95px; position: absolute" url="/faces/buscarProduto.jsp"/>
+        <webuijsf:imageHyperlink binding="#{menu.imageHyperlink5}" id="imageHyperlink5" imageURL="/resources/itensPagina/carrinhoAzulPq.jpg"
+            style="left: 5px; top: 129px; position: absolute" url="/faces/carrinhoDeProdutos.jsp"/>
+        <webuijsf:hyperlink actionExpression="#{menu.hyperlink3_action}" binding="#{menu.hyperlink4}" id="hyperlink4"
+            style="font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; font-size: 12px; font-style: normal; left: 48px; top: 135px; position: absolute; text-decoration: none"
+            styleClass="outros" text="Ver Carrinho" url="/faces/carrinhoDeProdutos.jsp"/>
     </f:subview>
 </div>

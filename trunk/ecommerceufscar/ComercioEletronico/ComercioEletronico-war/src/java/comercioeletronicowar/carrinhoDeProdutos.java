@@ -385,7 +385,10 @@ public class carrinhoDeProdutos extends AbstractPageBean {
 
     public String btnAtualizar_action() {
         Produtos[] produtosTableRow = (Produtos[])this.getTableRowGroup1().getSourceData();
-        
+        if (produtosTableRow.length <= 0){
+            this.setMostraMensagemAviso("Não há produtos em seu carrinho.");
+            return null;
+        }
         for(Produtos produtoRow : produtosTableRow){
             this.getSessionBean1().getCarrinhoCompras().remove(produtoRow.getCodProduto());
             this.getSessionBean1().getCarrinhoCompras().put(produtoRow.getCodProduto(), produtoRow.getQtdeCompras());
@@ -460,6 +463,7 @@ public class carrinhoDeProdutos extends AbstractPageBean {
         Produtos deletedProduto = this.getProdutos()[Integer.parseInt(row.getRowId())];
         this.getSessionBean1().getCarrinhoCompras().remove(deletedProduto.getCodProduto());
         this.carregarListaProdutosCarrinho();
+        this.setMostraMensagemAviso("Produto removido com sucesso! :)");
         return null;
     }
 
@@ -469,13 +473,13 @@ public class carrinhoDeProdutos extends AbstractPageBean {
 
     public void setMostraMensagemAviso(String msg) {
         getMsgCarrinhoDeProdutos().setText(msg);
-        getMsgCarrinhoDeProdutos().setStyle("color: rgb(0, 0, 153); left: 194px; top: 96px; position: absolute");
+        getMsgCarrinhoDeProdutos().setStyle("color: rgb(0, 0, 153); left: 216px; top: 96px; position: absolute");
         this.mostraMensagem = true;
     }
     
     public void setMostraMensagemErro(String msg) {
         getMsgCarrinhoDeProdutos().setText(msg);
-        getMsgCarrinhoDeProdutos().setStyle("color: rgb(255, 51, 51); left: 194px; top: 96px; position: absolute");
+        getMsgCarrinhoDeProdutos().setStyle("color: rgb(255, 51, 51); left: 216px; top: 96px; position: absolute");
         this.mostraMensagem = true;
     }
     

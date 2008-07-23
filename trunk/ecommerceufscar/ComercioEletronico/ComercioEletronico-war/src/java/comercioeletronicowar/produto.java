@@ -17,6 +17,7 @@ import com.sun.webui.jsf.component.Head;
 import com.sun.webui.jsf.component.HiddenField;
 import com.sun.webui.jsf.component.Html;
 import com.sun.webui.jsf.component.ImageComponent;
+import com.sun.webui.jsf.component.ImageHyperlink;
 import com.sun.webui.jsf.component.Label;
 import com.sun.webui.jsf.component.Link;
 import com.sun.webui.jsf.component.Page;
@@ -157,33 +158,6 @@ public class produto extends AbstractPageBean {
     public void setImage1(ImageComponent ic) {
         this.image1 = ic;
     }
-    private Button btnVer = new Button();
-
-    public Button getBtnVer() {
-        return btnVer;
-    }
-
-    public void setBtnVer(Button b) {
-        this.btnVer = b;
-    }
-    private Button btnAdd = new Button();
-
-    public Button getBtnAdd() {
-        return btnAdd;
-    }
-
-    public void setBtnAdd(Button b) {
-        this.btnAdd = b;
-    }
-    private Label label6 = new Label();
-
-    public Label getLabel6() {
-        return label6;
-    }
-
-    public void setLabel6(Label l) {
-        this.label6 = l;
-    }
     private HiddenField hiddenField1 = new HiddenField();
 
     public HiddenField getHiddenField1() {
@@ -192,15 +166,6 @@ public class produto extends AbstractPageBean {
 
     public void setHiddenField1(HiddenField hf) {
         this.hiddenField1 = hf;
-    }
-    private Button button1 = new Button();
-
-    public Button getButton1() {
-        return button1;
-    }
-
-    public void setButton1(Button b) {
-        this.button1 = b;
     }
     private Label label7 = new Label();
 
@@ -266,6 +231,24 @@ public class produto extends AbstractPageBean {
 
     public void setLabel3(Label l) {
         this.label3 = l;
+    }
+    private ImageHyperlink imageHyperlink1 = new ImageHyperlink();
+
+    public ImageHyperlink getImageHyperlink1() {
+        return imageHyperlink1;
+    }
+
+    public void setImageHyperlink1(ImageHyperlink ih) {
+        this.imageHyperlink1 = ih;
+    }
+    private ImageHyperlink imageHyperlink2 = new ImageHyperlink();
+
+    public ImageHyperlink getImageHyperlink2() {
+        return imageHyperlink2;
+    }
+
+    public void setImageHyperlink2(ImageHyperlink ih) {
+        this.imageHyperlink2 = ih;
     }
 
     // </editor-fold>

@@ -5,6 +5,7 @@
 package br.com.ecommerce.bean;
 
 import br.com.ecommerce.entity.Compras;
+import br.com.ecommerce.entity.Cliente;
 import br.com.ecommerce.entity.Endereco;
 import br.com.ecommerce.entity.ItensCompras;
 import br.com.ecommerce.entity.Pessoa;
@@ -14,12 +15,14 @@ import br.com.ecommerce.remote.PessoaRemote;
 import br.com.ecommerce.remote.ProdutoRemote;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -77,5 +80,19 @@ public class CompraBean implements CompraRemote {
         em.persist(compras);
         
         return compras.getNumCompra();
+    }
+    
+    public Collection pesquisarComprasPeloLogin(Pessoa cliente){
+        try {
+            Query query = em.createNamedQuery("Compras.findByLoginCli");
+            Cliente newCliente = new Cliente();
+            newCliente.setLoginCli(cliente);
+            query.setParameter("loginCli", newCliente);
+            List list = query.getResultList();
+            return list;
+        }catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

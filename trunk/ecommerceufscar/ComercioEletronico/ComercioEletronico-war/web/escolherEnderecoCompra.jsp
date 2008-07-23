@@ -24,7 +24,8 @@
                             <jsp:directive.include file="homeRight.jspf"/>
                         </div>
                         <webuijsf:table augmentTitle="false" binding="#{escolherEnderecoCompra.table1}" id="table1"
-                            style="height: 53px; left: 264px; top: 312px; position: absolute; width: 720px" title="Carrinho de Compras" width="720">
+                            style="color: rgb(0, 0, 102); font-size: 12px; font-style: normal; font-weight: lighter; height: 53px; left: 264px; top: 312px; position: relative; width: 720px"
+                            styleClass="outrosSmallText" title="Carrinho de Compras" width="720">
                             <webuijsf:tableRowGroup binding="#{escolherEnderecoCompra.tableRowGroup1}" id="tableRowGroup1" rows="10"
                                 sourceData="#{escolherEnderecoCompra.produtos}" sourceVar="currentRow">
                                 <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn5}" headerText="Nome" id="tableColumn5" sort="nomeProduto">
@@ -39,13 +40,15 @@
                                 </webuijsf:tableColumn>
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>
-                        <webuijsf:label binding="#{escolherEnderecoCompra.label1}" id="label1" style="left: 336px; top: 144px; position: absolute" text="#{escolherEnderecoCompra.calculoTotal}"/>
+                        <webuijsf:label binding="#{escolherEnderecoCompra.label1}" id="label1"
+                            style="font-family: 'Comic Sans MS',Arial,Helvetica,sans-serif; left: 336px; top: 144px; position: absolute" text="#{escolherEnderecoCompra.calculoTotal}"/>
                         <webuijsf:label binding="#{escolherEnderecoCompra.label2}" id="label2"
-                            style="font-size: 14px; left: 264px; top: 144px; position: absolute" text="Total:"/>
+                            style="font-family: 'Comic Sans MS',Arial,Helvetica,sans-serif; font-size: 14px; left: 264px; top: 144px; position: absolute" text="Total:"/>
                         <webuijsf:button actionExpression="#{escolherEnderecoCompra.btnComprar_action}" binding="#{escolherEnderecoCompra.btnComprar1}"
                             id="btnComprar1" style="left: 887px; top: 144px; position: absolute" text="Finalizar Comprar"/>
                         <webuijsf:table augmentTitle="false" binding="#{escolherEnderecoCompra.table3}" id="table3"
-                            style="left: 264px; top: 168px; position: absolute; width: 720px" title="Escolha o endereço para a entrega de sua compra:" width="720">
+                            style="color: rgb(0, 0, 102); font-size: 12px; font-style: normal; font-weight: lighter; left: 264px; top: 168px; position: absolute; width: 720px"
+                            styleClass="outrosSmallText" title="Escolha o endereço para a entrega de sua compra:" width="720">
                             <webuijsf:tableRowGroup binding="#{escolherEnderecoCompra.tableRowGroup3}" id="tableRowGroup3" rows="10"
                                 sourceData="#{escolherEnderecoCompra.enderecos}" sourceVar="currentRow">
                                 <webuijsf:tableColumn binding="#{escolherEnderecoCompra.tableColumn4}" id="tableColumn4">
