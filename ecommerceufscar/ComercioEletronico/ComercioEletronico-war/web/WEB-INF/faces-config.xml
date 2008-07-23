@@ -62,11 +62,6 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
-        <managed-bean-name>homeRight</managed-bean-name>
-        <managed-bean-class>comercioeletronicowar.homeRight</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
-    <managed-bean>
         <managed-bean-name>incluirCategorias</managed-bean-name>
         <managed-bean-class>comercioeletronicowar.incluirCategorias</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
@@ -128,6 +123,46 @@
     <managed-bean>
         <managed-bean-name>carrinhoDeProdutos</managed-bean-name>
         <managed-bean-class>comercioeletronicowar.carrinhoDeProdutos</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>homeRight</managed-bean-name>
+        <managed-bean-class>comercioeletronicowar.homeRight</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>cadastroCliente</managed-bean-name>
+        <managed-bean-class>comercioeletronicowar.cadastroCliente</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>configCliente</managed-bean-name>
+        <managed-bean-class>comercioeletronicowar.configCliente</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>editarDadosCliente</managed-bean-name>
+        <managed-bean-class>comercioeletronicowar.editarDadosCliente</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>alterarSenhaCliente</managed-bean-name>
+        <managed-bean-class>comercioeletronicowar.alterarSenhaCliente</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>configComprasCliente</managed-bean-name>
+        <managed-bean-class>comercioeletronicowar.configComprasCliente</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>incluirEnderecoCliente</managed-bean-name>
+        <managed-bean-class>comercioeletronicowar.incluirEnderecoCliente</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>detalhePedidoCliente</managed-bean-name>
+        <managed-bean-class>comercioeletronicowar.detalhePedidoCliente</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
 </faces-config>

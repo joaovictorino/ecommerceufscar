@@ -10,6 +10,7 @@ import java.util.Collection;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
@@ -43,7 +44,7 @@ public class Cliente implements Serializable {
     @JoinColumn(name = "login_cli", referencedColumnName = "login_pes")
     @OneToOne
     private Pessoa loginCli;
-    @OneToMany(mappedBy = "loginCli")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "loginCli")
     private Collection<Compras> comprasCollection;
 
     public Cliente() {

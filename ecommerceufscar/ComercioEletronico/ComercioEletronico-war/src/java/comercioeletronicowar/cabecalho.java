@@ -6,9 +6,16 @@
  
 package comercioeletronicowar;
 
+import br.com.ecommerce.entity.Pessoa;
+import br.com.ecommerce.remote.PessoaRemote;
 import com.sun.rave.web.ui.appbase.AbstractFragmentBean;
+import com.sun.webui.jsf.component.Hyperlink;
+import com.sun.webui.jsf.component.ImageComponent;
 import com.sun.webui.jsf.component.ImageHyperlink;
 import com.sun.webui.jsf.component.Label;
+import com.sun.webui.jsf.component.PasswordField;
+import com.sun.webui.jsf.component.TextField;
+import javax.ejb.EJB;
 import javax.faces.FacesException;
 
 /**
@@ -30,6 +37,7 @@ public class cabecalho extends AbstractFragmentBean {
      */
     private void _init() throws Exception {
     }
+    
     private Label label1 = new Label();
 
     public Label getLabel1() {
@@ -66,26 +74,146 @@ public class cabecalho extends AbstractFragmentBean {
         }
     }
     
-    public boolean getControlVisibility(){
+    public boolean isMostrarBemVindo(){
         if (this.getSessionBean1().getLoginCliente() != null && !this.getSessionBean1().getLoginCliente().toString().equals("")){
             return true;
         }else{
             return false;
         }
     }
-    private ImageHyperlink lnkLogout = new ImageHyperlink();
+    
+    public boolean isMostrarCamposLogin(){
+        if (this.getSessionBean1().getLoginCliente() != null && !this.getSessionBean1().getLoginCliente().toString().equals("")){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    private ImageComponent image1 = new ImageComponent();
 
-    public ImageHyperlink getLnkLogout() {
-        return lnkLogout;
+    public ImageComponent getImage1() {
+        return image1;
     }
 
-    public void setLnkLogout(ImageHyperlink ih) {
-        this.lnkLogout = ih;
+    public void setImage1(ImageComponent ic) {
+        this.image1 = ic;
+    }
+    private Label lblSenha1 = new Label();
+
+    public Label getLblSenha1() {
+        return lblSenha1;
+    }
+
+    public void setLblSenha1(Label l) {
+        this.lblSenha1 = l;
+    }
+    private Label lblLogin1 = new Label();
+
+    public Label getLblLogin1() {
+        return lblLogin1;
+    }
+
+    public void setLblLogin1(Label l) {
+        this.lblLogin1 = l;
+    }
+    private TextField txtLogin1 = new TextField();
+
+    public TextField getTxtLogin1() {
+        return txtLogin1;
+    }
+
+    public void setTxtLogin1(TextField tf) {
+        this.txtLogin1 = tf;
+    }
+    private PasswordField txtSenha1 = new PasswordField();
+
+    public PasswordField getTxtSenha1() {
+        return txtSenha1;
+    }
+
+    public void setTxtSenha1(PasswordField pf) {
+        this.txtSenha1 = pf;
+    }
+    private Label lblError1 = new Label();
+
+    public Label getLblError1() {
+        return lblError1;
+    }
+
+    public void setLblError1(Label l) {
+        this.lblError1 = l;
+    }
+    private ImageHyperlink imageHyperlink1 = new ImageHyperlink();
+
+    public ImageHyperlink getImageHyperlink1() {
+        return imageHyperlink1;
+    }
+
+    public void setImageHyperlink1(ImageHyperlink ih) {
+        this.imageHyperlink1 = ih;
+    }
+    private ImageHyperlink imageHyperlink2 = new ImageHyperlink();
+
+    public ImageHyperlink getImageHyperlink2() {
+        return imageHyperlink2;
+    }
+
+    public void setImageHyperlink2(ImageHyperlink ih) {
+        this.imageHyperlink2 = ih;
+    }
+    private Hyperlink hyperlink1 = new Hyperlink();
+
+    public Hyperlink getHyperlink1() {
+        return hyperlink1;
+    }
+
+    public void setHyperlink1(Hyperlink h) {
+        this.hyperlink1 = h;
+    }
+    private Hyperlink hyperlink2 = new Hyperlink();
+
+    public Hyperlink getHyperlink2() {
+        return hyperlink2;
+    }
+
+    public void setHyperlink2(Hyperlink h) {
+        this.hyperlink2 = h;
+    }
+    private Hyperlink hyperlink3 = new Hyperlink();
+
+    public Hyperlink getHyperlink3() {
+        return hyperlink3;
+    }
+
+    public void setHyperlink3(Hyperlink h) {
+        this.hyperlink3 = h;
+    }
+    private Hyperlink hyperlink4 = new Hyperlink();
+
+    public Hyperlink getHyperlink4() {
+        return hyperlink4;
+    }
+
+    public void setHyperlink4(Hyperlink h) {
+        this.hyperlink4 = h;
     }
     
     // </editor-fold>
 
     public cabecalho() {
+    }
+    
+    @EJB
+    private PessoaRemote pessoaBean;
+    
+    private boolean showError = false;
+    
+    public void setShowError(boolean showError){
+        this.showError = showError;
+    }
+    
+    public boolean getShowError(){
+        return this.showError;
     }
 
     /**
@@ -144,6 +272,25 @@ public class cabecalho extends AbstractFragmentBean {
 
     public String lnkLogout_action() {
         this.getSessionBean1().setLoginCliente(null);
+        return null;
+    }
+
+    public String btnLogin_action() {
+        if (this.getTxtLogin1().getText() == null || this.getTxtSenha1().getText() == null ||
+            this.getTxtLogin1().getText().toString().equals("") || this.getTxtSenha1().getText().toString().equals("")){
+            this.setShowError(true);
+            return null;
+        }
+        Pessoa pessoa = new Pessoa();
+        pessoa.setLoginPes(this.getTxtLogin1().getText().toString());
+        pessoa.setSenha(this.getTxtSenha1().getText().toString());
+        
+        if (this.pessoaBean.loginCliente(pessoa)){
+            this.getSessionBean1().setLoginCliente(pessoa.getLoginPes());
+            this.setShowError(false);
+        }else{
+            this.setShowError(true);
+        }
         return null;
     }
 

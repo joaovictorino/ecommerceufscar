@@ -8,7 +8,9 @@ package comercioeletronicowar;
 
 import com.sun.rave.web.ui.appbase.AbstractFragmentBean;
 import com.sun.webui.jsf.component.Hyperlink;
+import com.sun.webui.jsf.component.ImageComponent;
 import com.sun.webui.jsf.component.ImageHyperlink;
+import com.sun.webui.jsf.component.Label;
 import javax.faces.FacesException;
 
 /**
@@ -76,6 +78,42 @@ public class menu extends AbstractFragmentBean {
     public void setHyperlink3(Hyperlink h) {
         this.hyperlink3 = h;
     }
+    private ImageHyperlink imageHyperlink3 = new ImageHyperlink();
+
+    public ImageHyperlink getImageHyperlink3() {
+        return imageHyperlink3;
+    }
+
+    public void setImageHyperlink3(ImageHyperlink ih) {
+        this.imageHyperlink3 = ih;
+    }
+    private ImageHyperlink imageHyperlink4 = new ImageHyperlink();
+
+    public ImageHyperlink getImageHyperlink4() {
+        return imageHyperlink4;
+    }
+
+    public void setImageHyperlink4(ImageHyperlink ih) {
+        this.imageHyperlink4 = ih;
+    }
+    private ImageHyperlink imageHyperlink5 = new ImageHyperlink();
+
+    public ImageHyperlink getImageHyperlink5() {
+        return imageHyperlink5;
+    }
+
+    public void setImageHyperlink5(ImageHyperlink ih) {
+        this.imageHyperlink5 = ih;
+    }
+    private Hyperlink hyperlink4 = new Hyperlink();
+
+    public Hyperlink getHyperlink4() {
+        return hyperlink4;
+    }
+
+    public void setHyperlink4(Hyperlink h) {
+        this.hyperlink4 = h;
+    }
     // </editor-fold>
 
     public menu() {
@@ -142,6 +180,12 @@ public class menu extends AbstractFragmentBean {
     }
 
     public String hyperlink3_action() {
+        // TODO: Process the action. Return value is a navigation
+        // case name where null will return to the same page.
+        return null;
+    }
+
+    public String imageHyperlink1_action() {
         // TODO: Process the action. Return value is a navigation
         // case name where null will return to the same page.
         return null;

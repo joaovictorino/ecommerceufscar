@@ -15,24 +15,40 @@
   font-weight: bolder; 
 }
 
+.textoUsuario{
+ color: rgb(0, 51, 204);
+ font-family: 'Comic Sans MS',Arial,Helvetica,sans-serif; 
+ font-style: normal; 
+ font-weight: lighter;
+}
+
 .outros {
   background-color: #FFFFFF;
   font-size: larger;
   color: rgb(0, 0, 153); 
-  font-family: serif; 
+  font-family: 'Comic Sans MS',Arial,Helvetica,sans-serif;
   font-size: 15px; 
-  font-style: italic;
-  font-weight: bolder; 
+  font-style: normal;
+}
+
+.titulo01 {
+  color: rgb(0, 0, 51); 
+  font-size: 20px; 
+  font-style: normal; 
+  font-weight: lighter; 
+  text-decoration: none;  
+  background-color: #FFFFFF;
+  font-family: 'Comic Sans MS',Arial,Helvetica,sans-serif;
+  font-style: normal;
 }
 
 .outrosSmallText {
   background-color: #FFFFFF;
   font-size: larger;
   color: rgb(0, 0, 153); 
-  font-family: serif; 
+  font-family: 'Comic Sans MS',Arial,Helvetica,sans-serif;
   font-size: 13px; 
-  font-style: italic;
-  font-weight: bolder; 
+  font-style: normal;
 }
 
 .list-header {
