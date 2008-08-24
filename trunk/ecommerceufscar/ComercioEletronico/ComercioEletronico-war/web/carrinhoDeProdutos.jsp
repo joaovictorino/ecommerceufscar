@@ -21,7 +21,7 @@
                             <jsp:directive.include file="menu.jspf"/>
                         </div>
                         <webuijsf:table augmentTitle="false" binding="#{carrinhoDeProdutos.table1}" id="table1"
-                            style="font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; left: 216px; top: 144px; position: absolute"
+                            style="font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; left: 288px; top: 144px; position: absolute; width: 816px"
                             title="Carrinho de Compras" width="816">
                             <webuijsf:tableRowGroup binding="#{carrinhoDeProdutos.tableRowGroup1}" id="tableRowGroup1" rows="10"
                                 sourceData="#{carrinhoDeProdutos.produtos}" sourceVar="currentRow">
@@ -43,14 +43,14 @@
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>
                         <webuijsf:label binding="#{carrinhoDeProdutos.label1}" id="label1"
-                            style="font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; font-size: 14px; left: 216px; top: 120px; position: absolute" text="Total:"/>
+                            style="font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; font-size: 14px; left: 288px; top: 120px; position: absolute" text="Total:"/>
                         <webuijsf:label binding="#{carrinhoDeProdutos.label2}" id="label2"
-                            style="font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; left: 288px; top: 120px; position: absolute" text="#{carrinhoDeProdutos.calculoTotal}"/>
+                            style="font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; left: 360px; top: 120px; position: absolute" text="#{carrinhoDeProdutos.calculoTotal}"/>
                         <webuijsf:button actionExpression="#{carrinhoDeProdutos.btnAtualizar_action}" binding="#{carrinhoDeProdutos.btnAtualizar1}"
                             id="btnAtualizar1"
-                            style="font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; left: 839px; top: 120px; position: absolute; width: 72px" text="Atualizar"/>
+                            style="font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; left: 911px; top: 120px; position: absolute; width: 72px" text="Atualizar"/>
                         <webuijsf:button actionExpression="#{carrinhoDeProdutos.btnComprar_action}" binding="#{carrinhoDeProdutos.btnComprar1}" id="btnComprar1"
-                            style="font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; left: 935px; top: 120px; position: absolute; width: 96px" text="Efetuar Compra"/>
+                            style="font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; left: 1007px; top: 120px; position: absolute; width: 96px" text="Efetuar Compra"/>
                         <webuijsf:label binding="#{carrinhoDeProdutos.msgCarrinhoDeProdutos}" id="msgCarrinhoDeProdutos" visible="#{carrinhoDeProdutos.mostraMensagem}"/>
                     </webuijsf:form>
                 </webuijsf:body>
