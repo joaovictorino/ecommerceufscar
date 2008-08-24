@@ -4,22 +4,332 @@
     Created on : 03/02/2008, 14:37:15
     Author     : Cliente
 -->
-<div style="background-color: rgb(255, 255, 255); height: 454px; width: 142px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
+<div xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
     <f:subview id="menu">
-        <webuijsf:hyperlink actionExpression="#{menu.hyperlink1_action}" binding="#{menu.hyperlink1}" id="hyperlink1"
-            style="font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; font-size: 12px; font-style: normal; left: 48px; top: 100px; position: absolute; text-decoration: none"
-            styleClass="outros" text="Buscar Produto" url="/faces/buscarProduto.jsp"/>
-        <webuijsf:hyperlink actionExpression="#{menu.hyperlink3_action}" binding="#{menu.hyperlink3}" id="hyperlink3"
-            style="font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; font-size: 12px; font-style: normal; left: 48px; top: 72px; position: absolute; text-decoration: none"
-            styleClass="outros" text="Home" url="/faces/index.jsp"/>
-        <webuijsf:imageHyperlink binding="#{menu.imageHyperlink3}" id="imageHyperlink3" imageURL="/resources/itensPagina/casinhaAzulPq.jpg"
-            style="left: 5px; top: 60px; position: absolute" url="/faces/index.jsp"/>
-        <webuijsf:imageHyperlink binding="#{menu.imageHyperlink4}" id="imageHyperlink4" imageURL="/resources/itensPagina/lupaPq.jpg"
-            style="left: 5px; top: 95px; position: absolute" url="/faces/buscarProduto.jsp"/>
-        <webuijsf:imageHyperlink binding="#{menu.imageHyperlink5}" id="imageHyperlink5" imageURL="/resources/itensPagina/carrinhoAzulPq.jpg"
-            style="left: 5px; top: 129px; position: absolute" url="/faces/carrinhoDeProdutos.jsp"/>
-        <webuijsf:hyperlink actionExpression="#{menu.hyperlink3_action}" binding="#{menu.hyperlink4}" id="hyperlink4"
-            style="font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; font-size: 12px; font-style: normal; left: 48px; top: 135px; position: absolute; text-decoration: none"
-            styleClass="outros" text="Ver Carrinho" url="/faces/carrinhoDeProdutos.jsp"/>
+        <table>
+            <tr>
+                <td>
+                    <table border="0" cellpadding="0" cellspacing="0" class="box_heading_table" width="61%">
+                        <tr>
+                            <td width="19%">
+                                <img alt="" border="0" height="5" src="http://localhost:8080/ComercioEletronico-war/resources/images/box_heading_tl.gif" width="38"/>
+                            </td>
+                            <td class="box_heading_tall_t" width="51%">
+                                <img alt="" border="0" height="5" src="http://localhost:8080/ComercioEletronico-war/resources/images/box_heading_t.gif" width="205"/>
+                            </td>
+                            <td width="30%">
+                                <img alt="" border="0" height="5" src="http://localhost:8080/ComercioEletronico-war/resources/images/box_heading_tr.gif" width="5"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="" border="0" height="26" src="http://localhost:8080/ComercioEletronico-war/resources/images/box_heading_l.gif" width="38"/>
+                            </td>
+                            <td valign="baseline">
+                                <img height="26" src="http://localhost:8080/ComercioEletronico-war/resources/images/menuTopo.jpg" width="205"/>
+                            </td>
+                            <td>
+                                <img alt="" border="0" height="26" src="http://localhost:8080/ComercioEletronico-war/resources/images/box_heading_r.gif" width="5"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img alt="" border="0" height="5" src="http://localhost:8080/ComercioEletronico-war/resources/images/box_heading_bl.gif" width="38"/>
+                            </td>
+                            <td class="box_heading_tall_b">
+                                <img alt="" border="0" height="5" src="http://localhost:8080/ComercioEletronico-war/resources/images/box_heading_b.gif" width="205"/>
+                            </td>
+                            <td>
+                                <img alt="" border="0" height="5" src="http://localhost:8080/ComercioEletronico-war/resources/images/box_heading_br.gif" width="5"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="0" width="">
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="0" cellspacing="0" class="box_body_table" style="margin-bottom:7px;" width="100%">
+                                    <tr>
+                                        <td width="1%">
+                                            <img height="150" src="http://localhost:8080/ComercioEletronico-war/resources/images/line_x.gif" width="2"/>
+                                        </td>
+                                        <td class="box_body box_body_tall_b box_body_td" style="height: 150px; width: 167px" width="98%">
+                                            <ul>
+                                                <li class="bg_list">
+                                                    <webuijsf:hyperlink actionExpression="#{menu.hyperlink3_action}" binding="#{menu.hyperlink3}"
+                                                        id="hyperlink3" text="Home" url="/faces/index.jsp"/>
+                                                </li>
+                                                <li class="bg_list">
+                                                    <a href="/ComercioEletronico-war/faces/loginUsuario.jsp">Login</a>
+                                                </li>
+                                                <li class="bg_list">
+                                                    <a href="/ComercioEletronico-war/faces/cadastroCliente.jsp">Cadastre-se</a>
+                                                </li>
+                                                <li class="bg_list">
+                                                    <webuijsf:hyperlink actionExpression="#{menu.hyperlink1_action}" binding="#{menu.hyperlink1}"
+                                                        id="hyperlink1" text="Buscar Produto" url="/faces/buscarProduto.jsp"/>
+                                                </li>
+                                                <li class="bg_list">
+                                                    <webuijsf:hyperlink actionExpression="#{menu.hyperlink3_action}" binding="#{menu.hyperlink4}"
+                                                        id="hyperlink4" text="Ver Carrinho" url="/faces/carrinhoDeProdutos.jsp"/>
+                                                </li>
+                                                <li class="bg_list">
+                                                    <a href="contato.html">Fale conosco </a>
+                                                </li>
+                                                <li class="bg_list">
+                                                    <a href="termos.html">Termos de uso</a>
+                                                </li>
+                                                <li class="bg_list">
+                                                    <a href="politicas.html">Políticas de Privacidade</a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td align="right" style="width: 2px">
+                                            <img height="168" src="http://localhost:8080/ComercioEletronico-war/resources/images/line_x.gif" width="2"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="box_body_tall_b" colspan="3" style="width:100%;">
+                                            <img alt="" border="0" height="9" src="http://localhost:8080/ComercioEletronico-war/resources/images/line2.gif" width="247"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="0" class="box_heading_table" width="100%">
+                        <tr>
+                            <td width="13%">
+                                <img alt="" border="0" height="5" src="http://localhost:8080/ComercioEletronico-war/resources/images/box_heading_tl.gif" width="38"/>
+                            </td>
+                            <td class="box_heading_tall_t" width="81%">
+                                <img alt="" border="0" height="5" src="http://localhost:8080/ComercioEletronico-war/resources/images/box_heading_t.gif" width="205"/>
+                            </td>
+                            <td width="6%">
+                                <img alt="" border="0" height="5" src="http://localhost:8080/ComercioEletronico-war/resources/images/box_heading_tr.gif" width="5"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <img alt="" border="0" height="26" src="http://localhost:8080/ComercioEletronico-war/resources/images/box_heading_l.gif" width="38"/>
+                            </td>
+                            <td>
+                                <img height="26" src="http://localhost:8080/ComercioEletronico-war/resources/images/destaquesTopo.jpg" width="205"/>
+                            </td>
+                            <td>
+                                <img alt="" border="0" height="26" src="http://localhost:8080/ComercioEletronico-war/resources/images/box_heading_r.gif" width="5"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 5px">
+                                <img alt="" border="0" height="5" src="http://localhost:8080/ComercioEletronico-war/resources/images/box_heading_bl.gif" width="38"/>
+                            </td>
+                            <td class="box_heading_tall_b">
+                                <img alt="" border="0" height="5" src="http://localhost:8080/ComercioEletronico-war/resources/images/box_heading_b.gif" width="205"/>
+                            </td>
+                            <td>
+                                <img alt="" border="0" height="5" src="http://localhost:8080/ComercioEletronico-war/resources/images/box_heading_br.gif" width="5"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="0" width="">
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="0" cellspacing="0" class="box_body_table" style="margin-bottom:7px;" width="100%">
+                                    <tr>
+                                        <td>
+                                            <img height="605" src="http://localhost:8080/ComercioEletronico-war/resources/images/line_x.gif" width="2"/>
+                                        </td>
+                                        <td class="box_body box_body_tall_b box_body_td" style="width: 200px">
+                                            <table border="0" cellpadding="0" cellspacing="4">
+                                                <tr>
+                                                    <td>
+                                                        <table border="0" cellpadding="5" cellspacing="5" class="pic table_pic_width">
+                                                            <tr>
+                                                                <td class="image">
+                                                                    <a href="#">
+                                                                        <img alt="iPhone 3G" border="0" height="103"
+                                                                            src="http://localhost:8080/ComercioEletronico-war/resources/produtos/iphone_small.jpg"
+                                                                            title=" iPhone 3G " width="70"/>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <img alt="" border="0" height="1"
+                                                            src="http://localhost:8080/ComercioEletronico-war/resources/images/spacer.gif" width="13"/>
+                                                    </td>
+                                                    <td>
+                                                        <table border="0" cellpadding="0" cellspacing="0">
+                                                            <tr>
+                                                                <td height="70">
+                                                                    <span>
+                                                                        <a href="#">iPhone 3G</a>
+                                                                    </span>
+                                                                    <br/>
+                                                                    <br/>
+                                                                Novo iPhone 3G. Tecnologia 3G. GPS. Mais fino.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <br/>
+                                                                    <del>R$ 1.600,00</del>
+                                                                    <br/>
+                                                                    <span class="productSpecialPrice">R$ 1.399,99</span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <br/>
+                                            <table border="0" cellpadding="0" cellspacing="4">
+                                                <tr>
+                                                    <td>
+                                                        <table border="0" cellpadding="5" cellspacing="5" class="pic table_pic_width">
+                                                            <tr>
+                                                                <td class="image">
+                                                                    <a href="#">
+                                                                        <img alt="Nintendo Wii" border="0"
+                                                                            src="http://localhost:8080/ComercioEletronico-war/resources/produtos/nintendo_wii_small.jpg" title=" Nintendo Wii "/>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <img alt="" border="0" height="1"
+                                                            src="http://localhost:8080/ComercioEletronico-war/resources/images/spacer.gif" width="13"/>
+                                                    </td>
+                                                    <td>
+                                                        <table border="0" cellpadding="0" cellspacing="0">
+                                                            <tr>
+                                                                <td height="70">
+                                                                    <span>
+                                                                        <a href="#">Nintendo Wii </a>
+                                                                    </span>
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <span class="vam" style="height:33px ">Ultima linha do console da Nintendo...</span>.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <br/>
+                                                                    <del>R$ 1.200,00</del>
+                                                                    <br/>
+                                                                    <span class="productSpecialPrice">R$ 800,00</span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <br/>
+                                            <table border="0" cellpadding="0" cellspacing="4">
+                                                <tr>
+                                                    <td width="90">
+                                                        <table border="0" cellpadding="5" cellspacing="5" class="pic table_pic_width">
+                                                            <tr>
+                                                                <td class="image">
+                                                                    <a href="#">
+                                                                        <img alt="Nintendo Wii" border="0" height="74"
+                                                                            src="http://localhost:8080/ComercioEletronico-war/resources/produtos/ps3p.jpg"
+                                                                            title=" Nintendo Wii " width="80"/>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td width="13">
+                                                        <img alt="" border="0" height="1"
+                                                            src="http://localhost:8080/ComercioEletronico-war/resources/images/spacer.gif" width="13"/>
+                                                    </td>
+                                                    <td width="84">
+                                                        <table border="0" cellpadding="0" cellspacing="0">
+                                                            <tr>
+                                                                <td height="70">
+                                                                    <span>
+                                                                        <a href="#">Play Station 3 </a>
+                                                                    </span>
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <span class="vam" style="height:33px ">Ultima linha do console da Sony...</span>.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <br/>
+                                                                    <del>R$ 1.899,00</del>
+                                                                    <br/>
+                                                                    <span class="productSpecialPrice">R$ 1.500,00</span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <br/>
+                                            <table border="0" cellpadding="0" cellspacing="4">
+                                                <tr>
+                                                    <td>
+                                                        <table border="0" cellpadding="5" cellspacing="5" class="pic table_pic_width">
+                                                            <tr>
+                                                                <td class="image">
+                                                                    <a href="#">
+                                                                        <img alt="Nintendo Wii" border="0" height="74"
+                                                                            src="http://localhost:8080/ComercioEletronico-war/resources/produtos/nokia-n95p.jpg"
+                                                                            title=" Nintendo Wii " width="80"/>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <img alt="" border="0" height="1"
+                                                            src="http://localhost:8080/ComercioEletronico-war/resources/images/spacer.gif" width="13"/>
+                                                    </td>
+                                                    <td>
+                                                        <table border="0" cellpadding="0" cellspacing="0">
+                                                            <tr>
+                                                                <td height="70">
+                                                                    <span>
+                                                                        <a href="#">Nokia N95 </a>
+                                                                    </span>
+                                                                    <br/>
+                                                                    <br/>
+                                                                    <span id="titleproduct">8Gb com GPS, 5.0MP, MP3 player, Wi-fi, Maps e Fone</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <br/>
+                                                                    <del>R$ 1.200,00</del>
+                                                                    <br/>
+                                                                    <span class="/resources/productSpecialPrice">R$ 800,00</span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td align="left" style="width:2px">
+                                            <img height="605" src="http://localhost:8080/ComercioEletronico-war/resources/images/line_x.gif" width="2"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="box_body_tall_b" style="width:100%;"></td>
+                                        <td class="box_body_tall_b" style="width:100%;">
+                                            <img alt="" border="0" height="9" src="http://localhost:8080/ComercioEletronico-war/resources/images/line2.gif" width="247"/>
+                                        </td>
+                                        <td class="box_body_tall_b" style="width:100%;"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <br/>
+                </td>
+            </tr>
+        </table>
     </f:subview>
 </div>
