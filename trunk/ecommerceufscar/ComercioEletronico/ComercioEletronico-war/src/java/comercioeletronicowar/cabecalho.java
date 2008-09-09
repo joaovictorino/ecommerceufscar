@@ -161,15 +161,7 @@ public class cabecalho extends AbstractFragmentBean {
     public void setImageHyperlink2(ImageHyperlink ih) {
         this.imageHyperlink2 = ih;
     }
-    private Hyperlink hyperlink1 = new Hyperlink();
-
-    public Hyperlink getHyperlink1() {
-        return hyperlink1;
-    }
-
-    public void setHyperlink1(Hyperlink h) {
-        this.hyperlink1 = h;
-    }
+    
     private Hyperlink hyperlink2 = new Hyperlink();
 
     public Hyperlink getHyperlink2() {
