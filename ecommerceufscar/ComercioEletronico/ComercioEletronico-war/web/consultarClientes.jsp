@@ -14,10 +14,16 @@
                 </webuijsf:head>
                 <webuijsf:body binding="#{consultarClientes.body1}" id="body1" style="-rave-layout: grid">
                     <webuijsf:form binding="#{consultarClientes.form1}" id="form1">
+                        <div style="height: 94px; left: 0px; top: 0px; position: absolute; width: 1222px">
+                            <jsp:directive.include file="cabecalho.jspf"/>
+                        </div>
+                        <div style="height: 454px; left: 0px; top: 312px; position: absolute; width: 142px">
+                            <jsp:directive.include file="menu.jspf"/>
+                        </div>
                         <webuijsf:label binding="#{consultarClientes.label1}" id="label1"
-                            style="font-family: 'Arial','Helvetica',sans-serif; font-size: 18px; left: 168px; top: 120px; position: absolute" text="Administração &gt;&gt; Clientes"/>
+                            style="font-family: 'Arial','Helvetica',sans-serif; font-size: 18px; left: 288px; top: 312px; position: absolute" text="Administraï¿½ï¿½o &gt;&gt; Clientes"/>
                         <webuijsf:table augmentTitle="false" binding="#{consultarClientes.table1}" id="table1"
-                            style="left: 168px; top: 168px; position: absolute" width="744">
+                            style="left: 288px; top: 360px; position: absolute; width: 744px" width="744">
                             <webuijsf:tableRowGroup binding="#{consultarClientes.tableRowGroup1}" id="tableRowGroup1" rows="10"
                                 sourceData="#{consultarClientes.defaultTableDataProvider}" sourceVar="currentRow">
                                 <webuijsf:tableColumn binding="#{consultarClientes.tableColumn1}" headerText="ID" id="tableColumn1" sort="column1">
@@ -40,12 +46,6 @@
                                 </webuijsf:tableColumn>
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>
-                        <div style="left: 0px; top: 0px; position: absolute">
-                            <jsp:directive.include file="cabecalho.jspf"/>
-                        </div>
-                        <div style="left: 0px; top: 96px; position: absolute">
-                            <jsp:directive.include file="menuAdm.jspf"/>
-                        </div>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

@@ -14,21 +14,21 @@
                 </webuijsf:head>
                 <webuijsf:body binding="#{editarCategorias.body1}" id="body1" style="-rave-layout: grid">
                     <webuijsf:form binding="#{editarCategorias.form1}" id="form1">
-                        <webuijsf:dropDown binding="#{editarCategorias.dropDown1}" id="dropDown1" items="#{editarCategorias.dropDown1DefaultOptions.options}"
-                            style="left: 240px; top: 144px; position: absolute" valueChangeListenerExpression="#{editarCategorias.dropDown1_processValueChange}"/>
-                        <webuijsf:label binding="#{editarCategorias.label1}" id="label1" style="left: 144px; top: 168px; position: absolute" text="Nome:"/>
-                        <webuijsf:button actionExpression="#{editarCategorias.button1_action}" binding="#{editarCategorias.button1}" id="button1"
-                            style="left: 239px; top: 192px; position: absolute" text="Editar"/>
-                        <webuijsf:textField binding="#{editarCategorias.textField1}" id="textField1" style="left: 240px; top: 168px; position: absolute" text="CDs"/>
-                        <webuijsf:label binding="#{editarCategorias.label3}" id="label3" style="left: 144px; top: 144px; position: absolute" text="Categoria-Pai:"/>
-                        <webuijsf:label binding="#{editarCategorias.label2}" id="label2"
-                            style="font-family: 'Arial','Helvetica',sans-serif; font-size: 18px; left: 144px; top: 96px; position: absolute" text="Administração &gt;&gt; Categorias &gt;&gt; Editar"/>
-                        <div style="left: 0px; top: 0px; position: absolute">
+                        <div style="height: 94px; left: 0px; top: 0px; position: absolute; width: 1222px">
                             <jsp:directive.include file="cabecalho.jspf"/>
                         </div>
-                        <div style="left: 0px; top: 96px; position: absolute">
-                            <jsp:directive.include file="menuAdm.jspf"/>
+                        <div style="height: 454px; left: 0px; top: 312px; position: absolute; width: 142px">
+                            <jsp:directive.include file="menu.jspf"/>
                         </div>
+                        <webuijsf:dropDown binding="#{editarCategorias.dropDown1}" id="dropDown1" items="#{editarCategorias.dropDown1DefaultOptions.options}"
+                            style="left: 408px; top: 360px; position: absolute" valueChangeListenerExpression="#{editarCategorias.dropDown1_processValueChange}"/>
+                        <webuijsf:label binding="#{editarCategorias.label1}" id="label1" style="left: 312px; top: 384px; position: absolute" text="Nome:"/>
+                        <webuijsf:button actionExpression="#{editarCategorias.button1_action}" binding="#{editarCategorias.button1}" id="button1"
+                            style="left: 407px; top: 408px; position: absolute" text="Editar"/>
+                        <webuijsf:textField binding="#{editarCategorias.textField1}" id="textField1" style="left: 408px; top: 384px; position: absolute" text="CDs"/>
+                        <webuijsf:label binding="#{editarCategorias.label3}" id="label3" style="left: 312px; top: 360px; position: absolute" text="Categoria-Pai:"/>
+                        <webuijsf:label binding="#{editarCategorias.label2}" id="label2"
+                            style="font-family: 'Arial','Helvetica',sans-serif; font-size: 18px; left: 312px; top: 312px; position: absolute" text="Administraï¿½ï¿½o &gt;&gt; Categorias &gt;&gt; Editar"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

@@ -14,8 +14,14 @@
                 </webuijsf:head>
                 <webuijsf:body binding="#{consultarAdministradores.body1}" id="body1" style="-rave-layout: grid">
                     <webuijsf:form binding="#{consultarAdministradores.form1}" id="form1">
+                         <div style="height: 94px; left: 0px; top: 0px; position: absolute; width: 1222px">
+                            <jsp:directive.include file="cabecalho.jspf"/>
+                        </div>
+                        <div style="height: 454px; left: 0px; top: 312px; position: absolute; width: 142px">
+                            <jsp:directive.include file="menu.jspf"/>
+                        </div>
                         <webuijsf:table augmentTitle="false" binding="#{consultarAdministradores.table1}" id="table1"
-                            style="left: 192px; top: 312px; position: absolute; width: 696px" width="696">
+                            style="left: 312px; top: 480px; position: absolute; width: 696px" width="696">
                             <webuijsf:tableRowGroup binding="#{consultarAdministradores.tableRowGroup1}" id="tableRowGroup1" rows="10"
                                 sourceData="#{consultarAdministradores.defaultTableDataProvider}" sourceVar="currentRow">
                                 <webuijsf:tableColumn binding="#{consultarAdministradores.tableColumn1}" headerText="ID" id="tableColumn1" sort="column1">
@@ -39,21 +45,15 @@
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>
                         <webuijsf:label binding="#{consultarAdministradores.label1}" id="label1"
-                            style="font-family: 'Arial','Helvetica',sans-serif; font-size: 18px; left: 192px; top: 144px; position: absolute" text="Administração &gt;&gt; Administradores"/>
-                        <webuijsf:label binding="#{consultarAdministradores.label2}" id="label2" style="left: 192px; top: 192px; position: absolute" text="Nome:"/>
-                        <webuijsf:textField binding="#{consultarAdministradores.textField1}" columns="30" id="textField1" style="left: 288px; top: 192px; position: absolute"/>
-                        <webuijsf:label binding="#{consultarAdministradores.label3}" id="label3" style="left: 192px; top: 216px; position: absolute" text="Email:"/>
-                        <webuijsf:textField binding="#{consultarAdministradores.textField2}" columns="30" id="textField2" style="position: absolute; left: 288px; top: 216px"/>
-                        <webuijsf:textField binding="#{consultarAdministradores.textField3}" columns="30" id="textField3" style="position: absolute; left: 288px; top: 240px"/>
-                        <webuijsf:label binding="#{consultarAdministradores.label4}" id="label4" style="position: absolute; left: 192px; top: 240px" text="Login:"/>
+                            style="font-family: 'Arial','Helvetica',sans-serif; font-size: 18px; left: 312px; top: 312px; position: absolute" text="Administração &gt;&gt; Administradores"/>
+                        <webuijsf:label binding="#{consultarAdministradores.label2}" id="label2" style="left: 312px; top: 360px; position: absolute" text="Nome:"/>
+                        <webuijsf:textField binding="#{consultarAdministradores.textField1}" columns="30" id="textField1" style="left: 408px; top: 360px; position: absolute"/>
+                        <webuijsf:label binding="#{consultarAdministradores.label3}" id="label3" style="left: 312px; top: 384px; position: absolute" text="Email:"/>
+                        <webuijsf:textField binding="#{consultarAdministradores.textField2}" columns="30" id="textField2" style="left: 408px; top: 384px; position: absolute"/>
+                        <webuijsf:textField binding="#{consultarAdministradores.textField3}" columns="30" id="textField3" style="left: 408px; top: 408px; position: absolute"/>
+                        <webuijsf:label binding="#{consultarAdministradores.label4}" id="label4" style="left: 312px; top: 408px; position: absolute" text="Login:"/>
                         <webuijsf:button binding="#{consultarAdministradores.button1}" id="button1"
-                            style="height: 24px; left: 407px; top: 264px; position: absolute; width: 72px" text="Procurar"/>
-                        <div style="left: 0px; top: 0px; position: absolute">
-                            <jsp:directive.include file="cabecalho.jspf"/>
-                        </div>
-                        <div style="left: 0px; top: 96px; position: absolute">
-                            <jsp:directive.include file="menuAdm.jspf"/>
-                        </div>
+                            style="height: 24px; left: 527px; top: 432px; position: absolute; width: 72px" text="Procurar"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

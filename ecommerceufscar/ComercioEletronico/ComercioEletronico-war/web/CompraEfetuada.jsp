@@ -14,18 +14,15 @@
                 </webuijsf:head>
                 <webuijsf:body binding="#{CompraEfetuada.body1}" id="body1" style="-rave-layout: grid">
                     <webuijsf:form binding="#{CompraEfetuada.form1}" id="form1">
-                        <div style="left: 0px; top: 0px; position: absolute">
+                        <div style="height: 94px; left: 0px; top: 0px; position: absolute; width: 1222px">
                             <jsp:directive.include file="cabecalho.jspf"/>
                         </div>
-                        <div style="left: 0px; top: 96px; position: absolute">
+                        <div style="height: 454px; left: 0px; top: 312px; position: absolute; width: 142px">
                             <jsp:directive.include file="menu.jspf"/>
                         </div>
-                        <div style="left: 1080px; top: 96px; position: absolute">
-                            <jsp:directive.include file="homeRight.jspf"/>
-                        </div>
-                        <webuijsf:label binding="#{CompraEfetuada.label1}" id="label1" style="left: 480px; top: 168px; position: absolute" text="Compra realizada com sucesso!"/>
-                        <webuijsf:label binding="#{CompraEfetuada.label2}" id="label2" style="left: 600px; top: 192px; position: absolute; width: 48px" text="#{SessionBean1.numCompra}"/>
-                        <webuijsf:label binding="#{CompraEfetuada.label3}" id="label3" style="left: 480px; top: 192px; position: absolute" text="Número da compra:"/>
+                        <webuijsf:label binding="#{CompraEfetuada.label1}" id="label1" style="left: 408px; top: 360px; position: absolute" text="Compra realizada com sucesso!"/>
+                        <webuijsf:label binding="#{CompraEfetuada.label2}" id="label2" style="left: 528px; top: 384px; position: absolute; width: 48px" text="#{SessionBean1.numCompra}"/>
+                        <webuijsf:label binding="#{CompraEfetuada.label3}" id="label3" style="left: 408px; top: 384px; position: absolute" text="Número da compra:"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>

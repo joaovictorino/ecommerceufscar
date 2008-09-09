@@ -14,20 +14,26 @@
                 </webuijsf:head>
                 <webuijsf:body binding="#{buscarProduto.body1}" id="body1" style="-rave-layout: grid">
                     <webuijsf:form binding="#{buscarProduto.form1}" id="form1">
+                        <div style="height: 94px; left: 0px; top: 0px; position: absolute; width: 1222px">
+                            <jsp:directive.include file="cabecalho.jspf"/>
+                        </div>
+                        <div style="height: 454px; left: 0px; top: 312px; position: absolute; width: 142px">
+                            <jsp:directive.include file="menu.jspf"/>
+                        </div>
                         <webuijsf:button actionExpression="#{buscarProduto.buttonProcurarProduto_action}" binding="#{buscarProduto.buttonProcurarProduto}"
-                            id="buttonProcurarProduto" style="height: 24px; left: 695px; top: 168px; position: absolute; width: 72px" text="Procurar"/>
+                            id="buttonProcurarProduto" style="height: 24px; left: 815px; top: 384px; position: absolute; width: 72px" text="Procurar"/>
                         <webuijsf:textField binding="#{buscarProduto.nomeProdutoProcurar}" columns="68" id="nomeProdutoProcurar"
-                            style="left: 312px; top: 144px; position: absolute" valueChangeListenerExpression="#{buscarProduto.nomeProdutoProcurar_processValueChange}"/>
-                        <webuijsf:textField binding="#{buscarProduto.precoMinProcurar}" id="precoMinProcurar" style="left: 312px; top: 168px; position: absolute"/>
-                        <webuijsf:textField binding="#{buscarProduto.precoMaxProcurar}" id="precoMaxProcurar" style="left: 552px; top: 168px; position: absolute"/>
+                            style="left: 432px; top: 360px; position: absolute" valueChangeListenerExpression="#{buscarProduto.nomeProdutoProcurar_processValueChange}"/>
+                        <webuijsf:textField binding="#{buscarProduto.precoMinProcurar}" id="precoMinProcurar" style="left: 432px; top: 384px; position: absolute"/>
+                        <webuijsf:textField binding="#{buscarProduto.precoMaxProcurar}" id="precoMaxProcurar" style="left: 672px; top: 384px; position: absolute"/>
                         <webuijsf:label binding="#{buscarProduto.labelNomeProdutoProcurar}" id="labelNomeProdutoProcurar"
-                            style="left: 216px; top: 144px; position: absolute" styleClass="outros" text="Produto:"/>
+                            style="left: 336px; top: 360px; position: absolute" styleClass="outros" text="Produto:"/>
                         <webuijsf:label binding="#{buscarProduto.labelPrecoMinProcurar}" id="labelPrecoMinProcurar"
-                            style="left: 216px; top: 168px; position: absolute" styleClass="outros" text="Preço Min.:"/>
+                            style="left: 336px; top: 384px; position: absolute" styleClass="outros" text="Preço Min.:"/>
                         <webuijsf:label binding="#{buscarProduto.labelpPrecoMaxProcurar}" id="labelpPrecoMaxProcurar"
-                            style="left: 456px; top: 168px; position: absolute" styleClass="outros" text="Preço Max.:"/>
-                        <webuijsf:table augmentTitle="false" binding="#{buscarProduto.table2}" id="table2" style="left: 216px; top: 216px; position: absolute"
-                            title="Produtos" width="552">
+                            style="left: 576px; top: 384px; position: absolute" styleClass="outros" text="Preço Max.:"/>
+                        <webuijsf:table augmentTitle="false" binding="#{buscarProduto.table2}" id="table2"
+                            style="left: 336px; top: 432px; position: absolute; width: 552px" title="Produtos" width="552">
                             <webuijsf:tableRowGroup binding="#{buscarProduto.tableRowGroup2}" id="tableRowGroup2" rows="10"
                                 sourceData="#{buscarProduto.listaTabelaProdutosEncontrados}" sourceVar="currentRow">
                                 <webuijsf:tableColumn align="center" binding="#{buscarProduto.tableColumn7}" headerText="Foto" id="tableColumn7"
@@ -43,15 +49,6 @@
                                 </webuijsf:tableColumn>
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>
-                        <div style="left: 0px; top: 0px; position: absolute">
-                            <jsp:directive.include file="cabecalho.jspf"/>
-                        </div>
-                        <div style="left: 0px; top: 96px; position: absolute">
-                            <jsp:directive.include file="menu.jspf"/>
-                        </div>
-                        <div style="left: 1080px; top: 96px; position: absolute">
-                            <jsp:directive.include file="homeRight.jspf"/>
-                        </div>
                         <div style="left: 48px; top: 336px; position: absolute"></div>
                     </webuijsf:form>
                 </webuijsf:body>

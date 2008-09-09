@@ -14,8 +14,14 @@
                 </webuijsf:head>
                 <webuijsf:body binding="#{consultarCategorias.body1}" id="body1" style="-rave-layout: grid">
                     <webuijsf:form binding="#{consultarCategorias.form1}" id="form1">
+                        <div style="height: 94px; left: 0px; top: 0px; position: absolute; width: 1222px">
+                            <jsp:directive.include file="cabecalho.jspf"/>
+                        </div>
+                        <div style="height: 454px; left: 0px; top: 312px; position: absolute; width: 142px">
+                            <jsp:directive.include file="menu.jspf"/>
+                        </div>
                         <webuijsf:table augmentTitle="false" binding="#{consultarCategorias.table1}" id="table1"
-                            style="height: 312px; left: 192px; top: 240px; position: absolute; width: 696px" width="696">
+                            style="height: 312px; left: 312px; top: 432px; position: absolute; width: 696px" width="696">
                             <webuijsf:tableRowGroup binding="#{consultarCategorias.tableRowGroup1}" id="tableRowGroup1" rows="10"
                                 sourceData="#{consultarCategorias.defaultTableDataProvider}" sourceVar="currentRow">
                                 <webuijsf:tableColumn binding="#{consultarCategorias.tableColumn1}" headerText="ID" id="tableColumn1" sort="column1" width="175">
@@ -36,21 +42,15 @@
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>
                         <webuijsf:label binding="#{consultarCategorias.label1}" id="label1"
-                            style="font-family: 'Arial','Helvetica',sans-serif; font-size: 18px; left: 192px; top: 120px; position: absolute" text="Administração &gt;&gt; Categorias"/>
-                        <webuijsf:textField binding="#{consultarCategorias.textField1}" columns="30" id="textField1" style="left: 288px; top: 168px; position: absolute"/>
+                            style="font-family: 'Arial','Helvetica',sans-serif; font-size: 18px; left: 312px; top: 312px; position: absolute" text="Administraï¿½ï¿½o &gt;&gt; Categorias"/>
+                        <webuijsf:textField binding="#{consultarCategorias.textField1}" columns="30" id="textField1" style="left: 408px; top: 360px; position: absolute"/>
                         <webuijsf:button actionExpression="#{consultarCategorias.buttonProcurarProduto_action}"
                             binding="#{consultarCategorias.buttonProcurarProduto1}" id="buttonProcurarProduto1"
-                            style="height: 24px; left: 407px; top: 192px; position: absolute; width: 72px" text="Procurar"/>
-                        <webuijsf:label binding="#{consultarCategorias.label2}" id="label2" style="left: 192px; top: 168px; position: absolute" text="Nome:"/>
-                        <webuijsf:label binding="#{consultarCategorias.label3}" id="label3" style="left: 192px; top: 192px; position: absolute" text="Categoria-Pai:"/>
+                            style="height: 24px; left: 527px; top: 384px; position: absolute; width: 72px" text="Procurar"/>
+                        <webuijsf:label binding="#{consultarCategorias.label2}" id="label2" style="left: 312px; top: 360px; position: absolute" text="Nome:"/>
+                        <webuijsf:label binding="#{consultarCategorias.label3}" id="label3" style="left: 312px; top: 384px; position: absolute" text="Categoria-Pai:"/>
                         <webuijsf:dropDown binding="#{consultarCategorias.dropDown1}" id="dropDown1"
-                            items="#{consultarCategorias.dropDown1DefaultOptions.options}" style="left: 288px; top: 192px; position: absolute"/>
-                        <div style="left: 0px; top: 0px; position: absolute">
-                            <jsp:directive.include file="cabecalho.jspf"/>
-                        </div>
-                        <div style="left: 0px; top: 96px; position: absolute">
-                            <jsp:directive.include file="menuAdm.jspf"/>
-                        </div>
+                            items="#{consultarCategorias.dropDown1DefaultOptions.options}" style="left: 408px; top: 384px; position: absolute"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
