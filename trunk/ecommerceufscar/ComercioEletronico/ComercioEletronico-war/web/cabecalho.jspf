@@ -4,42 +4,143 @@
     Created on : 03/02/2008, 14:34:49
     Author     : Cliente
 -->
-<div style="background-color: rgb(0, 51, 153); height: 94px; width: 1222px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
+<div xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
     <f:subview id="cabecalho">
-        <webuijsf:label binding="#{cabecalho.label1}" id="label1"
-            style="background-color: rgb(0, 51, 153); color: white; font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; height: 46px; left: 24px; top: 24px; position: absolute; width: 262px"
-            styleClass="nomeSite" text="E-Commerce"/>
-        <webuijsf:label binding="#{cabecalho.label2}" id="label2"
-            style="color: white; font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; font-size: 14px; left: 1014px; top: 60px; position: absolute"
-            text="Bem vindo," visible="#{cabecalho.mostrarBemVindo}"/>
-        <webuijsf:label binding="#{cabecalho.lblUsuario}" id="lblUsuario"
-            style="color: rgb(255, 255, 255); font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; font-size: 18px; left: 1090px; top: 54px; position: absolute"
-            text="#{cabecalho.loginCliente}" visible="#{cabecalho.mostrarBemVindo}"/>
-        <webuijsf:image binding="#{cabecalho.image1}" height="6" id="image1" style="left: 0px; top: 88px; position: absolute"
-            url="/resources/itensPagina/linhaAzul.jpg" width="1222"/>
-        <webuijsf:label binding="#{cabecalho.lblSenha1}" id="lblSenha1"
-            style="color: white; font-family: 'Comic Sans MS',Arial,Helvetica,sans-serif; left: 960px; top: 68px; position: absolute" text="Senha" visible="#{cabecalho.mostrarCamposLogin}"/>
-        <webuijsf:label binding="#{cabecalho.lblLogin1}" id="lblLogin1"
-            style="color: white; font-family: 'Comic Sans MS',Arial,Helvetica,sans-serif; left: 768px; top: 68px; position: absolute" text="Login" visible="#{cabecalho.mostrarCamposLogin}"/>
-        <webuijsf:textField binding="#{cabecalho.txtLogin1}" id="txtLogin1" style="left: 816px; top: 68px; position: absolute" visible="#{cabecalho.mostrarCamposLogin}"/>
-        <webuijsf:passwordField binding="#{cabecalho.txtSenha1}" id="txtSenha1" style="left: 1008px; top: 68px; position: absolute" visible="#{cabecalho.mostrarCamposLogin}"/>
-        <webuijsf:label binding="#{cabecalho.lblError1}" id="lblError1"
-            style="color: rgb(255, 51, 51); font-size: 12px; left: 768px; top: 48px; position: absolute" text="Login e/ou Senha inválidos." visible="#{cabecalho.showError}"/>
-        <webuijsf:imageHyperlink actionExpression="#{cabecalho.lnkLogout_action}" binding="#{cabecalho.imageHyperlink1}" id="imageHyperlink1"
-            imageURL="/resources/itensPagina/logOutPq.jpg" style="left: 1190px; top: 5px; position: absolute" visible="#{cabecalho.mostrarBemVindo}"/>
-        <webuijsf:imageHyperlink actionExpression="#{cabecalho.btnLogin_action}" binding="#{cabecalho.imageHyperlink2}" id="imageHyperlink2"
-            imageURL="/resources/itensPagina/logInPq.jpg" style="left: 1151px; top: 62px; position: absolute" visible="#{cabecalho.mostrarCamposLogin}"/>
-        <webuijsf:hyperlink binding="#{cabecalho.hyperlink1}" id="hyperlink1"
-            style="background-color: rgb(0, 51, 153); color: white; left: 504px; top: 48px; position: absolute; text-decoration: none" styleClass="outros"
-            text="Cadastre-se aqui!" url="/faces/cadastroCliente.jsp" visible="#{cabecalho.mostrarCamposLogin}"/>
-        <webuijsf:hyperlink binding="#{cabecalho.hyperlink2}" id="hyperlink2"
-            style="background-color: rgb(0, 51, 153); color: white; left: 456px; top: 60px; position: absolute; text-decoration: none"
-            styleClass="outrosSmallText" text="Meu Carrinho" url="/faces/carrinhoDeProdutos.jsp" visible="#{cabecalho.mostrarBemVindo}"/>
-        <webuijsf:hyperlink binding="#{cabecalho.hyperlink3}" id="hyperlink3"
-            style="background-color: rgb(0, 51, 153); color: rgb(255, 255, 255); left: 589px; top: 60px; position: absolute; text-decoration: none"
-            styleClass="outrosSmallText" text="Meu Cadastro" url="/faces/configCliente.jsp" visible="#{cabecalho.mostrarBemVindo}"/>
-        <webuijsf:hyperlink binding="#{cabecalho.hyperlink4}" id="hyperlink4"
-            style="background-color: rgb(0, 51, 153); color: white; left: 720px; top: 60px; position: absolute; text-decoration: none"
-            styleClass="outrosSmallText" text="Minhas Compras" url="/faces/configComprasCliente.jsp" visible="#{cabecalho.mostrarBemVindo}"/>
+        <table border="0" cellpadding="0" cellspacing="0" id="Table_01" width="100%">
+            <tr>
+                <td align="center" bgcolor="#196395" colspan="6">
+                    <table>
+                        <tr>
+                            <td colspan="2" rowspan="5" style="color: #196395;background-color: rgb(255, 255, 255)">
+                                <a href="/ComercioEletronico-war/faces/index.jsp">
+                                    <img alt="" border="0" src="http://localhost:8080/ComercioEletronico-war/resources/images/logo.gif"/>
+                                </a>
+                            </td>
+                            <td align="center" bgcolor="#A5E4F5" rowspan="8" width="569">
+                                <div align="left">
+                                    <img height="203" src="http://localhost:8080/ComercioEletronico-war/resources/images/p.jpg" width="570"/>
+                                </div>
+                            </td>
+                            <td align="center" bgcolor="#196395" width="124"></td>
+                        </tr>
+                        <tr>
+                            <td align="center" bgcolor="#196395"></td>
+                        </tr>
+                        <tr>
+                            <td align="center" bgcolor="#196395"></td>
+                        </tr>
+                        <tr>
+                            <td align="center" bgcolor="#196395" height="53"></td>
+                        </tr>
+                        <tr>
+                            <td align="right" bgcolor="#196395" rowspan="4" width="124" valign="bottom">
+                                <table>
+                                    <tr>
+                                        <td align="left" bgcolor="#196395">
+                                           
+                                                <strong>
+                                                    <webuijsf:label style="color: #FFFFFF;" binding="#{cabecalho.lblLogin1}" id="lblLogin1" text="Login" visible="#{cabecalho.mostrarCamposLogin}"/>
+                                                </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" bgcolor="#196395">
+                                            <span style="color: #FFFFFF;">
+                                                <webuijsf:textField binding="#{cabecalho.txtLogin1}" id="txtLogin1" visible="#{cabecalho.mostrarCamposLogin}"/>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" bgcolor="#196395">
+                                            <span style="color: #FFFFFF;">
+                                                <strong>
+                                                    <webuijsf:label style="color: #FFFFFF;" binding="#{cabecalho.lblSenha1}" id="lblSenha1" text="Senha" visible="#{cabecalho.mostrarCamposLogin}"/>
+                                                </strong>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" bgcolor="#196395">
+                                                <webuijsf:passwordField binding="#{cabecalho.txtSenha1}" id="txtSenha1" visible="#{cabecalho.mostrarCamposLogin}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" bgcolor="#196395">
+                                            <div align="right">
+                                                <span style="color: #FFFFFF;">
+                                                    <webuijsf:imageHyperlink actionExpression="#{cabecalho.btnLogin_action}"
+                                                        binding="#{cabecalho.imageHyperlink2}" id="imageHyperlink2"
+                                                        imageURL="http://localhost:8080/ComercioEletronico-war/resources/itensPagina/logInPq.jpg" visible="#{cabecalho.mostrarCamposLogin}"/>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#196395" colspan="2" height="42" style="padding: 10px; " valign="bottom">
+                                
+                                
+                                <span style="color: #FFFFFF;"><strong> <webuijsf:label  style="color: #FFFFFF;" binding="#{cabecalho.lblUsuario}" id="lblUsuario" text="Boa tarde, #{cabecalho.loginCliente}" visible="#{cabecalho.mostrarBemVindo}"/></strong><br/>
+                                    <webuijsf:hyperlink style="color: #FFFFFF; text-decoration:underline; cursor:pointer;" text="Faça o login para ver sua página personalizada" url="/faces/loginUsuario.jsp" visible="#{!cabecalho.mostrarBemVindo}"/>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#196395" rowspan="2" width="91">
+                                <div align="right">
+                                    <span style="color: #FFFFFF;font-weight: bold;">
+                                        <a style="color: #FFFFFF;" href="carrinho.html"></a>
+                                        <a href="carrinho.html">
+                                            <img alt="" border="0" src="http://localhost:8080/ComercioEletronico-war/resources/images/z1.gif"/>
+                                        </a>
+                                    </span>
+                                    <br/>
+                                </div>
+                            </td>
+                            <td bgcolor="#196395" style="padding-left:10px;" width="155">
+                                <span style="color: #FFFFFF;font-weight: bold;">Carrinho:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#196395" height="17" style="padding-left:10px;">
+                                <a style="color: #FFFFFF;" href="/ComercioEletronico-war/faces/carrinhoDeProdutos.jsp">2  itens</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="6" height="67" style="background-color:#2c2c2c;">
+                    <nobr>
+                        <a href="index.html">
+                            <img alt="" border="0" height="67" id="layout_03" src="http://localhost:8080/ComercioEletronico-war/resources/images/layout_03.jpg" width="152"/>
+                        </a>
+                        <a href="carrinho.html">
+                            <img alt="" border="0" height="67" id="layout_04" name="layout_04"
+                                src="http://localhost:8080/ComercioEletronico-war/resources/images/layout_04.jpg" width="152"/>
+                        </a>
+                        <a href="login.html">
+                            <img alt="" border="0" height="67" id="layout_05" name="layout_05"
+                                src="http://localhost:8080/ComercioEletronico-war/resources/images/layout_05.jpg" width="152"/>
+                        </a>
+                        <a href="login.html">
+                            <img alt="" border="0" height="67" id="layout_06" name="layout_06"
+                                src="http://localhost:8080/ComercioEletronico-war/resources/images/layout_06.jpg" width="152"/>
+                        </a>
+                        <a href="/ComercioEletronico-war/faces/aempresa.jsp">
+                            <img alt="" border="0" height="67" id="layout_07" name="layout_07"
+                                src="http://localhost:8080/ComercioEletronico-war/resources/images/layout_07.jpg" width="152"/>
+                        </a>
+                    </nobr>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8" height="8">
+                    <img alt="" height="8" id="layout_08" src="http://localhost:8080/ComercioEletronico-war/resources/images/layout_08.jpg" width="775"/>
+                </td>
+            </tr>
+        </table>
     </f:subview>
 </div>

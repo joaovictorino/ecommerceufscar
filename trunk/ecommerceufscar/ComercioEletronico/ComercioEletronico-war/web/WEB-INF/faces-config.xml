@@ -165,4 +165,24 @@
         <managed-bean-class>comercioeletronicowar.detalhePedidoCliente</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>loginUsuario</managed-bean-name>
+        <managed-bean-class>comercioeletronicowar.loginUsuario</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>aempresa</managed-bean-name>
+        <managed-bean-class>comercioeletronicowar.aempresa</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>termos</managed-bean-name>
+        <managed-bean-class>comercioeletronicowar.termos</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>contato</managed-bean-name>
+        <managed-bean-class>comercioeletronicowar.contato</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>

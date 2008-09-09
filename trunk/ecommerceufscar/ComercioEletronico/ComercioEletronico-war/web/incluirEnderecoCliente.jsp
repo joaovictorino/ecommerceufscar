@@ -13,24 +13,24 @@
                     <webuijsf:link binding="#{incluirEnderecoCliente.link1}" id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
                 <webuijsf:body binding="#{incluirEnderecoCliente.body1}" id="body1" style="-rave-layout: grid">
+                    <div style="height: 94px; left: 0px; top: 0px; position: absolute; width: 1222px">
+                        <jsp:directive.include file="cabecalho.jspf"/>
+                    </div>
+                    <div style="height: 454px; left: 0px; top: 312px; position: absolute; width: 142px">
+                        <jsp:directive.include file="menu.jspf"/>
+                    </div>
                     <webuijsf:form binding="#{incluirEnderecoCliente.form1}" id="form1">
-                        <div style="left: 0px; top: 0px; position: absolute">
-                            <jsp:directive.include file="cabecalho.jspf"/>
-                        </div>
-                        <div style="left: 0px; top: 96px; position: absolute">
-                            <jsp:directive.include file="menu.jspf"/>
-                        </div>
-                        <webuijsf:label binding="#{incluirEnderecoCliente.label1}" id="label1" style="left: 192px; top: 216px; position: absolute"
+                        <webuijsf:label binding="#{incluirEnderecoCliente.label1}" id="label1" style="left: 288px; top: 408px; position: absolute"
                             styleClass="outrosSmallText" text="Tipo de endereço:"/>
-                        <webuijsf:label binding="#{incluirEnderecoCliente.label2}" id="label2" style="left: 768px; top: 264px; position: absolute"
+                        <webuijsf:label binding="#{incluirEnderecoCliente.label2}" id="label2" style="left: 864px; top: 456px; position: absolute"
                             styleClass="outrosSmallText" text="País:"/>
-                        <webuijsf:label binding="#{incluirEnderecoCliente.label3}" id="label3" style="left: 600px; top: 264px; position: absolute"
+                        <webuijsf:label binding="#{incluirEnderecoCliente.label3}" id="label3" style="left: 696px; top: 456px; position: absolute"
                             styleClass="outrosSmallText" text="C.E.P.:"/>
-                        <webuijsf:textField binding="#{incluirEnderecoCliente.cidade1}" id="cidade1" style="left: 336px; top: 288px; position: absolute" tabIndex="5"/>
+                        <webuijsf:textField binding="#{incluirEnderecoCliente.cidade1}" id="cidade1" style="left: 432px; top: 480px; position: absolute" tabIndex="5"/>
                         <webuijsf:textField binding="#{incluirEnderecoCliente.numEndereco1}" columns="6" id="numEndereco1"
-                            style="left: 768px; top: 240px; position: absolute" tabIndex="3"/>
+                            style="left: 864px; top: 432px; position: absolute" tabIndex="3"/>
                         <webuijsf:table augmentTitle="false" binding="#{incluirEnderecoCliente.tabEnderecos1}" id="tabEnderecos1"
-                            style="color: rgb(0, 0, 102); font-size: 12px; font-style: normal; font-weight: lighter; left: 192px; top: 336px; position: absolute; text-decoration: none"
+                            style="color: rgb(0, 0, 102); font-size: 12px; font-style: normal; font-weight: lighter; left: 288px; top: 528px; position: absolute; text-decoration: none; width: 840px"
                             styleClass="outrosSmallText" title="Endereços já cadastrados:" width="840">
                             <webuijsf:tableRowGroup binding="#{incluirEnderecoCliente.tableRowGroup1}" id="tableRowGroup1" rows="10"
                                 sourceData="#{incluirEnderecoCliente.enderecos}" sourceVar="currentRow">
@@ -60,37 +60,37 @@
                                 </webuijsf:tableColumn>
                             </webuijsf:tableRowGroup>
                         </webuijsf:table>
-                        <webuijsf:textField binding="#{incluirEnderecoCliente.cep1}" columns="8" id="cep1" style="left: 600px; top: 288px; position: absolute" tabIndex="7"/>
+                        <webuijsf:textField binding="#{incluirEnderecoCliente.cep1}" columns="8" id="cep1" style="left: 696px; top: 480px; position: absolute" tabIndex="7"/>
                         <webuijsf:label binding="#{incluirEnderecoCliente.login1}" id="login1"
-                            style="color: rgb(0, 51, 204); font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; font-style: normal; font-weight: lighter; left: 660px; top: 285px; position: absolute" text="-"/>
-                        <webuijsf:textField binding="#{incluirEnderecoCliente.bairro1}" id="bairro1" style="left: 192px; top: 288px; position: absolute" tabIndex="4"/>
+                            style="color: rgb(0, 51, 204); font-family: 'Comic Sans MS','Arial','Helvetica',sans-serif; font-style: normal; font-weight: lighter; left: 744px; top: 456px; position: absolute" text="-"/>
+                        <webuijsf:textField binding="#{incluirEnderecoCliente.bairro1}" id="bairro1" style="left: 288px; top: 480px; position: absolute" tabIndex="4"/>
                         <webuijsf:label binding="#{incluirEnderecoCliente.label4}" id="label4"
-                            style="color: rgb(0, 0, 51); font-size: 20px; font-style: normal; font-weight: lighter; left: 192px; top: 168px; position: absolute; text-decoration: none"
+                            style="color: rgb(0, 0, 51); font-size: 20px; font-style: normal; font-weight: lighter; left: 288px; top: 360px; position: absolute; text-decoration: none"
                             styleClass="titulo01" text="Incluir novo endereço"/>
-                        <webuijsf:label binding="#{incluirEnderecoCliente.label5}" id="label5" style="left: 336px; top: 264px; position: absolute"
+                        <webuijsf:label binding="#{incluirEnderecoCliente.label5}" id="label5" style="left: 432px; top: 456px; position: absolute"
                             styleClass="outrosSmallText" text="Cidade:"/>
-                        <webuijsf:textField binding="#{incluirEnderecoCliente.cep2}" columns="4" id="cep2" style="left: 672px; top: 288px; position: absolute" tabIndex="8"/>
+                        <webuijsf:textField binding="#{incluirEnderecoCliente.cep2}" columns="4" id="cep2" style="left: 768px; top: 480px; position: absolute" tabIndex="8"/>
                         <webuijsf:button actionExpression="#{incluirEnderecoCliente.button1_action}" binding="#{incluirEnderecoCliente.button1}" id="button1"
-                            style="left: 935px; top: 288px; position: absolute" text="Incluir endereço"/>
-                        <webuijsf:label binding="#{incluirEnderecoCliente.label6}" id="label6" style="left: 504px; top: 264px; position: absolute"
+                            style="left: 1031px; top: 480px; position: absolute" text="Incluir endereço"/>
+                        <webuijsf:label binding="#{incluirEnderecoCliente.label6}" id="label6" style="left: 600px; top: 456px; position: absolute"
                             styleClass="outrosSmallText" text="Estado:"/>
                         <webuijsf:hyperlink binding="#{incluirEnderecoCliente.hyperlink1}" id="hyperlink1"
-                            style="left: 360px; top: 120px; position: absolute; text-decoration: none" styleClass="outrosSmallText" text="Alterar Senha" url="/faces/alterarSenhaCliente.jsp"/>
+                            style="left: 456px; top: 312px; position: absolute; text-decoration: none" styleClass="outrosSmallText" text="Alterar Senha" url="/faces/alterarSenhaCliente.jsp"/>
                         <webuijsf:textField binding="#{incluirEnderecoCliente.tipoEndereco1}" id="tipoEndereco1"
-                            style="left: 192px; top: 240px; position: absolute" tabIndex="1"/>
+                            style="left: 288px; top: 432px; position: absolute" tabIndex="1"/>
                         <webuijsf:textField binding="#{incluirEnderecoCliente.endereco1}" columns="73" id="endereco1"
-                            style="left: 336px; top: 240px; position: absolute" tabIndex="2"/>
-                        <webuijsf:label binding="#{incluirEnderecoCliente.label7}" id="label7" style="left: 336px; top: 216px; position: absolute"
+                            style="left: 432px; top: 432px; position: absolute" tabIndex="2"/>
+                        <webuijsf:label binding="#{incluirEnderecoCliente.label7}" id="label7" style="left: 432px; top: 408px; position: absolute"
                             styleClass="outrosSmallText" text="Endereço:"/>
-                        <webuijsf:label binding="#{incluirEnderecoCliente.label8}" id="label8" style="left: 768px; top: 216px; position: absolute"
+                        <webuijsf:label binding="#{incluirEnderecoCliente.label8}" id="label8" style="left: 864px; top: 408px; position: absolute"
                             styleClass="outrosSmallText" text="Número:"/>
                         <webuijsf:hyperlink binding="#{incluirEnderecoCliente.hyperlink2}" id="hyperlink2"
-                            style="left: 192px; top: 120px; position: absolute; text-decoration: none" styleClass="outrosSmallText" text="Editar meus dados" url="/faces/editarDadosCliente.jsp"/>
+                            style="left: 288px; top: 312px; position: absolute; text-decoration: none" styleClass="outrosSmallText" text="Editar meus dados" url="/faces/editarDadosCliente.jsp"/>
                         <webuijsf:textField binding="#{incluirEnderecoCliente.pais1}" columns="15" id="pais1"
-                            style="left: 768px; top: 288px; position: absolute" tabIndex="9"/>
+                            style="left: 864px; top: 480px; position: absolute" tabIndex="9"/>
                         <webuijsf:textField binding="#{incluirEnderecoCliente.estado1}" columns="5" id="estado1"
-                            style="left: 504px; top: 288px; position: absolute" tabIndex="6"/>
-                        <webuijsf:label binding="#{incluirEnderecoCliente.label9}" id="label9" style="left: 192px; top: 264px; position: absolute"
+                            style="left: 600px; top: 480px; position: absolute" tabIndex="6"/>
+                        <webuijsf:label binding="#{incluirEnderecoCliente.label9}" id="label9" style="left: 288px; top: 456px; position: absolute"
                             styleClass="outrosSmallText" text="Bairro:"/>
                         <webuijsf:label binding="#{incluirEnderecoCliente.msgIncluirEnderecoCliente}" id="msgIncluirEnderecoCliente"
                             style="left: 192px; top: 96px; position: absolute" visible="#{incluirEnderecoCliente.mostraMensagem}"/>

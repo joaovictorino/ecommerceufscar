@@ -14,33 +14,30 @@
                 </webuijsf:head>
                 <webuijsf:body binding="#{produto.body1}" id="body1" style="-rave-layout: grid">
                     <webuijsf:form binding="#{produto.form1}" id="form1">
-                        <webuijsf:label binding="#{produto.label2}" converter="#{produto.realConverter1}" id="label2"
-                            style="left: 408px; top: 192px; position: absolute" styleClass="outrosSmallText"/>
-                        <webuijsf:image binding="#{produto.image1}" id="image1" style="left: 216px; top: 144px; position: absolute" url=""/>
-                        <div style="left: 0px; top: 0px; position: absolute">
+                        <div style="height: 94px; left: 0px; top: 0px; position: absolute; width: 1222px">
                             <jsp:directive.include file="cabecalho.jspf"/>
                         </div>
-                        <div style="left: 0px; top: 96px; position: absolute">
+                        <div style="height: 454px; left: 0px; top: 312px; position: absolute; width: 142px">
                             <jsp:directive.include file="menu.jspf"/>
                         </div>
-                        <div style="height: 272px; left: 1080px; top: 96px; position: absolute; width: 142px">
-                            <jsp:directive.include file="homeRight.jspf"/>
-                        </div>
+                        <webuijsf:label binding="#{produto.label2}" converter="#{produto.realConverter1}" id="label2"
+                            style="left: 480px; top: 360px; position: absolute" styleClass="outrosSmallText"/>
+                        <webuijsf:image binding="#{produto.image1}" id="image1" style="left: 288px; top: 312px; position: absolute" url=""/>
                         <webuijsf:hiddenField binding="#{produto.hiddenField1}" id="hiddenField1"/>
-                        <webuijsf:label binding="#{produto.label7}" id="label7" style="left: 360px; top: 192px; position: absolute" styleClass="outrosSmallText" text="Por:"/>
-                        <webuijsf:label binding="#{produto.label9}" id="label9" style="font-size: 16px; left: 216px; top: 240px; position: absolute"
+                        <webuijsf:label binding="#{produto.label7}" id="label7" style="left: 432px; top: 360px; position: absolute" styleClass="outrosSmallText" text="Por:"/>
+                        <webuijsf:label binding="#{produto.label9}" id="label9" style="font-size: 16px; left: 288px; top: 408px; position: absolute"
                             styleClass="outrosSmallText" text="Descrição"/>
-                        <webuijsf:label binding="#{produto.label10}" id="label10" style="font-size: 16px; left: 216px; top: 432px; position: absolute"
+                        <webuijsf:label binding="#{produto.label10}" id="label10" style="font-size: 16px; left: 288px; top: 600px; position: absolute"
                             styleClass="outrosSmallText" text="Dados Técnicos"/>
                         <webuijsf:label binding="#{produto.label4}" converter="#{produto.characterConverter1}" id="label4"
-                            style="height: 142px; left: 216px; top: 456px; position: absolute; width: 840px" styleClass="outrosSmallText"/>
+                            style="height: 142px; left: 288px; top: 624px; position: absolute; width: 840px" styleClass="outrosSmallText"/>
                         <webuijsf:label binding="#{produto.label5}" converter="#{produto.characterConverter1}" id="label5"
-                            style="height: 142px; line-height: normal; left: 216px; top: 264px; position: absolute; width: 840px; background-attachment: fixed" styleClass="outrosSmallText"/>
+                            style="height: 142px; line-height: normal; left: 288px; top: 432px; position: absolute; width: 840px; background-attachment: fixed" styleClass="outrosSmallText"/>
                         <webuijsf:label binding="#{produto.carrinhoDeProdutos.msgCarrinhoDeProdutos}" id="msgCarrinhoDeProdutos" visible="#{produto.carrinhoDeProdutos.mostraMensagem}"/>
                         <webuijsf:imageHyperlink actionExpression="#{produto.btnAdd_action}" alt="Incluir produto no carrinho."
-                            binding="#{produto.imageHyperlink1}" id="imageHyperlink1" imageURL="/resources/itensPagina/carrinhoIncluirAzul.jpg" style="left: 1008px; top: 144px; position: absolute"/>
+                            binding="#{produto.imageHyperlink1}" id="imageHyperlink1" imageURL="/resources/itensPagina/carrinhoIncluirAzul.jpg" style="left: 960px; top: 312px; position: absolute"/>
                         <webuijsf:imageHyperlink actionExpression="#{produto.btnVoltar_action}" binding="#{produto.imageHyperlink2}" id="imageHyperlink2"
-                            imageURL="/resources/itensPagina/setaAzulPq.jpg" style="left: 1032px; top: 600px; position: absolute"/>
+                            imageURL="/resources/itensPagina/setaAzulPq.jpg" style="left: 1104px; top: 768px; position: absolute"/>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
