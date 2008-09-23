@@ -78,7 +78,38 @@ BEGIN
 
 	END LOOP;
 
-	OPEN ref FOR SELECT * FROM processamento_clientes_weka WHERE data_inclusao = dtAtual order by login_cli;
+	OPEN ref FOR 	select 	p0.nome_produto as nome0,
+				p1.nome_produto as nome1,
+				p2.nome_produto as nome2,
+				p3.nome_produto as nome3,
+				p4.nome_produto as nome4,
+				p5.nome_produto as nome5,
+				p6.nome_produto as nome6,
+				p7.nome_produto as nome7,
+				p8.nome_produto as nome8,
+				p9.nome_produto as nome9
+			from	processamento_clientes_weka pcw,
+				produtos p0,
+				produtos p1,
+				produtos p2,
+				produtos p3,
+				produtos p4,
+				produtos p5,
+				produtos p6,
+				produtos p7,
+				produtos p8,
+				produtos p9
+			where pcw."codProduto0" = p0.cod_produto
+			and pcw."codProduto1" = p1.cod_produto
+			and pcw."codProduto2" = p2.cod_produto
+			and pcw."codProduto3" = p3.cod_produto
+			and pcw."codProduto4" = p4.cod_produto
+			and pcw."codProduto5" = p5.cod_produto
+			and pcw."codProduto6" = p6.cod_produto
+			and pcw."codProduto7" = p7.cod_produto
+			and pcw."codProduto8" = p8.cod_produto
+			and pcw."codProduto9" = p9.cod_produto
+			and pcw.data_inclusao = dtAtual;
 
 	RETURN ref;
 END;
