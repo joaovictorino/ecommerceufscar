@@ -32,7 +32,7 @@
                             style="left: 336px; top: 384px; position: absolute" styleClass="outros" text="Preço Min.:"/>
                         <webuijsf:label binding="#{buscarProduto.labelpPrecoMaxProcurar}" id="labelpPrecoMaxProcurar"
                             style="left: 576px; top: 384px; position: absolute" styleClass="outros" text="Preço Max.:"/>
-                        <webuijsf:table augmentTitle="false" binding="#{buscarProduto.table2}" id="table2"
+                        <webuijsf:table augmentTitle="false" binding="#{buscarProduto.table2}" id="table2" paginateButton="true" paginationControls="true"
                             style="left: 336px; top: 432px; position: absolute; width: 552px" title="Produtos" width="552">
                             <webuijsf:tableRowGroup binding="#{buscarProduto.tableRowGroup2}" id="tableRowGroup2" rows="10"
                                 sourceData="#{buscarProduto.listaTabelaProdutosEncontrados}" sourceVar="currentRow">
