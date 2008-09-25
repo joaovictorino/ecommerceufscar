@@ -401,7 +401,7 @@ public class buscarProduto extends AbstractPageBean {
         // </editor-fold>
         // Perform application initialization that must complete
         // *after* managed components are initialized
-        // TODO - add your own initialization code here
+        buttonProcurarProduto_action();
     }
 
     /**
