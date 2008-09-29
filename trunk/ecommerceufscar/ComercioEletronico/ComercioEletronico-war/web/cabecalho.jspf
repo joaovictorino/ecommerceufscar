@@ -8,7 +8,7 @@
     <f:subview id="cabecalho">
         <table border="0" cellpadding="0" cellspacing="0" id="Table_01" width="100%">
             <tr>
-                <td align="center" bgcolor="#196395" colspan="6">
+                <td align="left" bgcolor="#196395" colspan="6">
                     <table>
                         <tr>
                             <td colspan="2" rowspan="5" style="color: #196395;background-color: rgb(255, 255, 255)">
@@ -112,12 +112,12 @@
                 </td>
             </tr>
             <tr>
-                <td align="center" colspan="6" height="67" style="background-color:#2c2c2c;">
+                <td align="left" colspan="6" height="67" style="background-color:#2c2c2c;">
                     <nobr>
-                        <a href="index.html">
+                        <a href="index.jsp">
                             <img alt="" border="0" height="67" id="layout_03" src="http://localhost:8080/ComercioEletronico-war/resources/images/layout_03.jpg" width="152"/>
                         </a>
-                        <a href="carrinho.html">
+                        <a href="buscarProduto.jsp">
                             <img alt="" border="0" height="67" id="layout_04" name="layout_04"
                                 src="http://localhost:8080/ComercioEletronico-war/resources/images/layout_04.jpg" width="152"/>
                         </a>
@@ -125,7 +125,7 @@
                             <img alt="" border="0" height="67" id="layout_05" name="layout_05"
                                 src="http://localhost:8080/ComercioEletronico-war/resources/images/layout_05.jpg" width="152"/>
                         </a>
-                        <a href="login.html">
+                        <a href="/ComercioEletronico-war/faces/configComprasCliente.jsp">
                             <img alt="" border="0" height="67" id="layout_06" name="layout_06"
                                 src="http://localhost:8080/ComercioEletronico-war/resources/images/layout_06.jpg" width="152"/>
                         </a>
