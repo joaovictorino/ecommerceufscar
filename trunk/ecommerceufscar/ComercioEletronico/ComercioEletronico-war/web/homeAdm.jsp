@@ -12,12 +12,12 @@
                 <webuijsf:head binding="#{homeAdm.head1}" id="head1">
                     <webuijsf:link binding="#{homeAdm.link1}" id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
-                <webuijsf:body binding="#{homeAdm.body1}" id="body1" style="-rave-layout: grid">
+                <webuijsf:body binding="#{homeAdm.body1}" id="body1" style="-rave-layout: grid; background-color:#F6F6F6;">
                     <webuijsf:form binding="#{homeAdm.form1}" id="form1">
                         <div style="height: 94px; left: 0px; top: 0px; position: absolute; width: 1222px">
                             <jsp:directive.include file="cabecalhoAdm.jspf"/>
                         </div>
-                        <div style="height: 454px; left: 0px; top: 96px; position: absolute; width: 142px">
+                        <div style="height: 454px; left: 0px; top: 132px; position: absolute; width: 166px">
                             <jsp:directive.include file="menuAdm.jspf"/>
                         </div>
                     </webuijsf:form>
