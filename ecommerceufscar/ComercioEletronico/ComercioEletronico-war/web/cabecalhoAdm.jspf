@@ -6,7 +6,7 @@
 -->
 <div style="height: 94px; width: 1222px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
     <f:subview id="cabecalhoAdm">
-        <webuijsf:label binding="#{cabecalhoAdm.label1}" id="label1"
-            style="font-family: 'Verdana','Arial','Helvetica',sans-serif; font-size: 18px; height: 22px; left: 318px; top: 0px; position: absolute; width: 190px" text="Site Adminstrador"/>
+        <div style="background-image: url(http://localhost:8080/ComercioEletronico-war/resources/images/bg_top-1.gif); background-repeat: repeat-x; height: 132px; left: 0px; top: 0px; position: absolute; width: 100%"></div>
+        <div style="background-image: url(http://localhost:8080/ComercioEletronico-war/resources/images/logo.gif); height: 130px; left: 504px; top: 0px; position: absolute; width: 253px"></div>
     </f:subview>
 </div>

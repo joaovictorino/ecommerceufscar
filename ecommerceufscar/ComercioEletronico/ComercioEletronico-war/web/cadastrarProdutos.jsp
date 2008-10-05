@@ -12,17 +12,16 @@
                 <webuijsf:head binding="#{cadastrarProdutos.headCaProd}" id="headCaProd">
                     <webuijsf:link binding="#{cadastrarProdutos.linkCaProd}" id="linkCaProd" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
-                <webuijsf:body binding="#{cadastrarProdutos.bodyCaProd}" id="bodyCaProd" style="-rave-layout: grid">
+                <webuijsf:body binding="#{cadastrarProdutos.bodyCaProd}" id="bodyCaProd" style="-rave-layout: grid; background-color:#F6F6F6;">
                     <webuijsf:form binding="#{cadastrarProdutos.formCaProd}" id="formCaProd">
                         <div style="left: 0px; top: 0px; position: absolute">
                             <jsp:directive.include file="cabecalhoAdm.jspf"/>
-                            <webuijsf:label id="label1"
-                                style="color: blue; font-family: 'Verdana','Arial','Helvetica',sans-serif; font-size: 24px; font-weight: bold; height: 40px; left: 384px; top: 48px; position: absolute; width: 298px" text="Cadastro de Produtos"/>
+                          
                         </div>
-                        <div style="left: 0px; top: 96px; position: absolute">
+                        <div style="left: 0px; top: 132px; position: absolute">
                             <jsp:directive.include file="menuAdm.jspf"/>
                         </div>
-                        <webuijsf:tabSet binding="#{cadastrarProdutos.tabSetCadProd}" id="tabSetCadProd" selected="tabIncluir" style="border-width: 1px; border-style: solid; height: 466px; left: 191px; top: 107px; position: absolute; width: 671px">
+                        <webuijsf:tabSet binding="#{cadastrarProdutos.tabSetCadProd}" id="tabSetCadProd" selected="tabIncluir" style="border-width: 1px; border-style: solid; height: 466px; left: 192px; top: 192px; position: absolute; width: 671px">
                             <webuijsf:tab binding="#{cadastrarProdutos.tabIncluir}" id="tabIncluir" text="Incluir">
                                 <webuijsf:panelLayout binding="#{cadastrarProdutos.layoutPanelIncluir}" id="layoutPanelIncluir" style="height: 432px; position: relative; width: 100%; -rave-layout: grid">
                                     <webuijsf:label binding="#{cadastrarProdutos.lblNomeProd_incl}" id="lblNomeProd_incl"
@@ -185,6 +184,9 @@
                             </webuijsf:tab>
                         </webuijsf:tabSet>
                         <br/>
+                        <div style="left: 124px; top: 131px; height:25px; width:1099px; position: absolute; background-color:#196395;color:white; vertical-align:middle;">
+                            <div style="padding-left:20px;padding-top:3px;"><b>CADASTRAR PRODUTO</b></div>
+                        </div>
                     </webuijsf:form>
                 </webuijsf:body>
             </webuijsf:html>
