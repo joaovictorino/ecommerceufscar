@@ -13,7 +13,9 @@ import weka.core.FastVector;
  * @author João Henrique
  */
 public class CustomApriori extends Apriori {
+    
     public FastVector[] getRules(){
         return this.m_allTheRules;
     }
+    
 }

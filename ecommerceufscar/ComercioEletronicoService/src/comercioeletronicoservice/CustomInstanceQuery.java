@@ -6,7 +6,6 @@
 package comercioeletronicoservice;
 
 import java.sql.CallableStatement;
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -62,4 +61,5 @@ public class CustomInstanceQuery extends InstanceQuery{
     public boolean execute(String arg0) throws SQLException {
         return true;
     }
+    
 }

@@ -21,9 +21,16 @@ public class Main {
         try{
             CustomInstanceQuery query = new CustomInstanceQuery();
             Instances data = query.retrieveInstances();
+            query.disconnectFromDatabase();
             CustomApriori apriori = new CustomApriori();
+            apriori.setDelta(0.5);
+            apriori.setLowerBoundMinSupport(0.1);
+            apriori.setMinMetric(0.9);
             apriori.setNumRules(10);
-            apriori.setMinMetric(0.1);
+            apriori.setOutputItemSets(false);
+            apriori.setSignificanceLevel(-1.0);
+            apriori.setUpperBoundMinSupport(1.0);
+            apriori.setVerbose(false);
             apriori.buildAssociations(data);
             FastVector[] rules = apriori.getRules();
             System.out.println("modelo");
