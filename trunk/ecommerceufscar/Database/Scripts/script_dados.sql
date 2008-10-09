@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Started on 2008-09-03 03:52:29
+-- Started on 2008-10-04 18:28:49
 
 SET client_encoding = 'SQL_ASCII';
 SET standard_conforming_strings = off;
@@ -13,8 +13,8 @@ SET escape_string_warning = off;
 SET search_path = public, pg_catalog;
 
 --
--- TOC entry 1702 (class 0 OID 0)
--- Dependencies: 1305
+-- TOC entry 1709 (class 0 OID 0)
+-- Dependencies: 1310
 -- Name: cliente_cod_cliente_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -22,8 +22,8 @@ SELECT pg_catalog.setval('cliente_cod_cliente_seq', 93, false);
 
 
 --
--- TOC entry 1703 (class 0 OID 0)
--- Dependencies: 1303
+-- TOC entry 1710 (class 0 OID 0)
+-- Dependencies: 1308
 -- Name: compras_num_compra_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -31,8 +31,8 @@ SELECT pg_catalog.setval('compras_num_compra_seq', 893, true);
 
 
 --
--- TOC entry 1704 (class 0 OID 0)
--- Dependencies: 1294
+-- TOC entry 1711 (class 0 OID 0)
+-- Dependencies: 1299
 -- Name: endereco_cod_endereco_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -40,8 +40,8 @@ SELECT pg_catalog.setval('endereco_cod_endereco_seq', 101, true);
 
 
 --
--- TOC entry 1705 (class 0 OID 0)
--- Dependencies: 1304
+-- TOC entry 1712 (class 0 OID 0)
+-- Dependencies: 1309
 -- Name: produtos_cod_produto_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -49,16 +49,16 @@ SELECT pg_catalog.setval('produtos_cod_produto_seq', 89, true);
 
 
 --
--- TOC entry 1685 (class 0 OID 16404)
--- Dependencies: 1287
+-- TOC entry 1691 (class 0 OID 16404)
+-- Dependencies: 1292
 -- Data for Name: acompanhamento_produtos_em_falta; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 1686 (class 0 OID 16406)
--- Dependencies: 1288
+-- TOC entry 1692 (class 0 OID 16406)
+-- Dependencies: 1293
 -- Data for Name: administrador; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -76,8 +76,8 @@ INSERT INTO administrador (login_adm, data_expedicao, frase_seguranca, orgao_exp
 
 
 --
--- TOC entry 1687 (class 0 OID 16408)
--- Dependencies: 1289
+-- TOC entry 1693 (class 0 OID 16408)
+-- Dependencies: 1294
 -- Data for Name: categorias; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -93,8 +93,8 @@ INSERT INTO categorias (categoria, categoria_pai) VALUES ('Seafood', NULL);
 
 
 --
--- TOC entry 1688 (class 0 OID 16410)
--- Dependencies: 1290
+-- TOC entry 1694 (class 0 OID 16410)
+-- Dependencies: 1295
 -- Data for Name: cliente; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -193,16 +193,16 @@ INSERT INTO cliente (cod_cliente, deseja_receber_email, email_secundario, login_
 
 
 --
--- TOC entry 1689 (class 0 OID 16412)
--- Dependencies: 1291
+-- TOC entry 1695 (class 0 OID 16412)
+-- Dependencies: 1296
 -- Data for Name: cliente_esta_gpr; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 1690 (class 0 OID 16414)
--- Dependencies: 1292
+-- TOC entry 1696 (class 0 OID 16414)
+-- Dependencies: 1297
 -- Data for Name: compras; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -1053,8 +1053,8 @@ INSERT INTO compras (num_compra, data_entrega, data_pedido, data_prevista_entreg
 
 
 --
--- TOC entry 1691 (class 0 OID 16416)
--- Dependencies: 1293
+-- TOC entry 1697 (class 0 OID 16416)
+-- Dependencies: 1298
 -- Data for Name: endereco; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -1165,32 +1165,32 @@ INSERT INTO endereco (cod_endereco, bairro, cep, cidade, endereco, estado, numer
 
 
 --
--- TOC entry 1692 (class 0 OID 16423)
--- Dependencies: 1295
+-- TOC entry 1698 (class 0 OID 16423)
+-- Dependencies: 1300
 -- Data for Name: grp_tem_produto; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 1693 (class 0 OID 16425)
--- Dependencies: 1296
+-- TOC entry 1699 (class 0 OID 16425)
+-- Dependencies: 1301
 -- Data for Name: grupo_interesse; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 1694 (class 0 OID 16427)
--- Dependencies: 1297
+-- TOC entry 1700 (class 0 OID 16427)
+-- Dependencies: 1302
 -- Data for Name: historico_navegacao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 1695 (class 0 OID 16429)
--- Dependencies: 1298
+-- TOC entry 1701 (class 0 OID 16429)
+-- Dependencies: 1303
 -- Data for Name: itens_compras; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -3371,8 +3371,8 @@ INSERT INTO itens_compras (cod_produto, num_compra, preco_produto, quantidade) V
 
 
 --
--- TOC entry 1696 (class 0 OID 16431)
--- Dependencies: 1299
+-- TOC entry 1702 (class 0 OID 16431)
+-- Dependencies: 1304
 -- Data for Name: pessoa; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -3481,8 +3481,91 @@ INSERT INTO pessoa (login_pes, celular, cpf, data_nasc, dddcelular, dddtelefone,
 
 
 --
--- TOC entry 1697 (class 0 OID 16436)
--- Dependencies: 1300
+-- TOC entry 1706 (class 0 OID 16670)
+-- Dependencies: 1311
+-- Data for Name: processamento_clientes_weka; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('alfki', 83, 70, 18, 40, 71, 89, 15, 88, 75, 40, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('anatr', 23, 84, 31, 25, 44, 72, 54, 26, 81, 82, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('anton', 14, 54, 87, 78, 45, 38, 45, 46, 29, 65, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('arout', 43, 48, 43, 32, 62, 79, 47, 64, 53, 34, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('bergs', 87, 40, 22, 31, 61, 59, 36, 42, 14, 38, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('blaus', 73, 72, 33, 33, 63, 59, 30, 23, 51, 33, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('blonp', 69, 43, 71, 13, 43, 30, 88, 23, 67, 53, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('bonap', 26, 18, 31, 25, 19, 28, 87, 84, 74, 76, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('bottm', 80, 63, 45, 74, 36, 19, 55, 87, 20, 22, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('bsbev', 19, 55, 71, 58, 34, 25, 74, 69, 47, 45, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('cactu', 45, 79, 40, 46, 85, 87, 55, 43, 47, 80, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('chops', 14, 75, 75, 68, 68, 74, 49, 25, 54, 74, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('commi', 73, 56, 58, 68, 58, 23, 17, 89, 61, 41, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('dracd', 53, 25, 71, 38, 65, 23, 25, 43, 87, 88, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('eastc', 19, 72, 67, 17, 13, 45, 83, 77, 38, 55, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('ernsh', 53, 76, 62, 14, 71, 82, 15, 46, 83, 40, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('famia', 53, 67, 64, 66, 65, 42, 87, 58, 36, 59, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('folig', 30, 80, 75, 47, 34, 36, 33, 87, 19, 30, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('folko', 88, 19, 58, 67, 34, 41, 53, 87, 59, 75, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('frank', 83, 72, 31, 33, 89, 87, 66, 76, 36, 53, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('frans', 89, 72, 30, 63, 52, 86, 57, 59, 31, 38, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('furib', 72, 77, 68, 22, 88, 60, 28, 56, 47, 89, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('godos', 82, 72, 48, 36, 63, 67, 62, 29, 79, 13, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('gourl', 14, 24, 87, 68, 19, 54, 18, 42, 88, 72, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('greal', 72, 33, 41, 13, 48, 50, 74, 33, 76, 31, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('hanar', 73, 55, 81, 31, 50, 48, 64, 36, 29, 25, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('hilaa', 37, 69, 63, 36, 40, 53, 36, 47, 76, 42, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('hungo', 53, 52, 46, 28, 44, 30, 41, 23, 42, 41, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('islat', 73, 65, 14, 72, 25, 20, 84, 74, 71, 88, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('jh_vs', 1, 1, 3, 4, 2, 3, 1, 1, 1, 2, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('koene', 71, 67, 42, 41, 36, 48, 20, 38, 15, 50, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('lacor', 38, 29, 45, 87, 53, 88, 32, 64, 19, 82, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('lamai', 36, 54, 79, 55, 37, 76, 56, 25, 41, 14, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('lehms', 43, 28, 14, 13, 18, 42, 64, 23, 71, 41, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('letss', 33, 77, 68, 73, 89, 42, 30, 66, 27, 87, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('lilas', 19, 25, 66, 42, 58, 64, 44, 51, 89, 71, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('linod', 61, 69, 47, 40, 53, 43, 72, 57, 28, 37, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('lonep', 68, 30, 24, 36, 65, 71, 63, 88, 80, 79, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('magaa', 16, 14, 79, 53, 44, 48, 84, 51, 52, 17, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('maisd', 88, 38, 20, 56, 52, 33, 68, 57, 71, 55, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('merep', 73, 22, 33, 34, 18, 80, 68, 83, 72, 71, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('morgk', 25, 43, 28, 74, 59, 88, 71, 75, 84, 40, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('ocean', 89, 23, 88, 32, 19, 17, 84, 25, 71, 26, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('oldwo', 73, 56, 33, 63, 43, 77, 68, 28, 88, 68, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('ottik', 22, 53, 89, 63, 43, 65, 19, 80, 19, 14, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('peric', 36, 23, 63, 72, 57, 65, 79, 40, 26, 52, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('picco', 76, 44, 30, 34, 81, 53, 43, 75, 29, 38, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('prini', 20, 54, 41, 33, 13, 51, 68, 33, 63, 16, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('quede', 18, 53, 23, 66, 26, 47, 83, 51, 31, 38, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('queen', 55, 40, 89, 88, 64, 83, 16, 70, 45, 47, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('quick', 63, 84, 38, 32, 14, 54, 82, 88, 14, 25, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('ranch', 61, 58, 28, 69, 44, 50, 32, 73, 63, 33, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('rattc', 14, 89, 87, 85, 78, 76, 72, 67, 64, 58, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('reggc', 65, 82, 36, 19, 61, 19, 64, 84, 89, 43, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('ricar', 72, 29, 25, 28, 30, 71, 69, 37, 14, 58, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('ricsu', 58, 88, 14, 65, 81, 87, 53, 45, 69, 25, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('romey', 57, 54, 35, 80, 72, 42, 66, 42, 65, 69, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('santg', 89, 42, 19, 53, 28, 47, 31, 50, 55, 30, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('savea', 53, 29, 80, 67, 65, 13, 71, 41, 14, 17, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('seves', 23, 13, 80, 35, 22, 61, 40, 63, 66, 23, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('simob', 28, 74, 67, 63, 42, 48, 33, 73, 84, 89, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('splir', 75, 63, 47, 81, 80, 48, 30, 66, 38, 80, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('suprd', 64, 52, 83, 13, 66, 54, 47, 39, 70, 67, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('tomsp', 61, 31, 68, 46, 53, 43, 31, 36, 64, 69, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('tortu', 51, 29, 66, 45, 55, 82, 80, 23, 56, 31, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('tradh', 84, 70, 41, 42, 51, 18, 72, 80, 74, 67, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('vaffe', 71, 89, 36, 22, 47, 75, 74, 73, 64, 53, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('victe', 82, 45, 37, 63, 73, 60, 55, 53, 14, 77, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('vinet', 64, 48, 25, 53, 68, 84, 83, 23, 84, 54, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('wandk', 44, 24, 47, 76, 67, 43, 31, 34, 81, 82, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('warth', 13, 25, 66, 86, 68, 57, 71, 26, 70, 16, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('welli', 13, 30, 35, 13, 82, 64, 71, 37, 31, 58, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('whitc', 46, 31, 28, 48, 71, 50, 74, 70, 30, 74, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('wilmk', 13, 71, 61, 73, 31, 52, 88, 77, 40, 33, '2008-09-27');
+INSERT INTO processamento_clientes_weka (login_cli, codproduto0, codproduto1, codproduto2, codproduto3, codproduto4, codproduto5, codproduto6, codproduto7, codproduto8, codproduto9, data_inclusao) VALUES ('wolza', 74, 87, 86, 73, 36, 73, 47, 63, 14, 80, '2008-09-27');
+
+
+--
+-- TOC entry 1703 (class 0 OID 16436)
+-- Dependencies: 1305
 -- Data for Name: produtos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -3547,7 +3630,6 @@ INSERT INTO produtos (cod_produto, dados_tecnicos, descricao_detalhada, nome_pro
 
 C�mera: 2.0; Zoom: 4x; Flash Embutido: Sim;', 'LG Shine ME970 (KE970) Desbloqueado GSM
 ', 1, 900, 1, 99, 'categoria', 'LG 970ME P.jpg');
-INSERT INTO produtos (cod_produto, dados_tecnicos, descricao_detalhada, nome_produto, numero_visualizacao, preco, qtde_compras, qtde_estoque, categoria, imagem) VALUES (1, 'Largura 63mm; Altura 24mm; Profundidade 10mm; Peso 15 g.', 'Capacidade 4096Mb; Velocidade de Leitura 6 Mb/s Velocidade de Grava��o 1,5 Mb/s; Sistema operacional compat�vel Microsoft Windows, Macintosh.', 'Pen Drive Kingston DataTraveler DTI 4GB', 5, 100, 10, 990, 'categoria', 'pen kingston 4gb P.jpg');
 INSERT INTO produtos (cod_produto, dados_tecnicos, descricao_detalhada, nome_produto, numero_visualizacao, preco, qtde_compras, qtde_estoque, categoria, imagem) VALUES (2, 'Tipo de Display: LCD TFT; Widescreen: Sim; Tela: 15.4 polegadas; Resolu��o: 1280 x 800 Pixels; Placa de v�deo: ATI Radeon Xpress 1100; Mem�ria de V�deo: 128 compartilhada Mb; 
 
 Fax Modem: 56K; Conex�es: Rede 10/100 integrada;', 'Processador: AMD Turion 64 X2; Velocidade do Processador: 1,6 GHz; Cache: 512 Kb; 
@@ -3645,25 +3727,26 @@ INSERT INTO produtos (cod_produto, dados_tecnicos, descricao_detalhada, nome_pro
 INSERT INTO produtos (cod_produto, dados_tecnicos, descricao_detalhada, nome_produto, numero_visualizacao, preco, qtde_compras, qtde_estoque, categoria, imagem) VALUES (87, '24 - 0.5 l bottles', 'Soft drinks, coffees, teas, beers, and ales', 'Rhönbräu Klosterbier', 0, 775, 0, 125, 'Beverages', 'stitch P.jpg');
 INSERT INTO produtos (cod_produto, dados_tecnicos, descricao_detalhada, nome_produto, numero_visualizacao, preco, qtde_compras, qtde_estoque, categoria, imagem) VALUES (88, '500 ml', 'Soft drinks, coffees, teas, beers, and ales', 'Lakkalikööri', 0, 1800, 0, 57, 'Beverages', 'stitch P.jpg');
 INSERT INTO produtos (cod_produto, dados_tecnicos, descricao_detalhada, nome_produto, numero_visualizacao, preco, qtde_compras, qtde_estoque, categoria, imagem) VALUES (89, '12 boxes', 'Sweet and savory sauces, relishes, spreads, and seasonings', 'Original Frankfurter grüne Soße', 0, 1300, 0, 32, 'Condiments', 'stitch P.jpg');
+INSERT INTO produtos (cod_produto, dados_tecnicos, descricao_detalhada, nome_produto, numero_visualizacao, preco, qtde_compras, qtde_estoque, categoria, imagem) VALUES (1, 'Largura 63mm; Altura 24mm; Profundidade 10mm; Peso 15 g.', 'Capacidade 4096Mb; Velocidade de Leitura 6 Mb/s Velocidade de Grava��o 1,5 Mb/s; Sistema operacional compat�vel Microsoft Windows, Macintosh.', 'Pen Drive Kingston DataTraveler DTI 4GB', 6, 100, 10, 990, 'categoria', 'pen kingston 4gb P.jpg');
 
 
 --
--- TOC entry 1698 (class 0 OID 16438)
--- Dependencies: 1301
+-- TOC entry 1704 (class 0 OID 16438)
+-- Dependencies: 1306
 -- Data for Name: produtos_promocao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 1699 (class 0 OID 16440)
--- Dependencies: 1302
+-- TOC entry 1705 (class 0 OID 16440)
+-- Dependencies: 1307
 -- Data for Name: visitante; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
--- Completed on 2008-09-03 03:52:31
+-- Completed on 2008-10-04 18:28:50
 
 --
 -- PostgreSQL database dump complete
