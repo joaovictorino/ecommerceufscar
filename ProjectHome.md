@@ -1,0 +1,1 @@
+Projeto de Comércio Eletrônico, desenvolvido em Java, utilizando tecnologias como JSF, EJB3, Postgres e Weka. O Projeto está sendo desenvolvido no NetBeans 6 e utilizando como servidor o Glassfish v2.
